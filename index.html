@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ZDD - Zero-Drift Development. Une méthodologie pour le développement assisté par IA qui garantit zéro dérive entre l'intention et l'implémentation.">
+  <meta name="keywords" content="ZDD, Zero-Drift Development, AI development, methodology, Scrum alternative, AI-assisted development">
+  
+  <title>ZDD — Zero-Drift Development</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%2300ff88' width='100' height='100'/><text y='.9em' x='50%' text-anchor='middle' font-size='70' font-family='monospace' fill='%230a0a0a'>Z</text></svg>">
+</head>
+<body>
+  
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="/" class="nav__logo">
+        <span class="nav__logo-icon">Z</span>
+        <span>ZDD</span>
+      </a>
+      
+      <button class="nav__toggle" aria-label="Menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      
+      <ul class="nav__links">
+        <li><a href="#problem" class="nav__link">Problème</a></li>
+        <li><a href="#principles" class="nav__link">Principes</a></li>
+        <li><a href="#agents" class="nav__link">Agents</a></li>
+        <li><a href="#comparison" class="nav__link">Comparaison</a></li>
+        <li><a href="#quickstart" class="nav__link">Démarrer</a></li>
+        <li><a href="manifesto.html" class="nav__link">Manifeste</a></li>
+        <li><a href="https://github.com/zero-drift-development" class="nav__link" target="_blank">GitHub ↗</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero__grid"></div>
+    <div class="container hero__content">
+      <span class="hero__badge">Méthodologie Open Source</span>
+      <h1 class="hero__title">
+        <span class="hero__title-main">Zero-Drift</span>
+        <span class="hero__title-accent">Development</span>
+      </h1>
+      <p class="hero__subtitle">
+        Quand l'IA code plus vite que vous ne spécifiez, votre méthodologie doit évoluer. 
+        ZDD garantit <strong>zéro dérive</strong> entre l'intention et l'implémentation.
+      </p>
+      <div class="hero__cta">
+        <a href="#quickstart" class="btn btn--primary">Commencer →</a>
+        <a href="manifesto.html" class="btn btn--secondary">Lire le Manifeste</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section class="problem" id="problem">
+    <div class="container">
+      <header class="problem__header">
+        <h3>Le Constat</h3>
+        <h2>Le développement assisté par IA change tout,<br>sauf nos méthodologies.</h2>
+      </header>
+      
+      <div class="problem__grid">
+        <article class="problem__card" data-number="01">
+          <h3>Dérive Silencieuse</h3>
+          <p>L'IA produit du code qui <em>semble</em> correct mais qui s'écarte subtilement de votre intention. Sans le savoir, vous accumulez de la dette technique invisible.</p>
+        </article>
+        
+        <article class="problem__card" data-number="02">
+          <h3>Faux Alignement</h3>
+          <p>L'agent dit "c'est fait" mais a laissé des TODO, des implémentations partielles, des edge cases ignorés. Le code passe les tests mais ne résout pas le problème.</p>
+        </article>
+        
+        <article class="problem__card" data-number="03">
+          <h3>Perte de Contexte</h3>
+          <p>Chaque session repart de zéro. Les décisions architecturales se perdent. Les conventions s'érodent. Le projet devient un patchwork incohérent.</p>
+        </article>
+        
+        <article class="problem__card" data-number="04">
+          <h3>Validation Biaisée</h3>
+          <p>L'agent qui génère le code est le même qui le documente. C'est le renard qui garde le poulailler. L'auto-évaluation masque les problèmes.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Principles -->
+  <section class="principles" id="principles">
+    <div class="container container--narrow">
+      <h3>Les Fondamentaux</h3>
+      <h2>6 Principes pour Zéro Dérive</h2>
+      
+      <div class="principles__list">
+        <article class="principle">
+          <span class="principle__number">01</span>
+          <div class="principle__content">
+            <h3>L'intention est un artefact de première classe</h3>
+            <p>L'intention n'est pas une conversation oubliée. C'est un document versionné, structuré, qui répond à "pourquoi" et "quoi" avant tout "comment".</p>
+            <p class="principle__change">→ Avant de générer du code, l'intention doit être formalisée et validée.</p>
+          </div>
+        </article>
+        
+        <article class="principle">
+          <span class="principle__number">02</span>
+          <div class="principle__content">
+            <h3>Le contrat est exécutable</h3>
+            <p>Une spécification qu'on ne peut pas vérifier automatiquement n'est pas un contrat, c'est un souhait. Chaque requirement a des critères de validation automatisables.</p>
+            <p class="principle__change">→ Tests, assertions, schemas : le contrat se vérifie lui-même.</p>
+          </div>
+        </article>
+        
+        <article class="principle">
+          <span class="principle__number">03</span>
+          <div class="principle__content">
+            <h3>Aucun agent ne valide son propre travail</h3>
+            <p>Un agent qui génère du code ne peut pas être la source de vérité sur la qualité de ce code. La validation doit toujours venir d'un agent qui n'a pas participé à la production.</p>
+            <p class="principle__change">→ Architecture obligatoire à 4 rôles minimum.</p>
+          </div>
+        </article>
+        
+        <article class="principle">
+          <span class="principle__number">04</span>
+          <div class="principle__content">
+            <h3>La rétro-spécification est la mémoire du système</h3>
+            <p>Ce qui a été réellement implémenté doit être documenté objectivement, indépendamment de ce que l'agent de développement déclare avoir fait.</p>
+            <p class="principle__change">→ Un agent Scribe indépendant analyse le code et produit la vérité.</p>
+          </div>
+        </article>
+        
+        <article class="principle">
+          <span class="principle__number">05</span>
+          <div class="principle__content">
+            <h3>Les fondations précèdent les features</h3>
+            <p>Quand le coût marginal de développement baisse, investir dans l'architecture devient rationnel. On priorise ce qui dé-risque la suite.</p>
+            <p class="principle__change">→ Le séquençage favorise la solidité, pas l'impression immédiate.</p>
+          </div>
+        </article>
+        
+        <article class="principle">
+          <span class="principle__number">06</span>
+          <div class="principle__content">
+            <h3>Les skills sont des contrats de connaissance</h3>
+            <p>L'IA a des données d'entraînement obsolètes. Les skills injectent la connaissance à jour et définissent les critères de qualité entre phases.</p>
+            <p class="principle__change">→ Chaque transition est médiatisée par un skill explicite.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Agents -->
+  <section class="agents" id="agents">
+    <div class="container">
+      <header class="agents__header">
+        <h3>L'Architecture</h3>
+        <h2>4 Agents, Zéro Conflit d'Intérêt</h2>
+        <p>Chaque agent a un rôle unique. Aucun ne valide son propre travail.</p>
+      </header>
+      
+      <div class="agents__diagram">
+        <div class="agents__flow">
+          <div class="agent-box">
+            <div class="agent-box__icon">📋</div>
+            <div class="agent-box__name">Spec</div>
+            <div class="agent-box__role">Intention</div>
+          </div>
+          <span class="agent-arrow">→</span>
+          <div class="agent-box">
+            <div class="agent-box__icon">⚡</div>
+            <div class="agent-box__name">Dev</div>
+            <div class="agent-box__role">Génération</div>
+          </div>
+          <span class="agent-arrow">→</span>
+          <div class="agent-box">
+            <div class="agent-box__icon">🔍</div>
+            <div class="agent-box__name">Audit</div>
+            <div class="agent-box__role">Validation</div>
+          </div>
+          <span class="agent-arrow">→</span>
+          <div class="agent-box">
+            <div class="agent-box__icon">📝</div>
+            <div class="agent-box__name">Scribe</div>
+            <div class="agent-box__role">Rétro-Spec</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="agents__grid">
+        <article class="agent-card">
+          <div class="agent-card__header">
+            <div class="agent-card__icon">📋</div>
+            <span class="agent-card__name">Agent Spec</span>
+          </div>
+          <p>L'Architecte d'Intention. Formalise le "pourquoi" et le "quoi".</p>
+          <ul class="agent-card__list">
+            <li>Produit l'Intention Document</li>
+            <li>Définit les critères de validation</li>
+            <li>Structure le contrat exécutable</li>
+          </ul>
+        </article>
+        
+        <article class="agent-card">
+          <div class="agent-card__header">
+            <div class="agent-card__icon">⚡</div>
+            <span class="agent-card__name">Agent Dev</span>
+          </div>
+          <p>Le Développeur. Transforme l'intention en code.</p>
+          <ul class="agent-card__list">
+            <li>Génère l'implémentation</li>
+            <li>Respecte le contrat</li>
+            <li>Documente ses choix techniques</li>
+          </ul>
+        </article>
+        
+        <article class="agent-card">
+          <div class="agent-card__header">
+            <div class="agent-card__icon">🔍</div>
+            <span class="agent-card__name">Agent Audit</span>
+          </div>
+          <p>Le Vérificateur. Audite sans complaisance.</p>
+          <ul class="agent-card__list">
+            <li>Analyse le code produit</li>
+            <li>Vérifie l'alignement intention/code</li>
+            <li>Identifie les dérives et risques</li>
+          </ul>
+        </article>
+        
+        <article class="agent-card">
+          <div class="agent-card__header">
+            <div class="agent-card__icon">📝</div>
+            <span class="agent-card__name">Agent Scribe</span>
+          </div>
+          <p>Le Témoin. Documente la réalité objective.</p>
+          <ul class="agent-card__list">
+            <li>Analyse ce qui existe vraiment</li>
+            <li>Compare specs vs réalité</li>
+            <li>Produit la rétro-spécification</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison -->
+  <section class="comparison" id="comparison">
+    <div class="container container--narrow">
+      <h3>Migration</h3>
+      <h2>ZDD vs Méthodologies Legacy</h2>
+      
+      <div class="comparison__table-wrapper">
+        <table class="comparison__table">
+          <thead>
+            <tr>
+              <th>Aspect</th>
+              <th>Scrum / Kanban / SAFe</th>
+              <th>ZDD</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Goulot d'étranglement</td>
+              <td>Temps de développement</td>
+              <td>Clarté d'intention</td>
+            </tr>
+            <tr>
+              <td>Unité de travail</td>
+              <td>Story / Ticket</td>
+              <td>Intention + Contrat</td>
+            </tr>
+            <tr>
+              <td>Estimation</td>
+              <td>Points / Jours</td>
+              <td>Obsolète (trop rapide)</td>
+            </tr>
+            <tr>
+              <td>Validation</td>
+              <td>Code review humaine</td>
+              <td>Audit par agent indépendant</td>
+            </tr>
+            <tr>
+              <td>Documentation</td>
+              <td>Souvent négligée</td>
+              <td>Rétro-spec automatique</td>
+            </tr>
+            <tr>
+              <td>Rythme</td>
+              <td>Sprints fixes (2-3 sem)</td>
+              <td>Cycles adaptatifs</td>
+            </tr>
+            <tr>
+              <td>Coordination</td>
+              <td>Cérémonies d'équipe</td>
+              <td>Contrats inter-agents</td>
+            </tr>
+            <tr>
+              <td>Mémoire projet</td>
+              <td>Dans les têtes</td>
+              <td>Rétro-spec versionnée</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quickstart -->
+  <section class="quickstart" id="quickstart">
+    <div class="container container--narrow">
+      <h3>Démarrage Rapide</h3>
+      <h2>Commencer avec ZDD</h2>
+      
+      <div class="quickstart__tabs">
+        <button class="quickstart__tab quickstart__tab--active" data-tab="tab-solo">Solo + IA</button>
+        <button class="quickstart__tab" data-tab="tab-team">Équipe</button>
+        <button class="quickstart__tab" data-tab="tab-migration">Migration Scrum</button>
+      </div>
+      
+      <div id="tab-solo" class="quickstart__content quickstart__content--active">
+        <div class="quickstart__steps">
+          <div class="quickstart__step">
+            <span class="quickstart__step-number">1</span>
+            <div>
+              <h4>Sépare tes agents</h4>
+              <p>Utilise 2-3 modèles différents : Gemini pour les specs, Claude pour le dev, GPT pour l'audit. Ne laisse jamais un agent valider son propre travail.</p>
+            </div>
+          </div>
+          <div class="quickstart__step">
+            <span class="quickstart__step-number">2</span>
+            <div>
+              <h4>Formalise avant de coder</h4>
+              <p>Avant chaque session de dev, écris un Intention Document : pourquoi, quoi, critères de succès. C'est ton contrat.</p>
+            </div>
+          </div>
+          <div class="quickstart__step">
+            <span class="quickstart__step-number">3</span>
+            <div>
+              <h4>Audite chaque livraison</h4>
+              <p>Passe le code produit à ton agent d'audit avec un skill de due diligence. Ne merge jamais sans audit indépendant.</p>
+            </div>
+          </div>
+          <div class="quickstart__step">
+            <span class="quickstart__step-number">4</span>
+            <div>
+              <h4>Génère la rétro-spec</h4>
+              <p>Un 4ème agent (ou toi) analyse ce qui a été réellement implémenté et met à jour la documentation. C'est ta mémoire projet.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="tab-team" class="quickstart__content">
+        <div class="quickstart__steps">
+          <div class="quickstart__step">
+            <span class="quickstart__step-number">1</span>
+            <div>
+              <h4>Assigne les rôles</h4>
+              <p>Architecte d'Intention (PM/PO), Orchestrateur d'Agents (dev senior), Arbitre d'Alignement (QA ou pair). Chaque rôle est responsable d'une phase.</p>
+            </div>
+          </div>
+          <div class="quickstart__step">
+            <span class="quickstart__step-number">2</span>
+            <div>
+              <h4>Centralise les skills</h4>
+              <p>Un repo partagé avec tous les skills : Spec Skill, Dev Skill, Audit Skill, Retro-Spec Skill. Versionnés comme du code.</p>
+            </div>
+          </div>
+          <div class="quickstart__step">
+            <span class="quickstart__step-number">3</span>
+            <div>
+              <h4>Rétro-spec comme source de vérité</h4>
+              <p>La rétro-spécification est partagée et mise à jour à chaque cycle. C'est le point de départ de toute nouvelle itération.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="tab-migration" class="quickstart__content">
+        <div class="quickstart__steps">
+          <div class="quickstart__step">
+            <span class="quickstart__step-number">1</span>
+            <div>
+              <h4>Sprints → Cycles d'intention</h4>
+              <p>Plus de durée fixe. Un cycle commence quand une intention est formalisée et se termine quand la rétro-spec est validée.</p>
+            </div>
+          </div>
+          <div class="quickstart__step">
+            <span class="quickstart__step-number">2</span>
+            <div>
+              <h4>Stories → Intention Docs + Contrats</h4>
+              <p>Chaque story devient un Intention Document avec des critères de validation exécutables. Plus de "c'est bon pour moi".</p>
+            </div>
+          </div>
+          <div class="quickstart__step">
+            <span class="quickstart__step-number">3</span>
+            <div>
+              <h4>Definition of Done → Skill d'Audit</h4>
+              <p>La DoD devient un skill formel que l'agent d'audit exécute. Vérifiable, reproductible, non-négociable.</p>
+            </div>
+          </div>
+          <div class="quickstart__step">
+            <span class="quickstart__step-number">4</span>
+            <div>
+              <h4>Rétrospectives → Consolidations</h4>
+              <p>Plus de "comment améliorer le process". On consolide les rétro-specs et on améliore les skills.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container cta__content">
+      <h2>Prêt pour Zéro Dérive ?</h2>
+      <p>ZDD est open source. Rejoignez la communauté et contribuez à définir le futur du développement assisté par IA.</p>
+      <div class="hero__cta">
+        <a href="https://github.com/zero-drift-development" class="btn btn--primary" target="_blank">Voir sur GitHub →</a>
+        <a href="manifesto.html" class="btn btn--secondary">Lire le Manifeste Complet</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">© 2025 ZDD — Zero-Drift Development. Open Source sous licence MIT.</p>
+      <ul class="footer__links">
+        <li><a href="manifesto.html" class="footer__link">Manifeste</a></li>
+        <li><a href="https://github.com/zero-drift-development" class="footer__link" target="_blank">GitHub</a></li>
+        <li><a href="#" class="footer__link">Contribuer</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

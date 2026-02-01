@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Le Manifeste ZDD - Zero-Drift Development. Les principes fondamentaux pour un développement assisté par IA sans dérive.">
+  
+  <title>Manifeste — ZDD</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%2300ff88' width='100' height='100'/><text y='.9em' x='50%' text-anchor='middle' font-size='70' font-family='monospace' fill='%230a0a0a'>Z</text></svg>">
+</head>
+<body>
+  
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="/" class="nav__logo">
+        <span class="nav__logo-icon">Z</span>
+        <span>ZDD</span>
+      </a>
+      
+      <button class="nav__toggle" aria-label="Menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      
+      <ul class="nav__links">
+        <li><a href="index.html#problem" class="nav__link">Problème</a></li>
+        <li><a href="index.html#principles" class="nav__link">Principes</a></li>
+        <li><a href="index.html#agents" class="nav__link">Agents</a></li>
+        <li><a href="index.html#comparison" class="nav__link">Comparaison</a></li>
+        <li><a href="index.html#quickstart" class="nav__link">Démarrer</a></li>
+        <li><a href="manifesto.html" class="nav__link nav__link--active">Manifeste</a></li>
+        <li><a href="https://github.com/zero-drift-development" class="nav__link" target="_blank">GitHub ↗</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container container--narrow">
+      <h3>Document Fondateur</h3>
+      <h1>Le Manifeste ZDD</h1>
+      <p>Zero-Drift Development — Une méthodologie pour le développement assisté par IA qui garantit zéro dérive entre l'intention et l'implémentation.</p>
+    </div>
+  </header>
+
+  <!-- Page Content -->
+  <main class="page-content">
+    <div class="container container--narrow">
+      
+      <h2>Le Constat</h2>
+      
+      <p><strong>Le développement assisté par IA change tout, sauf nos méthodologies.</strong></p>
+      
+      <p>Scrum, Kanban, SAFe ont été conçus pour gérer la rareté du temps de développement. Quand une équipe de 10 personnes mettait un an à livrer une plateforme, il fallait planifier, prioriser, coordonner.</p>
+      
+      <p>Aujourd'hui, un développeur avec les bons outils IA livre en 2 jours ce qui prenait 12 mois.</p>
+      
+      <p><strong>Le temps de développement n'est plus le goulot d'étranglement.</strong></p>
+      
+      <p>Les nouveaux goulots sont :</p>
+      <ul>
+        <li>La clarté de l'intention</li>
+        <li>La validation de l'alignement</li>
+        <li>La mémoire du système</li>
+      </ul>
+      
+      <p>Et les nouveaux risques sont :</p>
+      <ul>
+        <li>La dérive silencieuse entre intention et implémentation</li>
+        <li>L'hallucination présentée comme livraison</li>
+        <li>Le faux alignement (TODO cachés, implémentations partielles)</li>
+        <li>La perte de contexte entre sessions</li>
+      </ul>
+      
+      <p><strong>ZDD est une méthodologie conçue pour ces nouveaux défis.</strong></p>
+      
+      <!-- Principles -->
+      <h2>Les 6 Principes ZDD</h2>
+      
+      <h3>1. L'intention est un artefact de première classe</h3>
+      <p>L'intention n'est pas une conversation oubliée. C'est un document versionné, structuré, qui répond à "pourquoi" et "quoi" avant tout "comment".</p>
+      <p><em>Ce que ça change :</em> Avant de générer du code, l'intention doit être formalisée et validée.</p>
+      
+      <h3>2. Le contrat est exécutable</h3>
+      <p>Une spécification qu'on ne peut pas vérifier automatiquement n'est pas un contrat, c'est un souhait.</p>
+      <p><em>Ce que ça change :</em> Chaque requirement a des critères de validation automatisables (tests, assertions, schemas).</p>
+      
+      <h3>3. Aucun agent ne valide son propre travail</h3>
+      <p>Un agent qui génère du code ne peut pas être la source de vérité sur la qualité de ce code. La validation doit toujours venir d'un agent qui n'a pas participé à la production.</p>
+      <p><em>Ce que ça change :</em> Architecture obligatoire à 4 rôles minimum — Intention, Développement, Audit, Rétro-Spécification.</p>
+      
+      <h3>4. La rétro-spécification est la mémoire du système</h3>
+      <p>Ce qui a été réellement implémenté doit être documenté objectivement, indépendamment de ce que l'agent de développement déclare avoir fait.</p>
+      <p><em>Ce que ça change :</em> Un agent Scribe indépendant analyse le code et produit la documentation de ce qui existe vraiment.</p>
+      
+      <h3>5. Les fondations précèdent les features</h3>
+      <p>Quand le coût marginal de développement baisse, investir dans l'architecture devient rationnel. On ne priorise plus par "valeur business immédiate" mais par "solidité des fondations".</p>
+      <p><em>Ce que ça change :</em> Le séquençage favorise ce qui dé-risque la suite, pas ce qui impressionne le stakeholder.</p>
+      
+      <h3>6. Les skills sont des contrats de connaissance</h3>
+      <p>L'IA a des données d'entraînement potentiellement obsolètes. Les skills injectent la connaissance à jour (documentation, conventions, patterns) et définissent les critères de qualité entre phases.</p>
+      <p><em>Ce que ça change :</em> Chaque transition (Intention→Dev, Dev→Audit, etc.) est médiatisée par un skill explicite.</p>
+      
+      <!-- What ZDD is not -->
+      <h2>Ce que ZDD n'est pas</h2>
+      
+      <div class="not-table">
+        <div class="not-row">
+          <span class="not-row__left">Du "vibe coding" structuré</span>
+          <span class="not-row__right">ZDD exige des contrats vérifiables, pas des prompts vagues</span>
+        </div>
+        <div class="not-row">
+          <span class="not-row__left">Une certification à vendre</span>
+          <span class="not-row__right">ZDD est open source, sans business de formation</span>
+        </div>
+        <div class="not-row">
+          <span class="not-row__left">Un remplacement de développeurs</span>
+          <span class="not-row__right">ZDD repositionne l'humain comme architecte d'intention</span>
+        </div>
+        <div class="not-row">
+          <span class="not-row__left">Une méthode rigide</span>
+          <span class="not-row__right">ZDD définit des principes, pas des cérémonies obligatoires</span>
+        </div>
+        <div class="not-row">
+          <span class="not-row__left">Réservé aux experts IA</span>
+          <span class="not-row__right">ZDD s'adapte : solo, équipe, PO, dev, tous peuvent pratiquer</span>
+        </div>
+      </div>
+      
+      <!-- The 4 Agents -->
+      <h2>Les 4 Agents ZDD</h2>
+      
+      <p>L'architecture ZDD repose sur une séparation stricte des responsabilités. Chaque agent a un rôle unique et ne valide jamais son propre travail.</p>
+      
+      <h3>Agent Spec — L'Architecte d'Intention</h3>
+      <p>Formalise le "pourquoi" et le "quoi". Produit l'Intention Document et définit le contrat exécutable avec ses critères de validation.</p>
+      
+      <h3>Agent Dev — Le Développeur</h3>
+      <p>Transforme l'intention en code. Respecte le contrat, implémente les fonctionnalités, documente ses choix techniques.</p>
+      
+      <h3>Agent Audit — Le Vérificateur</h3>
+      <p>Audite sans complaisance. Analyse le code produit, vérifie l'alignement avec l'intention, identifie les dérives et les risques.</p>
+      
+      <h3>Agent Scribe — Le Témoin</h3>
+      <p>Documente la réalité objective. Analyse ce qui existe vraiment dans le code (pas ce que le dev déclare), compare avec les specs, produit la rétro-spécification.</p>
+      
+      <p><strong>Principe fondamental :</strong> Le Scribe n'a pas participé au développement. Sa rétro-spécification est objective car il n'a aucun intérêt à embellir ou minimiser.</p>
+      
+      <!-- Skills -->
+      <h2>Les Skills ZDD</h2>
+      
+      <p>Les skills sont des contrats de connaissance qui médiatisent chaque transition entre agents.</p>
+      
+      <h3>Skill de Spécification</h3>
+      <p>Guide l'Agent Spec dans la production d'Intention Documents structurés avec des requirements vérifiables.</p>
+      
+      <h3>Skill de Développement</h3>
+      <p>Définit les conventions, patterns, et contraintes que l'Agent Dev doit respecter.</p>
+      
+      <h3>Skill d'Audit</h3>
+      <p>Liste les critères de validation, les patterns à détecter, le format du rapport d'audit.</p>
+      
+      <h3>Skill de Rétro-Spécification</h3>
+      <p>Guide le Scribe dans l'analyse objective du code et la production de la documentation de ce qui existe réellement.</p>
+      
+      <h3>Skill de Correction</h3>
+      <p>Encadre la correction des findings d'audit avec traçabilité obligatoire.</p>
+      
+      <p>Les skills sont versionnés et évoluent avec le projet. Ils peuvent être publics (documentation framework), projet (conventions internes), ou delta (patches de connaissance temporaires).</p>
+      
+      <!-- Getting Started -->
+      <h2>Commencer avec ZDD</h2>
+      
+      <h3>Solo (1 personne + IA)</h3>
+      <ul>
+        <li>Utilise 2-3 modèles/agents différents pour les rôles (ex: Gemini pour specs, Claude pour dev, GPT pour audit)</li>
+        <li>Formalise tes intentions avant de coder</li>
+        <li>Ne merge jamais sans audit indépendant</li>
+        <li>Génère une rétro-spec à chaque cycle</li>
+      </ul>
+      
+      <h3>Équipe (2-5 personnes)</h3>
+      <ul>
+        <li>Assigne les rôles : Architecte d'Intention, Orchestrateur, Arbitre</li>
+        <li>Centralise les skills dans un repo partagé</li>
+        <li>Rétro-spec partagée comme source de vérité</li>
+      </ul>
+      
+      <h3>Migration depuis Scrum</h3>
+      <ul>
+        <li>Les sprints deviennent des cycles d'intention (durée variable)</li>
+        <li>Les stories deviennent des Intention Docs + Contrats</li>
+        <li>La Definition of Done devient le skill d'Audit</li>
+        <li>Les rétrospectives deviennent des consolidations de rétro-spec</li>
+      </ul>
+      
+      <!-- Contribute -->
+      <h2>Contribuer</h2>
+      
+      <p>ZDD est open source. La méthodologie évolue grâce aux contributions de la communauté.</p>
+      
+      <ul>
+        <li><strong>GitHub</strong> : Proposez des améliorations aux principes, skills, documentation</li>
+        <li><strong>Issues</strong> : Signalez les ambiguïtés, proposez des clarifications</li>
+        <li><strong>Discussions</strong> : Partagez vos retours d'expérience, cas d'usage</li>
+      </ul>
+      
+      <p>Pas de certification. Pas de formation payante. Pas de dénaturation commerciale.</p>
+      
+      <p><strong>ZDD reste ouvert, ou ne reste pas.</strong></p>
+      
+    </div>
+  </main>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container cta__content">
+      <h2>Rejoignez le mouvement</h2>
+      <p>Contribuez à définir le futur du développement assisté par IA.</p>
+      <div class="hero__cta">
+        <a href="https://github.com/zero-drift-development" class="btn btn--primary" target="_blank">Voir sur GitHub →</a>
+        <a href="index.html" class="btn btn--secondary">Retour à l'accueil</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">© 2025 ZDD — Zero-Drift Development. Open Source sous licence MIT.</p>
+      <ul class="footer__links">
+        <li><a href="manifesto.html" class="footer__link">Manifeste</a></li>
+        <li><a href="https://github.com/zero-drift-development" class="footer__link" target="_blank">GitHub</a></li>
+        <li><a href="#" class="footer__link">Contribuer</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
