@@ -163,6 +163,34 @@
   "language": {
     "select_label": "Language"
   },
+  "help": {
+    "title": "Keyboard Shortcuts",
+    "close": "Close",
+    "navigation": {
+      "title": "Navigation",
+      "arrows": "Previous / next page",
+      "gh": "Go to Home",
+      "gc": "Go to Concepts",
+      "gs": "Go to Skills",
+      "gm": "Go to Manifesto",
+      "ge": "Go to Examples",
+      "numbers": "Direct page navigation"
+    },
+    "scroll": {
+      "title": "Scroll",
+      "jk": "Scroll down / up",
+      "jk_fast": "Fast scroll",
+      "gg": "Top of page",
+      "G": "Bottom of page"
+    },
+    "actions": {
+      "title": "Actions",
+      "theme": "Toggle dark / light theme",
+      "lang": "Change language (FR/EN)",
+      "help": "Show this help",
+      "esc": "Close menus / modals"
+    }
+  },
   "concepts": {
     "page_subtitle": "Core Artifacts",
     "page_title": "MADD Concepts",

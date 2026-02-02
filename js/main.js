@@ -58,44 +58,47 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="keyboard-help-modal__backdrop"></div>
       <div class="keyboard-help-modal__content">
         <div class="keyboard-help-modal__header">
-          <h3>Raccourcis Clavier / Keyboard Shortcuts</h3>
-          <button class="keyboard-help-modal__close" aria-label="Close">&times;</button>
+          <h3 data-i18n="help.title">Raccourcis Clavier</h3>
+          <button class="keyboard-help-modal__close" aria-label="Close" data-i18n="help.close">&times;</button>
         </div>
         <div class="keyboard-help-modal__body">
           <div class="keyboard-help-modal__section">
-            <h4>Navigation</h4>
+            <h4 data-i18n="help.navigation.title">Navigation</h4>
             <ul>
-              <li><kbd>←</kbd> / <kbd>→</kbd> Page précédente / suivante</li>
-              <li><kbd>g</kbd> <kbd>h</kbd> Aller à l'accueil (Home)</li>
-              <li><kbd>g</kbd> <kbd>c</kbd> Aller aux Concepts</li>
-              <li><kbd>g</kbd> <kbd>s</kbd> Aller aux Skills</li>
-              <li><kbd>g</kbd> <kbd>m</kbd> Aller au Manifeste</li>
-              <li><kbd>g</kbd> <kbd>e</kbd> Aller aux Exemples</li>
-              <li><kbd>1</kbd>-<kbd>5</kbd> Navigation directe aux pages</li>
+              <li><kbd>←</kbd> / <kbd>→</kbd> <span data-i18n="help.navigation.arrows">Page précédente / suivante</span></li>
+              <li><kbd>g</kbd> <kbd>h</kbd> <span data-i18n="help.navigation.gh">Aller à l'accueil (Home)</span></li>
+              <li><kbd>g</kbd> <kbd>c</kbd> <span data-i18n="help.navigation.gc">Aller aux Concepts</span></li>
+              <li><kbd>g</kbd> <kbd>s</kbd> <span data-i18n="help.navigation.gs">Aller aux Skills</span></li>
+              <li><kbd>g</kbd> <kbd>m</kbd> <span data-i18n="help.navigation.gm">Aller au Manifeste</span></li>
+              <li><kbd>g</kbd> <kbd>e</kbd> <span data-i18n="help.navigation.ge">Aller aux Exemples</span></li>
+              <li><kbd>1</kbd>-<kbd>5</kbd> <span data-i18n="help.navigation.numbers">Navigation directe aux pages</span></li>
             </ul>
           </div>
           <div class="keyboard-help-modal__section">
-            <h4>Défilement / Scroll</h4>
+            <h4 data-i18n="help.scroll.title">Défilement</h4>
             <ul>
-              <li><kbd>j</kbd> / <kbd>k</kbd> Défiler bas / haut</li>
-              <li><kbd>J</kbd> / <kbd>K</kbd> Défiler rapidement</li>
-              <li><kbd>g</kbd> <kbd>g</kbd> Haut de page</li>
-              <li><kbd>G</kbd> Bas de page</li>
+              <li><kbd>j</kbd> / <kbd>k</kbd> <span data-i18n="help.scroll.jk">Défiler bas / haut</span></li>
+              <li><kbd>J</kbd> / <kbd>K</kbd> <span data-i18n="help.scroll.jk_fast">Défiler rapidement</span></li>
+              <li><kbd>g</kbd> <kbd>g</kbd> <span data-i18n="help.scroll.gg">Haut de page</span></li>
+              <li><kbd>G</kbd> <span data-i18n="help.scroll.G">Bas de page</span></li>
             </ul>
           </div>
           <div class="keyboard-help-modal__section">
-            <h4>Actions</h4>
+            <h4 data-i18n="help.actions.title">Actions</h4>
             <ul>
-              <li><kbd>t</kbd> Basculer thème sombre / clair</li>
-              <li><kbd>l</kbd> Changer la langue (FR/EN)</li>
-              <li><kbd>?</kbd> Afficher cette aide</li>
-              <li><kbd>Esc</kbd> Fermer les menus / modales</li>
+              <li><kbd>t</kbd> <span data-i18n="help.actions.theme">Basculer thème sombre / clair</span></li>
+              <li><kbd>l</kbd> <span data-i18n="help.actions.lang">Changer la langue (FR/EN)</span></li>
+              <li><kbd>?</kbd> <span data-i18n="help.actions.help">Afficher cette aide</span></li>
+              <li><kbd>Esc</kbd> <span data-i18n="help.actions.esc">Fermer les menus / modales</span></li>
             </ul>
           </div>
         </div>
       </div>
     `;
     document.body.appendChild(modal);
+
+    // Apply translations to the newly created modal
+    applyHelpModalTranslations(modal);
 
     // Close handlers
     const closeBtn = modal.querySelector('.keyboard-help-modal__close');
@@ -105,6 +108,25 @@ document.addEventListener('DOMContentLoaded', function() {
     backdrop.addEventListener('click', () => hideHelpModal());
 
     return modal;
+  }
+
+  // Apply translations to help modal elements
+  function applyHelpModalTranslations(modal) {
+    if (!window.MADD || !window.MADD.i18n || !window.MADD.i18n.getTranslation) return;
+
+    const elements = modal.querySelectorAll('[data-i18n]');
+    elements.forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const translation = window.MADD.i18n.getTranslation(key);
+      if (translation !== key) {
+        // Special case for close button - keep the × symbol
+        if (el.classList.contains('keyboard-help-modal__close')) {
+          el.setAttribute('aria-label', translation);
+        } else {
+          el.textContent = translation;
+        }
+      }
+    });
   }
 
   function showHelpModal() {

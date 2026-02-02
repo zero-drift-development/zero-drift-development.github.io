@@ -163,6 +163,34 @@
   "language": {
     "select_label": "Langue"
   },
+  "help": {
+    "title": "Raccourcis Clavier",
+    "close": "Fermer",
+    "navigation": {
+      "title": "Navigation",
+      "arrows": "Page précédente / suivante",
+      "gh": "Aller à l'accueil (Home)",
+      "gc": "Aller aux Concepts",
+      "gs": "Aller aux Skills",
+      "gm": "Aller au Manifeste",
+      "ge": "Aller aux Exemples",
+      "numbers": "Navigation directe aux pages"
+    },
+    "scroll": {
+      "title": "Défilement",
+      "jk": "Défiler bas / haut",
+      "jk_fast": "Défiler rapidement",
+      "gg": "Haut de page",
+      "G": "Bas de page"
+    },
+    "actions": {
+      "title": "Actions",
+      "theme": "Basculer thème sombre / clair",
+      "lang": "Changer la langue (FR/EN)",
+      "help": "Afficher cette aide",
+      "esc": "Fermer les menus / modales"
+    }
+  },
   "concepts": {
     "page_subtitle": "Artefacts Fondamentaux",
     "page_title": "Les Concepts MADD",
