@@ -30,10 +30,10 @@ MADD uses a mandatory architecture of 4 agents with zero conflict of interest:
 ## Pages
 
 - [Home](https://madd-sh.github.io/): Main page with overview, problem statement, principles, and quickstart guide
-- [Concepts](https://madd-sh.github.io/concepts.html): Core concepts of MADD methodology
-- [Skills](https://madd-sh.github.io/skills.html): Skills documentation - knowledge contracts for agents
-- [Manifesto](https://madd-sh.github.io/manifesto.html): Full MADD manifesto
-- [Examples](https://madd-sh.github.io/examples.html): Case studies and examples
+- [Concepts](https://madd-sh.github.io/concepts.md): Core concepts of MADD methodology
+- [Skills](https://madd-sh.github.io/skills.md): Skills documentation - knowledge contracts for agents
+- [Manifesto](https://madd-sh.github.io/manifesto.md): Full MADD manifesto
+- [Examples](https://madd-sh.github.io/examples.md): Case studies and examples
 
 ## Key Concepts
 
