@@ -25,9 +25,9 @@
     const savedTheme = localStorage.getItem(STORAGE_KEY_THEME);
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    // Default to dark theme if no preference saved
-    const theme = savedTheme || (prefersDark ? 'dark' : 'dark');
-    setTheme(theme);
+    // Use system theme by default if no preference saved
+    const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+    setTheme(theme, !savedTheme); // Don't persist to localStorage if using system default
 
     // Listen for system theme changes
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
@@ -37,9 +37,11 @@
     });
   }
 
-  function setTheme(theme) {
+  function setTheme(theme, skipPersist) {
     document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem(STORAGE_KEY_THEME, theme);
+    if (!skipPersist) {
+      localStorage.setItem(STORAGE_KEY_THEME, theme);
+    }
   }
 
   function toggleTheme() {
