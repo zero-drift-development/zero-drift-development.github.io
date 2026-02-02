@@ -1412,3 +1412,106 @@ kbd {
     gap: var(--space-xs);
   }
 }
+
+/* ========================================
+   MOBILE RESPONSIVE FIXES
+   ======================================== */
+@media (max-width: 480px) {
+  /* Reduce container padding on small screens */
+  .container {
+    padding: 0 var(--space-md);
+  }
+
+  /* Fix hero section overflow */
+  .hero {
+    overflow: visible;
+  }
+
+  .hero__title {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Reduce section padding */
+  section {
+    padding: var(--space-xl) 0;
+  }
+
+  /* Fix agents diagram - stack vertically on mobile */
+  .agents__diagram {
+    padding: var(--space-md);
+    overflow-x: visible;
+  }
+
+  .agents__flow {
+    min-width: auto;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .agent-box {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .agent-arrow {
+    transform: rotate(90deg);
+  }
+
+  /* Fix quickstart tabs - allow wrapping */
+  .quickstart__tabs {
+    flex-wrap: wrap;
+  }
+
+  .quickstart__tab {
+    padding: var(--space-sm) var(--space-md);
+    font-size: 0.75rem;
+  }
+
+  /* Fix comparison table */
+  .comparison__table {
+    font-size: 0.8125rem;
+  }
+
+  .comparison__table th,
+  .comparison__table td {
+    padding: var(--space-sm);
+  }
+
+  /* Fix footer layout */
+  .footer__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer__links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md);
+  }
+
+  /* Fix CTA radial gradient overflow */
+  .cta::before {
+    width: 300px;
+    height: 300px;
+  }
+
+  /* Fix nav controls positioning */
+  .nav__controls {
+    right: 50px;
+    gap: var(--space-sm);
+  }
+
+  .theme-toggle,
+  .help-toggle {
+    width: 36px;
+    height: 36px;
+    padding: var(--space-xs);
+  }
+
+  .lang-selector__btn {
+    padding: var(--space-xs) var(--space-sm);
+    height: 36px;
+    font-size: 0.6875rem;
+  }
+}
