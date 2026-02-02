@@ -85,9 +85,9 @@
   <!-- Page Header -->
   <header class="page-header">
     <div class="container container--narrow">
-      <h3>Contrats de Connaissance</h3>
-      <h1>Les Skills MADD</h1>
-      <p>Les skills injectent la connaissance à jour et définissent les critères de qualité entre agents. Chaque transition est médiatisée par un skill explicite.</p>
+      <h3 data-i18n="skills.page_subtitle">Contrats de Connaissance</h3>
+      <h1 data-i18n="skills.page_title">Les Skills MADD</h1>
+      <p data-i18n="skills.page_intro">Les skills injectent la connaissance à jour et définissent les critères de qualité entre agents. Chaque transition est médiatisée par un skill explicite.</p>
     </div>
   </header>
 
@@ -96,45 +96,45 @@
     <div class="container container--narrow">
 
       <!-- Introduction -->
-      <h2 id="pourquoi">Pourquoi les Skills ?</h2>
+      <h2 id="pourquoi" data-i18n="skills.why_title">Pourquoi les Skills ?</h2>
 
-      <p>Les modèles d'IA ont des données d'entraînement qui peuvent être obsolètes. Ils ne connaissent pas :</p>
+      <p data-i18n="skills.why_intro">Les modèles d'IA ont des données d'entraînement qui peuvent être obsolètes. Ils ne connaissent pas :</p>
       <ul>
-        <li>Les conventions spécifiques de votre projet</li>
-        <li>Les versions récentes des frameworks</li>
-        <li>Les décisions architecturales de votre équipe</li>
-        <li>Les critères de qualité de votre organisation</li>
+        <li data-i18n="skills.why_item1">Les conventions spécifiques de votre projet</li>
+        <li data-i18n="skills.why_item2">Les versions récentes des frameworks</li>
+        <li data-i18n="skills.why_item3">Les décisions architecturales de votre équipe</li>
+        <li data-i18n="skills.why_item4">Les critères de qualité de votre organisation</li>
       </ul>
 
-      <p><strong>Les skills comblent ce gap.</strong> Ce sont des documents structurés qui injectent le contexte manquant et définissent les règles du jeu.</p>
+      <p data-i18n="skills.why_conclusion" data-i18n-html="true"><strong>Les skills comblent ce gap.</strong> Ce sont des documents structurés qui injectent le contexte manquant et définissent les règles du jeu.</p>
 
       <!-- Types de skills -->
-      <h2 id="types">Types de Skills</h2>
+      <h2 id="types" data-i18n="skills.types_title">Types de Skills</h2>
 
       <div class="not-table">
         <div class="not-row">
-          <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">Skills Publics</span>
-          <span class="not-row__right">Documentation framework, best practices générales</span>
+          <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);" data-i18n="skills.types_public">Skills Publics</span>
+          <span class="not-row__right" data-i18n="skills.types_public_desc">Documentation framework, best practices générales</span>
         </div>
         <div class="not-row">
-          <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">Skills Projet</span>
-          <span class="not-row__right">Conventions internes, architecture, patterns maison</span>
+          <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);" data-i18n="skills.types_project">Skills Projet</span>
+          <span class="not-row__right" data-i18n="skills.types_project_desc">Conventions internes, architecture, patterns maison</span>
         </div>
         <div class="not-row">
-          <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">Skills Delta</span>
-          <span class="not-row__right">Patches temporaires de connaissance (nouvelle version, hotfix)</span>
+          <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);" data-i18n="skills.types_delta">Skills Delta</span>
+          <span class="not-row__right" data-i18n="skills.types_delta_desc">Patches temporaires de connaissance (nouvelle version, hotfix)</span>
         </div>
       </div>
 
       <!-- Skill de Spécification -->
-      <h2 id="specification">Skill de Spécification</h2>
+      <h2 id="specification" data-i18n="skills.spec_skill_title">Skill de Spécification</h2>
 
-      <p><strong>Agent cible :</strong> Agent Spec</p>
-      <p><strong>Transition :</strong> Besoin → Intention Document + Contrat</p>
+      <p data-i18n="skills.spec_skill_agent" data-i18n-html="true"><strong>Agent cible :</strong> Agent Spec</p>
+      <p data-i18n="skills.spec_skill_transition" data-i18n-html="true"><strong>Transition :</strong> Besoin → Intention Document + Contrat</p>
 
-      <p>Guide la production d'Intention Documents structurés avec des requirements vérifiables.</p>
+      <p data-i18n="skills.spec_skill_desc">Guide la production d'Intention Documents structurés avec des requirements vérifiables.</p>
 
-      <h3>Contenu type</h3>
+      <h3 data-i18n="skills.spec_skill_content_title">Contenu type</h3>
       <div class="code-block">
         <pre><code># Specification Skill
 
@@ -165,14 +165,14 @@ Markdown structuré, versionnable avec le code.</code></pre>
       </div>
 
       <!-- Skill de Développement -->
-      <h2 id="development">Skill de Développement</h2>
+      <h2 id="development" data-i18n="skills.dev_skill_title">Skill de Développement</h2>
 
-      <p><strong>Agent cible :</strong> Agent Dev</p>
-      <p><strong>Transition :</strong> Intention Document → Code</p>
+      <p data-i18n="skills.dev_skill_agent" data-i18n-html="true"><strong>Agent cible :</strong> Agent Dev</p>
+      <p data-i18n="skills.dev_skill_transition" data-i18n-html="true"><strong>Transition :</strong> Intention Document → Code</p>
 
-      <p>Définit les conventions, patterns et contraintes que l'implémentation doit respecter.</p>
+      <p data-i18n="skills.dev_skill_desc">Définit les conventions, patterns et contraintes que l'implémentation doit respecter.</p>
 
-      <h3>Contenu type</h3>
+      <h3 data-i18n="skills.dev_skill_content_title">Contenu type</h3>
       <div class="code-block">
         <pre><code># Development Skill
 
@@ -210,14 +210,14 @@ Markdown structuré, versionnable avec le code.</code></pre>
       </div>
 
       <!-- Skill d'Audit -->
-      <h2 id="audit">Skill d'Audit (Due Diligence)</h2>
+      <h2 id="audit" data-i18n="skills.audit_skill_title">Skill d'Audit (Due Diligence)</h2>
 
-      <p><strong>Agent cible :</strong> Agent Audit</p>
-      <p><strong>Transition :</strong> Code → Rapport d'Audit</p>
+      <p data-i18n="skills.audit_skill_agent" data-i18n-html="true"><strong>Agent cible :</strong> Agent Audit</p>
+      <p data-i18n="skills.audit_skill_transition" data-i18n-html="true"><strong>Transition :</strong> Code → Rapport d'Audit</p>
 
-      <p>Liste les critères de validation, les patterns à détecter, le format du rapport.</p>
+      <p data-i18n="skills.audit_skill_desc">Liste les critères de validation, les patterns à détecter, le format du rapport.</p>
 
-      <h3>Contenu type</h3>
+      <h3 data-i18n="skills.audit_skill_content_title">Contenu type</h3>
       <div class="code-block">
         <pre><code># Audit Skill (Due Diligence)
 
@@ -275,14 +275,14 @@ Analyser le code produit et vérifier l'alignement avec l'intention.
       </div>
 
       <!-- Skill de Rétro-Spécification -->
-      <h2 id="retrospec">Skill de Rétro-Spécification</h2>
+      <h2 id="retrospec" data-i18n="skills.retrospec_skill_title">Skill de Rétro-Spécification</h2>
 
-      <p><strong>Agent cible :</strong> Agent Scribe</p>
-      <p><strong>Transition :</strong> Code → Rétro-Spécification</p>
+      <p data-i18n="skills.retrospec_skill_agent" data-i18n-html="true"><strong>Agent cible :</strong> Agent Scribe</p>
+      <p data-i18n="skills.retrospec_skill_transition" data-i18n-html="true"><strong>Transition :</strong> Code → Rétro-Spécification</p>
 
-      <p>Guide l'analyse objective du code et la production de documentation factuelle.</p>
+      <p data-i18n="skills.retrospec_skill_desc">Guide l'analyse objective du code et la production de documentation factuelle.</p>
 
-      <h3>Contenu type</h3>
+      <h3 data-i18n="skills.retrospec_skill_content_title">Contenu type</h3>
       <div class="code-block">
         <pre><code># Retro-Spec Skill
 
@@ -351,14 +351,14 @@ Pas ce que le dev dit avoir fait. Ce qui est là.
       </div>
 
       <!-- Skill de Correction -->
-      <h2 id="correction">Skill de Correction</h2>
+      <h2 id="correction" data-i18n="skills.correction_skill_title">Skill de Correction</h2>
 
-      <p><strong>Agent cible :</strong> Agent Dev</p>
-      <p><strong>Transition :</strong> Rapport d'Audit → Code corrigé</p>
+      <p data-i18n="skills.correction_skill_agent" data-i18n-html="true"><strong>Agent cible :</strong> Agent Dev</p>
+      <p data-i18n="skills.correction_skill_transition" data-i18n-html="true"><strong>Transition :</strong> Rapport d'Audit → Code corrigé</p>
 
-      <p>Encadre la correction des findings avec traçabilité obligatoire.</p>
+      <p data-i18n="skills.correction_skill_desc">Encadre la correction des findings avec traçabilité obligatoire.</p>
 
-      <h3>Contenu type</h3>
+      <h3 data-i18n="skills.correction_skill_content_title">Contenu type</h3>
       <div class="code-block">
         <pre><code># Correction Skill
 
@@ -405,18 +405,18 @@ Corriger les findings d'audit avec traçabilité complète.
       </div>
 
       <!-- Créer vos skills -->
-      <h2 id="custom">Créer vos propres Skills</h2>
+      <h2 id="custom" data-i18n="skills.custom_title">Créer vos propres Skills</h2>
 
-      <p>Les skills fournis sont des templates. Adaptez-les à votre contexte :</p>
+      <p data-i18n="skills.custom_intro">Les skills fournis sont des templates. Adaptez-les à votre contexte :</p>
 
       <ol>
-        <li><strong>Identifiez les frictions</strong> — Où l'agent se trompe régulièrement ?</li>
-        <li><strong>Documentez la connaissance manquante</strong> — Qu'est-ce qu'il ne sait pas ?</li>
-        <li><strong>Structurez en règles</strong> — Pas de prose, des directives claires</li>
-        <li><strong>Testez et itérez</strong> — Un skill évolue avec le projet</li>
+        <li data-i18n="skills.custom_step1" data-i18n-html="true"><strong>Identifiez les frictions</strong> — Où l'agent se trompe régulièrement ?</li>
+        <li data-i18n="skills.custom_step2" data-i18n-html="true"><strong>Documentez la connaissance manquante</strong> — Qu'est-ce qu'il ne sait pas ?</li>
+        <li data-i18n="skills.custom_step3" data-i18n-html="true"><strong>Structurez en règles</strong> — Pas de prose, des directives claires</li>
+        <li data-i18n="skills.custom_step4" data-i18n-html="true"><strong>Testez et itérez</strong> — Un skill évolue avec le projet</li>
       </ol>
 
-      <p><strong>Versionnez vos skills</strong> comme du code. Ils font partie de la documentation vivante du projet.</p>
+      <p data-i18n="skills.custom_conclusion" data-i18n-html="true"><strong>Versionnez vos skills</strong> comme du code. Ils font partie de la documentation vivante du projet.</p>
 
     </div>
   </main>
@@ -424,11 +424,11 @@ Corriger les findings d'audit avec traçabilité complète.
   <!-- CTA -->
   <section class="cta">
     <div class="container cta__content">
-      <h2>Prêt à définir vos Skills ?</h2>
-      <p>Commencez par le Specification Skill et le Development Skill. Les autres viendront naturellement.</p>
+      <h2 data-i18n="skills.cta_title">Prêt à définir vos Skills ?</h2>
+      <p data-i18n="skills.cta_text">Commencez par le Specification Skill et le Development Skill. Les autres viendront naturellement.</p>
       <div class="hero__cta">
-        <a href="https://github.com/madd-sh" class="btn btn--primary" target="_blank">Voir les exemples sur GitHub →</a>
-        <a href="examples.html" class="btn btn--secondary">Voir un Case Study</a>
+        <a href="https://github.com/madd-sh" class="btn btn--primary" target="_blank" data-i18n="skills.cta_btn_github">Voir les exemples sur GitHub →</a>
+        <a href="examples.html" class="btn btn--secondary" data-i18n="skills.cta_btn_examples">Voir un Case Study</a>
       </div>
     </div>
   </section>
@@ -436,11 +436,11 @@ Corriger les findings d'audit avec traçabilité complète.
   <!-- Footer -->
   <footer class="footer">
     <div class="container footer__inner">
-      <p class="footer__copy">© 2025 MADD — Multi-Agent Driven Development. Open Source sous licence MIT.</p>
+      <p class="footer__copy" data-i18n="footer.copy">© 2025 MADD — Multi-Agent Driven Development. Open Source sous licence MIT.</p>
       <ul class="footer__links">
-        <li><a href="manifesto.html" class="footer__link">Manifeste</a></li>
-        <li><a href="https://github.com/madd-sh" class="footer__link" target="_blank">GitHub</a></li>
-        <li><a href="#" class="footer__link">Contribuer</a></li>
+        <li><a href="manifesto.html" class="footer__link" data-i18n="footer.manifesto">Manifeste</a></li>
+        <li><a href="https://github.com/madd-sh" class="footer__link" target="_blank" data-i18n="footer.github">GitHub</a></li>
+        <li><a href="#" class="footer__link" data-i18n="footer.contribute">Contribuer</a></li>
       </ul>
     </div>
   </footer>

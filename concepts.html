@@ -85,9 +85,9 @@
   <!-- Page Header -->
   <header class="page-header">
     <div class="container container--narrow">
-      <h3>Artefacts Fondamentaux</h3>
-      <h1>Les Concepts MADD</h1>
-      <p>Trois artefacts structurent chaque cycle MADD : l'Intention Document, le Contrat Exécutable, et la Rétro-Spécification.</p>
+      <h3 data-i18n="concepts.page_subtitle">Artefacts Fondamentaux</h3>
+      <h1 data-i18n="concepts.page_title">Les Concepts MADD</h1>
+      <p data-i18n="concepts.page_intro">Trois artefacts structurent chaque cycle MADD : l'Intention Document, le Contrat Exécutable, et la Rétro-Spécification.</p>
     </div>
   </header>
 
@@ -96,18 +96,18 @@
     <div class="container container--narrow">
 
       <!-- Intention Document -->
-      <h2 id="intention">L'Intention Document</h2>
+      <h2 id="intention" data-i18n="concepts.intention_title">L'Intention Document</h2>
 
-      <p><strong>L'artefact d'entrée.</strong> Le point de départ de tout cycle MADD.</p>
+      <p data-i18n="concepts.intention_intro" data-i18n-html="true"><strong>L'artefact d'entrée.</strong> Le point de départ de tout cycle MADD.</p>
 
-      <p>L'Intention Document répond à trois questions fondamentales :</p>
+      <p data-i18n="concepts.intention_questions">L'Intention Document répond à trois questions fondamentales :</p>
       <ul>
-        <li><strong>Pourquoi ?</strong> — Le contexte business, le problème à résoudre</li>
-        <li><strong>Quoi ?</strong> — Ce qui doit être livré, les fonctionnalités attendues</li>
-        <li><strong>Comment savoir si c'est réussi ?</strong> — Les critères de validation mesurables</li>
+        <li data-i18n="concepts.intention_q1" data-i18n-html="true"><strong>Pourquoi ?</strong> — Le contexte business, le problème à résoudre</li>
+        <li data-i18n="concepts.intention_q2" data-i18n-html="true"><strong>Quoi ?</strong> — Ce qui doit être livré, les fonctionnalités attendues</li>
+        <li data-i18n="concepts.intention_q3" data-i18n-html="true"><strong>Comment savoir si c'est réussi ?</strong> — Les critères de validation mesurables</li>
       </ul>
 
-      <h3>Structure recommandée</h3>
+      <h3 data-i18n="concepts.intention_structure_title">Structure recommandée</h3>
 
       <div class="code-block">
         <pre><code># Intention Document: [Nom de la feature]
@@ -134,137 +134,137 @@ Ce qui n'est PAS inclus dans cette intention.
 Les prérequis nécessaires avant de commencer.</code></pre>
       </div>
 
-      <h3>Bonnes pratiques</h3>
+      <h3 data-i18n="concepts.intention_practices_title">Bonnes pratiques</h3>
       <ul>
-        <li>Un Intention Document = une unité de travail cohérente</li>
-        <li>Chaque requirement doit avoir au moins un critère de validation</li>
-        <li>Le "hors scope" est aussi important que le scope</li>
-        <li>L'Intention Document est versionné avec le code</li>
+        <li data-i18n="concepts.intention_practice1">Un Intention Document = une unité de travail cohérente</li>
+        <li data-i18n="concepts.intention_practice2">Chaque requirement doit avoir au moins un critère de validation</li>
+        <li data-i18n="concepts.intention_practice3">Le "hors scope" est aussi important que le scope</li>
+        <li data-i18n="concepts.intention_practice4">L'Intention Document est versionné avec le code</li>
       </ul>
 
       <!-- Contrat Exécutable -->
-      <h2 id="contrat">Le Contrat Exécutable</h2>
+      <h2 id="contrat" data-i18n="concepts.contract_title">Le Contrat Exécutable</h2>
 
-      <p><strong>L'artefact de validation.</strong> Ce qui transforme un souhait en engagement vérifiable.</p>
+      <p data-i18n="concepts.contract_intro" data-i18n-html="true"><strong>L'artefact de validation.</strong> Ce qui transforme un souhait en engagement vérifiable.</p>
 
-      <p>Un contrat est "exécutable" quand il peut être vérifié automatiquement. Pas de "ça a l'air bon" — soit ça passe, soit ça échoue.</p>
+      <p data-i18n="concepts.contract_desc">Un contrat est "exécutable" quand il peut être vérifié automatiquement. Pas de "ça a l'air bon" — soit ça passe, soit ça échoue.</p>
 
-      <h3>Types de contrats</h3>
+      <h3 data-i18n="concepts.contract_types_title">Types de contrats</h3>
 
       <div class="not-table">
         <div class="not-row">
-          <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">Tests unitaires</span>
-          <span class="not-row__right">Vérifient le comportement des fonctions isolées</span>
+          <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);" data-i18n="concepts.contract_type1">Tests unitaires</span>
+          <span class="not-row__right" data-i18n="concepts.contract_type1_desc">Vérifient le comportement des fonctions isolées</span>
         </div>
         <div class="not-row">
-          <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">Tests d'intégration</span>
-          <span class="not-row__right">Vérifient les interactions entre composants</span>
+          <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);" data-i18n="concepts.contract_type2">Tests d'intégration</span>
+          <span class="not-row__right" data-i18n="concepts.contract_type2_desc">Vérifient les interactions entre composants</span>
         </div>
         <div class="not-row">
-          <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">Tests E2E</span>
-          <span class="not-row__right">Vérifient les parcours utilisateur complets</span>
+          <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);" data-i18n="concepts.contract_type3">Tests E2E</span>
+          <span class="not-row__right" data-i18n="concepts.contract_type3_desc">Vérifient les parcours utilisateur complets</span>
         </div>
         <div class="not-row">
-          <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">Schemas</span>
-          <span class="not-row__right">Vérifient la structure des données (JSON Schema, TypeScript)</span>
+          <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);" data-i18n="concepts.contract_type4">Schemas</span>
+          <span class="not-row__right" data-i18n="concepts.contract_type4_desc">Vérifient la structure des données (JSON Schema, TypeScript)</span>
         </div>
         <div class="not-row">
-          <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">Assertions runtime</span>
-          <span class="not-row__right">Vérifient les invariants en production</span>
+          <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);" data-i18n="concepts.contract_type5">Assertions runtime</span>
+          <span class="not-row__right" data-i18n="concepts.contract_type5_desc">Vérifient les invariants en production</span>
         </div>
       </div>
 
-      <h3>Le principe</h3>
-      <p><em>Si on ne peut pas écrire un test pour vérifier un requirement, ce requirement est mal défini.</em></p>
+      <h3 data-i18n="concepts.contract_principle_title">Le principe</h3>
+      <p data-i18n="concepts.contract_principle" data-i18n-html="true"><em>Si on ne peut pas écrire un test pour vérifier un requirement, ce requirement est mal défini.</em></p>
 
-      <p>Le contrat exécutable est produit par l'Agent Spec en même temps que l'Intention Document. L'Agent Dev implémente pour satisfaire le contrat. L'Agent Audit vérifie que le contrat est respecté.</p>
+      <p data-i18n="concepts.contract_flow">Le contrat exécutable est produit par l'Agent Spec en même temps que l'Intention Document. L'Agent Dev implémente pour satisfaire le contrat. L'Agent Audit vérifie que le contrat est respecté.</p>
 
       <!-- Rétro-Spécification -->
-      <h2 id="retrospec">La Rétro-Spécification</h2>
+      <h2 id="retrospec" data-i18n="concepts.retrospec_title">La Rétro-Spécification</h2>
 
-      <p><strong>L'artefact de mémoire.</strong> Ce qui documente objectivement ce qui existe vraiment.</p>
+      <p data-i18n="concepts.retrospec_intro" data-i18n-html="true"><strong>L'artefact de mémoire.</strong> Ce qui documente objectivement ce qui existe vraiment.</p>
 
-      <p>La rétro-spec n'est pas ce que le développeur dit avoir fait. C'est ce qu'un agent indépendant (le Scribe) constate en analysant le code.</p>
+      <p data-i18n="concepts.retrospec_desc">La rétro-spec n'est pas ce que le développeur dit avoir fait. C'est ce qu'un agent indépendant (le Scribe) constate en analysant le code.</p>
 
-      <h3>Pourquoi c'est différent</h3>
+      <h3 data-i18n="concepts.retrospec_diff_title">Pourquoi c'est différent</h3>
 
       <div class="not-table">
         <div class="not-row">
-          <span class="not-row__left">Documentation classique</span>
-          <span class="not-row__right" style="color: var(--color-accent);">Rétro-Spécification MADD</span>
+          <span class="not-row__left" data-i18n="concepts.retrospec_classic">Documentation classique</span>
+          <span class="not-row__right" style="color: var(--color-accent);" data-i18n="concepts.retrospec_madd">Rétro-Spécification MADD</span>
         </div>
         <div class="not-row">
-          <span class="not-row__left">Écrite par le développeur</span>
-          <span class="not-row__right">Générée par un agent indépendant</span>
+          <span class="not-row__left" data-i18n="concepts.retrospec_diff1_classic">Écrite par le développeur</span>
+          <span class="not-row__right" data-i18n="concepts.retrospec_diff1_madd">Générée par un agent indépendant</span>
         </div>
         <div class="not-row">
-          <span class="not-row__left">Décrit l'intention</span>
-          <span class="not-row__right">Décrit la réalité du code</span>
+          <span class="not-row__left" data-i18n="concepts.retrospec_diff2_classic">Décrit l'intention</span>
+          <span class="not-row__right" data-i18n="concepts.retrospec_diff2_madd">Décrit la réalité du code</span>
         </div>
         <div class="not-row">
-          <span class="not-row__left">Souvent obsolète</span>
-          <span class="not-row__right">Régénérée à chaque cycle</span>
+          <span class="not-row__left" data-i18n="concepts.retrospec_diff3_classic">Souvent obsolète</span>
+          <span class="not-row__right" data-i18n="concepts.retrospec_diff3_madd">Régénérée à chaque cycle</span>
         </div>
         <div class="not-row">
-          <span class="not-row__left">Optimiste</span>
-          <span class="not-row__right">Objective</span>
+          <span class="not-row__left" data-i18n="concepts.retrospec_diff4_classic">Optimiste</span>
+          <span class="not-row__right" data-i18n="concepts.retrospec_diff4_madd">Objective</span>
         </div>
       </div>
 
-      <h3>Contenu d'une rétro-spec</h3>
+      <h3 data-i18n="concepts.retrospec_content_title">Contenu d'une rétro-spec</h3>
       <ul>
-        <li><strong>État actuel</strong> : Ce qui existe dans le code</li>
-        <li><strong>Écarts</strong> : Différences entre intention et implémentation</li>
-        <li><strong>Dette technique</strong> : TODO, FIXME, workarounds identifiés</li>
-        <li><strong>Dépendances</strong> : Librairies, versions, contraintes</li>
-        <li><strong>Points d'attention</strong> : Risques, limitations connues</li>
+        <li data-i18n="concepts.retrospec_content1" data-i18n-html="true"><strong>État actuel</strong> : Ce qui existe dans le code</li>
+        <li data-i18n="concepts.retrospec_content2" data-i18n-html="true"><strong>Écarts</strong> : Différences entre intention et implémentation</li>
+        <li data-i18n="concepts.retrospec_content3" data-i18n-html="true"><strong>Dette technique</strong> : TODO, FIXME, workarounds identifiés</li>
+        <li data-i18n="concepts.retrospec_content4" data-i18n-html="true"><strong>Dépendances</strong> : Librairies, versions, contraintes</li>
+        <li data-i18n="concepts.retrospec_content5" data-i18n-html="true"><strong>Points d'attention</strong> : Risques, limitations connues</li>
       </ul>
 
-      <h3>Usage</h3>
-      <p>La rétro-spec devient le point de départ du prochain cycle. Quand un nouveau développement commence, l'Agent Spec consulte la rétro-spec pour comprendre l'état réel du système — pas la documentation marketing.</p>
+      <h3 data-i18n="concepts.retrospec_usage_title">Usage</h3>
+      <p data-i18n="concepts.retrospec_usage">La rétro-spec devient le point de départ du prochain cycle. Quand un nouveau développement commence, l'Agent Spec consulte la rétro-spec pour comprendre l'état réel du système — pas la documentation marketing.</p>
 
       <!-- Cycle complet -->
-      <h2 id="cycle">Le Cycle MADD</h2>
+      <h2 id="cycle" data-i18n="concepts.cycle_title">Le Cycle MADD</h2>
 
-      <p>Les trois artefacts forment un cycle vertueux :</p>
+      <p data-i18n="concepts.cycle_intro">Les trois artefacts forment un cycle vertueux :</p>
 
       <div class="agents__diagram">
         <div class="agents__flow" style="min-width: 500px;">
           <div class="agent-box">
             <div class="agent-box__icon">📋</div>
-            <div class="agent-box__name">Intention</div>
-            <div class="agent-box__role">Agent Spec</div>
+            <div class="agent-box__name" data-i18n="concepts.cycle_intention">Intention</div>
+            <div class="agent-box__role" data-i18n="concepts.cycle_agent_spec">Agent Spec</div>
           </div>
           <span class="agent-arrow">→</span>
           <div class="agent-box">
             <div class="agent-box__icon">📜</div>
-            <div class="agent-box__name">Contrat</div>
-            <div class="agent-box__role">Agent Spec</div>
+            <div class="agent-box__name" data-i18n="concepts.cycle_contract">Contrat</div>
+            <div class="agent-box__role" data-i18n="concepts.cycle_agent_spec">Agent Spec</div>
           </div>
           <span class="agent-arrow">→</span>
           <div class="agent-box">
             <div class="agent-box__icon">⚡</div>
-            <div class="agent-box__name">Code</div>
-            <div class="agent-box__role">Agent Dev</div>
+            <div class="agent-box__name" data-i18n="concepts.cycle_code">Code</div>
+            <div class="agent-box__role" data-i18n="concepts.cycle_agent_dev">Agent Dev</div>
           </div>
           <span class="agent-arrow">→</span>
           <div class="agent-box">
             <div class="agent-box__icon">📝</div>
-            <div class="agent-box__name">Rétro-Spec</div>
-            <div class="agent-box__role">Agent Scribe</div>
+            <div class="agent-box__name" data-i18n="concepts.cycle_retrospec">Rétro-Spec</div>
+            <div class="agent-box__role" data-i18n="concepts.cycle_agent_scribe">Agent Scribe</div>
           </div>
         </div>
       </div>
 
       <ol>
-        <li><strong>Intention → Contrat</strong> : L'Agent Spec formalise le besoin et définit les critères de succès</li>
-        <li><strong>Contrat → Code</strong> : L'Agent Dev implémente pour satisfaire le contrat</li>
-        <li><strong>Code → Audit</strong> : L'Agent Audit vérifie l'alignement</li>
-        <li><strong>Code → Rétro-Spec</strong> : L'Agent Scribe documente la réalité</li>
-        <li><strong>Rétro-Spec → Intention</strong> : Le cycle suivant part de la réalité documentée</li>
+        <li data-i18n="concepts.cycle_step1" data-i18n-html="true"><strong>Intention → Contrat</strong> : L'Agent Spec formalise le besoin et définit les critères de succès</li>
+        <li data-i18n="concepts.cycle_step2" data-i18n-html="true"><strong>Contrat → Code</strong> : L'Agent Dev implémente pour satisfaire le contrat</li>
+        <li data-i18n="concepts.cycle_step3" data-i18n-html="true"><strong>Code → Audit</strong> : L'Agent Audit vérifie l'alignement</li>
+        <li data-i18n="concepts.cycle_step4" data-i18n-html="true"><strong>Code → Rétro-Spec</strong> : L'Agent Scribe documente la réalité</li>
+        <li data-i18n="concepts.cycle_step5" data-i18n-html="true"><strong>Rétro-Spec → Intention</strong> : Le cycle suivant part de la réalité documentée</li>
       </ol>
 
-      <p><strong>Zéro dérive</strong> = chaque cycle est ancré dans la réalité du précédent.</p>
+      <p data-i18n="concepts.cycle_conclusion" data-i18n-html="true"><strong>Zéro dérive</strong> = chaque cycle est ancré dans la réalité du précédent.</p>
 
     </div>
   </main>
@@ -272,11 +272,11 @@ Les prérequis nécessaires avant de commencer.</code></pre>
   <!-- CTA -->
   <section class="cta">
     <div class="container cta__content">
-      <h2>Prêt à structurer vos développements ?</h2>
-      <p>Découvrez les Skills qui orchestrent ces concepts.</p>
+      <h2 data-i18n="concepts.cta_title">Prêt à structurer vos développements ?</h2>
+      <p data-i18n="concepts.cta_text">Découvrez les Skills qui orchestrent ces concepts.</p>
       <div class="hero__cta">
-        <a href="skills.html" class="btn btn--primary">Explorer les Skills →</a>
-        <a href="manifesto.html" class="btn btn--secondary">Lire le Manifeste</a>
+        <a href="skills.html" class="btn btn--primary" data-i18n="concepts.cta_btn_skills">Explorer les Skills →</a>
+        <a href="manifesto.html" class="btn btn--secondary" data-i18n="concepts.cta_btn_manifesto">Lire le Manifeste</a>
       </div>
     </div>
   </section>
@@ -284,11 +284,11 @@ Les prérequis nécessaires avant de commencer.</code></pre>
   <!-- Footer -->
   <footer class="footer">
     <div class="container footer__inner">
-      <p class="footer__copy">© 2025 MADD — Multi-Agent Driven Development. Open Source sous licence MIT.</p>
+      <p class="footer__copy" data-i18n="footer.copy">© 2025 MADD — Multi-Agent Driven Development. Open Source sous licence MIT.</p>
       <ul class="footer__links">
-        <li><a href="manifesto.html" class="footer__link">Manifeste</a></li>
-        <li><a href="https://github.com/madd-sh" class="footer__link" target="_blank">GitHub</a></li>
-        <li><a href="#" class="footer__link">Contribuer</a></li>
+        <li><a href="manifesto.html" class="footer__link" data-i18n="footer.manifesto">Manifeste</a></li>
+        <li><a href="https://github.com/madd-sh" class="footer__link" target="_blank" data-i18n="footer.github">GitHub</a></li>
+        <li><a href="#" class="footer__link" data-i18n="footer.contribute">Contribuer</a></li>
       </ul>
     </div>
   </footer>

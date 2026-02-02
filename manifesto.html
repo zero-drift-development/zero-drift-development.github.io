@@ -6,20 +6,20 @@
   <meta name="description" content="Le Manifeste MADD - Multi-Agent Driven Development. Les principes fondamentaux pour un développement assisté par IA sans dérive.">
 
   <title>Manifeste — MADD</title>
-  
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  
+
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
-  
+
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23CC785C' width='100' height='100'/><text y='.9em' x='50%' text-anchor='middle' font-size='70' font-family='monospace' fill='%23141413'>M</text></svg>">
 </head>
 <body>
-  
+
   <!-- Navigation -->
   <nav class="nav">
     <div class="container nav__inner">
@@ -85,189 +85,189 @@
   <!-- Page Header -->
   <header class="page-header">
     <div class="container container--narrow">
-      <h3>Document Fondateur</h3>
-      <h1>Le Manifeste MADD</h1>
-      <p>Multi-Agent Driven Development — La méthodologie qui garantit zéro dérive entre l'intention et l'implémentation.</p>
+      <h3 data-i18n="manifesto.page_subtitle">Document Fondateur</h3>
+      <h1 data-i18n="manifesto.page_title">Le Manifeste MADD</h1>
+      <p data-i18n="manifesto.page_intro">Multi-Agent Driven Development — La méthodologie qui garantit zéro dérive entre l'intention et l'implémentation.</p>
     </div>
   </header>
 
   <!-- Page Content -->
   <main class="page-content">
     <div class="container container--narrow">
-      
-      <h2>Le Constat</h2>
-      
-      <p><strong>Le développement assisté par IA change tout, sauf nos méthodologies.</strong></p>
-      
-      <p>Scrum, Kanban, SAFe ont été conçus pour gérer la rareté du temps de développement. Quand une équipe de 10 personnes mettait un an à livrer une plateforme, il fallait planifier, prioriser, coordonner.</p>
-      
-      <p>Aujourd'hui, un développeur avec les bons outils IA livre en 2 jours ce qui prenait 12 mois.</p>
-      
-      <p><strong>Le temps de développement n'est plus le goulot d'étranglement.</strong></p>
-      
-      <p>Les nouveaux goulots sont :</p>
+
+      <h2 data-i18n="manifesto.context_title">Le Constat</h2>
+
+      <p data-i18n="manifesto.context_intro" data-i18n-html="true"><strong>Le développement assisté par IA change tout, sauf nos méthodologies.</strong></p>
+
+      <p data-i18n="manifesto.context_p1">Scrum, Kanban, SAFe ont été conçus pour gérer la rareté du temps de développement. Quand une équipe de 10 personnes mettait un an à livrer une plateforme, il fallait planifier, prioriser, coordonner.</p>
+
+      <p data-i18n="manifesto.context_p2">Aujourd'hui, un développeur avec les bons outils IA livre en 2 jours ce qui prenait 12 mois.</p>
+
+      <p data-i18n="manifesto.context_bottleneck" data-i18n-html="true"><strong>Le temps de développement n'est plus le goulot d'étranglement.</strong></p>
+
+      <p data-i18n="manifesto.context_new_bottlenecks">Les nouveaux goulots sont :</p>
       <ul>
-        <li>La clarté de l'intention</li>
-        <li>La validation de l'alignement</li>
-        <li>La mémoire du système</li>
+        <li data-i18n="manifesto.context_bottleneck1">La clarté de l'intention</li>
+        <li data-i18n="manifesto.context_bottleneck2">La validation de l'alignement</li>
+        <li data-i18n="manifesto.context_bottleneck3">La mémoire du système</li>
       </ul>
-      
-      <p>Et les nouveaux risques sont :</p>
+
+      <p data-i18n="manifesto.context_new_risks">Et les nouveaux risques sont :</p>
       <ul>
-        <li>La dérive silencieuse entre intention et implémentation</li>
-        <li>L'hallucination présentée comme livraison</li>
-        <li>Le faux alignement (TODO cachés, implémentations partielles)</li>
-        <li>La perte de contexte entre sessions</li>
+        <li data-i18n="manifesto.context_risk1">La dérive silencieuse entre intention et implémentation</li>
+        <li data-i18n="manifesto.context_risk2">L'hallucination présentée comme livraison</li>
+        <li data-i18n="manifesto.context_risk3">Le faux alignement (TODO cachés, implémentations partielles)</li>
+        <li data-i18n="manifesto.context_risk4">La perte de contexte entre sessions</li>
       </ul>
-      
-      <p><strong>MADD est une méthodologie conçue pour ces nouveaux défis.</strong></p>
-      
+
+      <p data-i18n="manifesto.context_conclusion" data-i18n-html="true"><strong>MADD est une méthodologie conçue pour ces nouveaux défis.</strong></p>
+
       <!-- Principles -->
-      <h2>Les 6 Principes MADD</h2>
-      
-      <h3>1. L'intention est un artefact de première classe</h3>
-      <p>L'intention n'est pas une conversation oubliée. C'est un document versionné, structuré, qui répond à "pourquoi" et "quoi" avant tout "comment".</p>
-      <p><em>Ce que ça change :</em> Avant de générer du code, l'intention doit être formalisée et validée.</p>
-      
-      <h3>2. Le contrat est exécutable</h3>
-      <p>Une spécification qu'on ne peut pas vérifier automatiquement n'est pas un contrat, c'est un souhait.</p>
-      <p><em>Ce que ça change :</em> Chaque requirement a des critères de validation automatisables (tests, assertions, schemas).</p>
-      
-      <h3>3. Aucun agent ne valide son propre travail</h3>
-      <p>Un agent qui génère du code ne peut pas être la source de vérité sur la qualité de ce code. La validation doit toujours venir d'un agent qui n'a pas participé à la production.</p>
-      <p><em>Ce que ça change :</em> Architecture obligatoire à 4 rôles minimum — Intention, Développement, Audit, Rétro-Spécification.</p>
-      
-      <h3>4. La rétro-spécification est la mémoire du système</h3>
-      <p>Ce qui a été réellement implémenté doit être documenté objectivement, indépendamment de ce que l'agent de développement déclare avoir fait.</p>
-      <p><em>Ce que ça change :</em> Un agent Scribe indépendant analyse le code et produit la documentation de ce qui existe vraiment.</p>
-      
-      <h3>5. Les fondations précèdent les features</h3>
-      <p>Quand le coût marginal de développement baisse, investir dans l'architecture devient rationnel. On ne priorise plus par "valeur business immédiate" mais par "solidité des fondations".</p>
-      <p><em>Ce que ça change :</em> Le séquençage favorise ce qui dé-risque la suite, pas ce qui impressionne le stakeholder.</p>
-      
-      <h3>6. Les skills sont des contrats de connaissance</h3>
-      <p>L'IA a des données d'entraînement potentiellement obsolètes. Les skills injectent la connaissance à jour (documentation, conventions, patterns) et définissent les critères de qualité entre phases.</p>
-      <p><em>Ce que ça change :</em> Chaque transition (Intention→Dev, Dev→Audit, etc.) est médiatisée par un skill explicite.</p>
-      
-      <!-- What ZDD is not -->
-      <h2>Ce que MADD n'est pas</h2>
-      
+      <h2 data-i18n="manifesto.principles_title">Les 6 Principes MADD</h2>
+
+      <h3 data-i18n="manifesto.p1_title">1. L'intention est un artefact de première classe</h3>
+      <p data-i18n="manifesto.p1_text">L'intention n'est pas une conversation oubliée. C'est un document versionné, structuré, qui répond à "pourquoi" et "quoi" avant tout "comment".</p>
+      <p data-i18n="manifesto.p1_change" data-i18n-html="true"><em>Ce que ça change :</em> Avant de générer du code, l'intention doit être formalisée et validée.</p>
+
+      <h3 data-i18n="manifesto.p2_title">2. Le contrat est exécutable</h3>
+      <p data-i18n="manifesto.p2_text">Une spécification qu'on ne peut pas vérifier automatiquement n'est pas un contrat, c'est un souhait.</p>
+      <p data-i18n="manifesto.p2_change" data-i18n-html="true"><em>Ce que ça change :</em> Chaque requirement a des critères de validation automatisables (tests, assertions, schemas).</p>
+
+      <h3 data-i18n="manifesto.p3_title">3. Aucun agent ne valide son propre travail</h3>
+      <p data-i18n="manifesto.p3_text">Un agent qui génère du code ne peut pas être la source de vérité sur la qualité de ce code. La validation doit toujours venir d'un agent qui n'a pas participé à la production.</p>
+      <p data-i18n="manifesto.p3_change" data-i18n-html="true"><em>Ce que ça change :</em> Architecture obligatoire à 4 rôles minimum — Intention, Développement, Audit, Rétro-Spécification.</p>
+
+      <h3 data-i18n="manifesto.p4_title">4. La rétro-spécification est la mémoire du système</h3>
+      <p data-i18n="manifesto.p4_text">Ce qui a été réellement implémenté doit être documenté objectivement, indépendamment de ce que l'agent de développement déclare avoir fait.</p>
+      <p data-i18n="manifesto.p4_change" data-i18n-html="true"><em>Ce que ça change :</em> Un agent Scribe indépendant analyse le code et produit la documentation de ce qui existe vraiment.</p>
+
+      <h3 data-i18n="manifesto.p5_title">5. Les fondations précèdent les features</h3>
+      <p data-i18n="manifesto.p5_text">Quand le coût marginal de développement baisse, investir dans l'architecture devient rationnel. On ne priorise plus par "valeur business immédiate" mais par "solidité des fondations".</p>
+      <p data-i18n="manifesto.p5_change" data-i18n-html="true"><em>Ce que ça change :</em> Le séquençage favorise ce qui dé-risque la suite, pas ce qui impressionne le stakeholder.</p>
+
+      <h3 data-i18n="manifesto.p6_title">6. Les skills sont des contrats de connaissance</h3>
+      <p data-i18n="manifesto.p6_text">L'IA a des données d'entraînement potentiellement obsolètes. Les skills injectent la connaissance à jour (documentation, conventions, patterns) et définissent les critères de qualité entre phases.</p>
+      <p data-i18n="manifesto.p6_change" data-i18n-html="true"><em>Ce que ça change :</em> Chaque transition (Intention→Dev, Dev→Audit, etc.) est médiatisée par un skill explicite.</p>
+
+      <!-- What MADD is not -->
+      <h2 data-i18n="manifesto.not_title">Ce que MADD n'est pas</h2>
+
       <div class="not-table">
         <div class="not-row">
-          <span class="not-row__left">Du "vibe coding" structuré</span>
-          <span class="not-row__right">MADD exige des contrats vérifiables, pas des prompts vagues</span>
+          <span class="not-row__left" data-i18n="manifesto.not1_left">Du "vibe coding" structuré</span>
+          <span class="not-row__right" data-i18n="manifesto.not1_right">MADD exige des contrats vérifiables, pas des prompts vagues</span>
         </div>
         <div class="not-row">
-          <span class="not-row__left">Une certification à vendre</span>
-          <span class="not-row__right">MADD est open source, sans business de formation</span>
+          <span class="not-row__left" data-i18n="manifesto.not2_left">Une certification à vendre</span>
+          <span class="not-row__right" data-i18n="manifesto.not2_right">MADD est open source, sans business de formation</span>
         </div>
         <div class="not-row">
-          <span class="not-row__left">Un remplacement de développeurs</span>
-          <span class="not-row__right">MADD repositionne l'humain comme architecte d'intention</span>
+          <span class="not-row__left" data-i18n="manifesto.not3_left">Un remplacement de développeurs</span>
+          <span class="not-row__right" data-i18n="manifesto.not3_right">MADD repositionne l'humain comme architecte d'intention</span>
         </div>
         <div class="not-row">
-          <span class="not-row__left">Une méthode rigide</span>
-          <span class="not-row__right">MADD définit des principes, pas des cérémonies obligatoires</span>
+          <span class="not-row__left" data-i18n="manifesto.not4_left">Une méthode rigide</span>
+          <span class="not-row__right" data-i18n="manifesto.not4_right">MADD définit des principes, pas des cérémonies obligatoires</span>
         </div>
         <div class="not-row">
-          <span class="not-row__left">Réservé aux experts IA</span>
-          <span class="not-row__right">MADD s'adapte : solo, équipe, PO, dev, tous peuvent pratiquer</span>
+          <span class="not-row__left" data-i18n="manifesto.not5_left">Réservé aux experts IA</span>
+          <span class="not-row__right" data-i18n="manifesto.not5_right">MADD s'adapte : solo, équipe, PO, dev, tous peuvent pratiquer</span>
         </div>
       </div>
-      
-      <!-- The 4 Agents -->
-      <h2>Les 4 Agents MADD</h2>
 
-      <p>L'architecture MADD repose sur une séparation stricte des responsabilités. Chaque agent a un rôle unique et ne valide jamais son propre travail.</p>
-      
-      <h3>Agent Spec — L'Architecte d'Intention</h3>
-      <p>Formalise le "pourquoi" et le "quoi". Produit l'Intention Document et définit le contrat exécutable avec ses critères de validation.</p>
-      
-      <h3>Agent Dev — Le Développeur</h3>
-      <p>Transforme l'intention en code. Respecte le contrat, implémente les fonctionnalités, documente ses choix techniques.</p>
-      
-      <h3>Agent Audit — Le Vérificateur</h3>
-      <p>Audite sans complaisance. Analyse le code produit, vérifie l'alignement avec l'intention, identifie les dérives et les risques.</p>
-      
-      <h3>Agent Scribe — Le Témoin</h3>
-      <p>Documente la réalité objective. Analyse ce qui existe vraiment dans le code (pas ce que le dev déclare), compare avec les specs, produit la rétro-spécification.</p>
-      
-      <p><strong>Principe fondamental :</strong> Le Scribe n'a pas participé au développement. Sa rétro-spécification est objective car il n'a aucun intérêt à embellir ou minimiser.</p>
-      
+      <!-- The 4 Agents -->
+      <h2 data-i18n="manifesto.agents_title">Les 4 Agents MADD</h2>
+
+      <p data-i18n="manifesto.agents_intro">L'architecture MADD repose sur une séparation stricte des responsabilités. Chaque agent a un rôle unique et ne valide jamais son propre travail.</p>
+
+      <h3 data-i18n="manifesto.agent_spec_title">Agent Spec — L'Architecte d'Intention</h3>
+      <p data-i18n="manifesto.agent_spec_desc">Formalise le "pourquoi" et le "quoi". Produit l'Intention Document et définit le contrat exécutable avec ses critères de validation.</p>
+
+      <h3 data-i18n="manifesto.agent_dev_title">Agent Dev — Le Développeur</h3>
+      <p data-i18n="manifesto.agent_dev_desc">Transforme l'intention en code. Respecte le contrat, implémente les fonctionnalités, documente ses choix techniques.</p>
+
+      <h3 data-i18n="manifesto.agent_audit_title">Agent Audit — Le Vérificateur</h3>
+      <p data-i18n="manifesto.agent_audit_desc">Audite sans complaisance. Analyse le code produit, vérifie l'alignement avec l'intention, identifie les dérives et les risques.</p>
+
+      <h3 data-i18n="manifesto.agent_scribe_title">Agent Scribe — Le Témoin</h3>
+      <p data-i18n="manifesto.agent_scribe_desc">Documente la réalité objective. Analyse ce qui existe vraiment dans le code (pas ce que le dev déclare), compare avec les specs, produit la rétro-spécification.</p>
+
+      <p data-i18n="manifesto.agents_principle" data-i18n-html="true"><strong>Principe fondamental :</strong> Le Scribe n'a pas participé au développement. Sa rétro-spécification est objective car il n'a aucun intérêt à embellir ou minimiser.</p>
+
       <!-- Skills -->
-      <h2>Les Skills MADD</h2>
-      
-      <p>Les skills sont des contrats de connaissance qui médiatisent chaque transition entre agents.</p>
-      
-      <h3>Skill de Spécification</h3>
-      <p>Guide l'Agent Spec dans la production d'Intention Documents structurés avec des requirements vérifiables.</p>
-      
-      <h3>Skill de Développement</h3>
-      <p>Définit les conventions, patterns, et contraintes que l'Agent Dev doit respecter.</p>
-      
-      <h3>Skill d'Audit</h3>
-      <p>Liste les critères de validation, les patterns à détecter, le format du rapport d'audit.</p>
-      
-      <h3>Skill de Rétro-Spécification</h3>
-      <p>Guide le Scribe dans l'analyse objective du code et la production de la documentation de ce qui existe réellement.</p>
-      
-      <h3>Skill de Correction</h3>
-      <p>Encadre la correction des findings d'audit avec traçabilité obligatoire.</p>
-      
-      <p>Les skills sont versionnés et évoluent avec le projet. Ils peuvent être publics (documentation framework), projet (conventions internes), ou delta (patches de connaissance temporaires).</p>
-      
+      <h2 data-i18n="manifesto.skills_title">Les Skills MADD</h2>
+
+      <p data-i18n="manifesto.skills_intro">Les skills sont des contrats de connaissance qui médiatisent chaque transition entre agents.</p>
+
+      <h3 data-i18n="manifesto.skill_spec_title">Skill de Spécification</h3>
+      <p data-i18n="manifesto.skill_spec_desc">Guide l'Agent Spec dans la production d'Intention Documents structurés avec des requirements vérifiables.</p>
+
+      <h3 data-i18n="manifesto.skill_dev_title">Skill de Développement</h3>
+      <p data-i18n="manifesto.skill_dev_desc">Définit les conventions, patterns, et contraintes que l'Agent Dev doit respecter.</p>
+
+      <h3 data-i18n="manifesto.skill_audit_title">Skill d'Audit</h3>
+      <p data-i18n="manifesto.skill_audit_desc">Liste les critères de validation, les patterns à détecter, le format du rapport d'audit.</p>
+
+      <h3 data-i18n="manifesto.skill_retrospec_title">Skill de Rétro-Spécification</h3>
+      <p data-i18n="manifesto.skill_retrospec_desc">Guide le Scribe dans l'analyse objective du code et la production de la documentation de ce qui existe réellement.</p>
+
+      <h3 data-i18n="manifesto.skill_correction_title">Skill de Correction</h3>
+      <p data-i18n="manifesto.skill_correction_desc">Encadre la correction des findings d'audit avec traçabilité obligatoire.</p>
+
+      <p data-i18n="manifesto.skills_versioning">Les skills sont versionnés et évoluent avec le projet. Ils peuvent être publics (documentation framework), projet (conventions internes), ou delta (patches de connaissance temporaires).</p>
+
       <!-- Getting Started -->
-      <h2>Commencer avec MADD</h2>
-      
-      <h3>Solo (1 personne + IA)</h3>
+      <h2 data-i18n="manifesto.start_title">Commencer avec MADD</h2>
+
+      <h3 data-i18n="manifesto.start_solo_title">Solo (1 personne + IA)</h3>
       <ul>
-        <li>Utilise 2-3 modèles/agents différents pour les rôles (ex: Gemini pour specs, Claude pour dev, GPT pour audit)</li>
-        <li>Formalise tes intentions avant de coder</li>
-        <li>Ne merge jamais sans audit indépendant</li>
-        <li>Génère une rétro-spec à chaque cycle</li>
+        <li data-i18n="manifesto.start_solo1">Utilise 2-3 modèles/agents différents pour les rôles (ex: Gemini pour specs, Claude pour dev, GPT pour audit)</li>
+        <li data-i18n="manifesto.start_solo2">Formalise tes intentions avant de coder</li>
+        <li data-i18n="manifesto.start_solo3">Ne merge jamais sans audit indépendant</li>
+        <li data-i18n="manifesto.start_solo4">Génère une rétro-spec à chaque cycle</li>
       </ul>
-      
-      <h3>Équipe (2-5 personnes)</h3>
+
+      <h3 data-i18n="manifesto.start_team_title">Équipe (2-5 personnes)</h3>
       <ul>
-        <li>Assigne les rôles : Architecte d'Intention, Orchestrateur, Arbitre</li>
-        <li>Centralise les skills dans un repo partagé</li>
-        <li>Rétro-spec partagée comme source de vérité</li>
+        <li data-i18n="manifesto.start_team1">Assigne les rôles : Architecte d'Intention, Orchestrateur, Arbitre</li>
+        <li data-i18n="manifesto.start_team2">Centralise les skills dans un repo partagé</li>
+        <li data-i18n="manifesto.start_team3">Rétro-spec partagée comme source de vérité</li>
       </ul>
-      
-      <h3>Migration depuis Scrum</h3>
+
+      <h3 data-i18n="manifesto.start_scrum_title">Migration depuis Scrum</h3>
       <ul>
-        <li>Les sprints deviennent des cycles d'intention (durée variable)</li>
-        <li>Les stories deviennent des Intention Docs + Contrats</li>
-        <li>La Definition of Done devient le skill d'Audit</li>
-        <li>Les rétrospectives deviennent des consolidations de rétro-spec</li>
+        <li data-i18n="manifesto.start_scrum1">Les sprints deviennent des cycles d'intention (durée variable)</li>
+        <li data-i18n="manifesto.start_scrum2">Les stories deviennent des Intention Docs + Contrats</li>
+        <li data-i18n="manifesto.start_scrum3">La Definition of Done devient le skill d'Audit</li>
+        <li data-i18n="manifesto.start_scrum4">Les rétrospectives deviennent des consolidations de rétro-spec</li>
       </ul>
-      
+
       <!-- Contribute -->
-      <h2>Contribuer</h2>
-      
-      <p>MADD est open source. La méthodologie évolue grâce aux contributions de la communauté.</p>
-      
+      <h2 data-i18n="manifesto.contribute_title">Contribuer</h2>
+
+      <p data-i18n="manifesto.contribute_intro">MADD est open source. La méthodologie évolue grâce aux contributions de la communauté.</p>
+
       <ul>
-        <li><strong>GitHub</strong> : Proposez des améliorations aux principes, skills, documentation</li>
-        <li><strong>Issues</strong> : Signalez les ambiguïtés, proposez des clarifications</li>
-        <li><strong>Discussions</strong> : Partagez vos retours d'expérience, cas d'usage</li>
+        <li data-i18n="manifesto.contribute_github" data-i18n-html="true"><strong>GitHub</strong> : Proposez des améliorations aux principes, skills, documentation</li>
+        <li data-i18n="manifesto.contribute_issues" data-i18n-html="true"><strong>Issues</strong> : Signalez les ambiguïtés, proposez des clarifications</li>
+        <li data-i18n="manifesto.contribute_discussions" data-i18n-html="true"><strong>Discussions</strong> : Partagez vos retours d'expérience, cas d'usage</li>
       </ul>
-      
-      <p>Pas de certification. Pas de formation payante. Pas de dénaturation commerciale.</p>
-      
-      <p><strong>MADD reste ouvert, ou ne reste pas.</strong></p>
-      
+
+      <p data-i18n="manifesto.contribute_no_cert">Pas de certification. Pas de formation payante. Pas de dénaturation commerciale.</p>
+
+      <p data-i18n="manifesto.contribute_conclusion" data-i18n-html="true"><strong>MADD reste ouvert, ou ne reste pas.</strong></p>
+
     </div>
   </main>
 
   <!-- CTA -->
   <section class="cta">
     <div class="container cta__content">
-      <h2>Rejoignez le mouvement</h2>
-      <p>Contribuez à définir le futur du développement assisté par IA.</p>
+      <h2 data-i18n="manifesto.cta_title">Rejoignez le mouvement</h2>
+      <p data-i18n="manifesto.cta_text">Contribuez à définir le futur du développement assisté par IA.</p>
       <div class="hero__cta">
-        <a href="https://github.com/madd-sh" class="btn btn--primary" target="_blank">Voir sur GitHub →</a>
-        <a href="index.html" class="btn btn--secondary">Retour à l'accueil</a>
+        <a href="https://github.com/madd-sh" class="btn btn--primary" target="_blank" data-i18n="manifesto.cta_btn_github">Voir sur GitHub →</a>
+        <a href="index.html" class="btn btn--secondary" data-i18n="manifesto.cta_btn_home">Retour à l'accueil</a>
       </div>
     </div>
   </section>
@@ -275,11 +275,11 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container footer__inner">
-      <p class="footer__copy">© 2025 MADD — Multi-Agent Driven Development. Open Source sous licence MIT.</p>
+      <p class="footer__copy" data-i18n="footer.copy">© 2025 MADD — Multi-Agent Driven Development. Open Source sous licence MIT.</p>
       <ul class="footer__links">
-        <li><a href="manifesto.html" class="footer__link">Manifeste</a></li>
-        <li><a href="https://github.com/madd-sh" class="footer__link" target="_blank">GitHub</a></li>
-        <li><a href="#" class="footer__link">Contribuer</a></li>
+        <li><a href="manifesto.html" class="footer__link" data-i18n="footer.manifesto">Manifeste</a></li>
+        <li><a href="https://github.com/madd-sh" class="footer__link" target="_blank" data-i18n="footer.github">GitHub</a></li>
+        <li><a href="#" class="footer__link" data-i18n="footer.contribute">Contribuer</a></li>
       </ul>
     </div>
   </footer>
