@@ -327,6 +327,32 @@ section {
   display: block;
 }
 
+/* Help Toggle */
+.help-toggle {
+  background: none;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  padding: var(--space-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+  width: 36px;
+  height: 36px;
+}
+
+.help-toggle:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.help-toggle span {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
 /* Language Selector */
 .lang-selector {
   position: relative;

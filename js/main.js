@@ -293,7 +293,15 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   }
-  
+
+  // ========================================
+  // Help Button Toggle
+  // ========================================
+  const helpToggle = document.getElementById('help-toggle');
+  if (helpToggle) {
+    helpToggle.addEventListener('click', () => showHelpModal());
+  }
+
   // ========================================
   // Quickstart Tabs
   // ========================================
