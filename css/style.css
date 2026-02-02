@@ -794,8 +794,8 @@ section {
   font-size: 1.5rem;
 }
 
-/* Contract-centric diagram layout */
-.agents__diagram--contract-centric {
+/* Grid-based diagram layout */
+.agents__diagram--grid {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -803,24 +803,110 @@ section {
   overflow-x: visible;
 }
 
-.agents__writers,
-.agents__readers {
+.diagram__row {
   display: flex;
   justify-content: center;
-  gap: var(--space-xl);
+  align-items: center;
+  width: 100%;
 }
 
-.agents__arrows-down {
+.diagram__row--spec {
+  margin-bottom: var(--space-xs);
+}
+
+.diagram__row--arrow {
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--space-xs) 0;
+}
+
+.diagram__row--contract {
+  margin: var(--space-xs) 0;
+}
+
+/* Arrows row - use CSS Grid for precise alignment */
+.diagram__row--arrows-to-agents {
+  display: grid;
+  grid-template-columns: 150px 24px 150px 150px;
+  gap: var(--space-md);
+  justify-content: center;
+  padding: var(--space-sm) 0 0 0;
+}
+
+.diagram__arrow-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.diagram__arrow-col--dev {
+  grid-column: 1;
+}
+
+.diagram__arrow-col--audit {
+  grid-column: 3;
+}
+
+.diagram__arrow-col--scribe {
+  grid-column: 4;
+}
+
+/* Labels row */
+.diagram__row--labels {
+  display: grid;
+  grid-template-columns: 150px 24px 150px 150px;
+  gap: var(--space-md);
+  justify-content: center;
+  padding: 0 0 var(--space-sm) 0;
+}
+
+.diagram__row--labels .agent-arrow-label:first-child {
+  grid-column: 1 / 4;
+  text-align: center;
+}
+
+.diagram__row--labels .agent-arrow-label:last-child {
+  grid-column: 4;
+  text-align: center;
+}
+
+/* Agents row - use same grid for alignment */
+.diagram__row--agents {
+  display: grid;
+  grid-template-columns: 150px 24px 150px 150px;
+  gap: var(--space-md);
+  justify-content: center;
+  align-items: center;
+}
+
+.diagram__agent-cell {
+  display: flex;
+  justify-content: center;
+}
+
+.diagram__agent-cell .agent-box {
+  width: 100%;
+}
+
+.diagram__horizontal-arrow {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-xl);
-  padding: var(--space-xs) 0;
+}
+
+.diagram__horizontal-arrow .agent-arrow {
+  font-size: 1.5rem;
+  color: var(--color-info, #60a5fa);
 }
 
 .agent-arrow--down {
   font-size: 1.25rem;
   color: var(--color-text-muted);
+}
+
+.agent-arrow--up {
+  font-size: 1.25rem;
+  color: var(--color-success, #4ade80);
 }
 
 .agent-arrow-label {
@@ -829,7 +915,6 @@ section {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-text-muted);
-  padding: 0 var(--space-lg);
 }
 
 .contract-hub {
@@ -872,76 +957,6 @@ section {
 
 .agent-box--reader .agent-box__name {
   color: var(--color-info, #60a5fa);
-}
-
-/* Spec at top - single agent */
-.agents__spec-top {
-  display: flex;
-  justify-content: center;
-}
-
-/* Scribe at bottom - single agent */
-.agents__scribe-bottom {
-  display: flex;
-  justify-content: center;
-}
-
-/* Single arrow with label (vertical) */
-.agents__arrow-single {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-xs);
-  padding: var(--space-xs) 0;
-}
-
-/* Upward arrow variant */
-.agents__arrow-up {
-  flex-direction: column-reverse;
-}
-
-.agent-arrow--up {
-  font-size: 1.25rem;
-  color: var(--color-success, #4ade80);
-}
-
-/* Horizontal arrow between agents */
-.agents__horizontal-arrow {
-  display: flex;
-  align-items: center;
-  padding: 0 var(--space-md);
-}
-
-.agents__horizontal-arrow .agent-arrow {
-  font-size: 1.5rem;
-  color: var(--color-info, #60a5fa);
-}
-
-/* Triple arrows from contract to all agents */
-.agents__arrows-triple {
-  display: flex;
-  justify-content: center;
-  gap: calc(var(--space-xl) * 3);
-  padding: var(--space-xs) 0;
-}
-
-.agents__arrows-labels {
-  display: flex;
-  justify-content: center;
-  gap: calc(var(--space-xl) * 4);
-  padding: 0 0 var(--space-xs) 0;
-}
-
-/* All agents row (DEV, AUDIT, SCRIBE) */
-.agents__all-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: var(--space-md);
-}
-
-.agents__all-row .agent-box {
-  flex: 0 0 auto;
 }
 
 .agents__grid {
@@ -1540,51 +1555,45 @@ kbd {
     transform: rotate(90deg);
   }
 
-  /* Contract-centric diagram responsive */
-  .agents__diagram--contract-centric {
+  /* Grid diagram responsive */
+  .agents__diagram--grid {
     gap: var(--space-xs);
   }
 
-  .agents__writers,
-  .agents__readers,
-  .agents__all-row {
+  .diagram__row--arrows-to-agents,
+  .diagram__row--labels,
+  .diagram__row--agents {
+    display: flex;
     flex-direction: column;
     gap: var(--space-md);
     width: 100%;
   }
 
-  .agents__writers .agent-box,
-  .agents__readers .agent-box,
-  .agents__all-row .agent-box,
-  .agents__spec-top .agent-box,
-  .agents__scribe-bottom .agent-box {
+  .diagram__row--arrows-to-agents {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .diagram__row--labels {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .diagram__agent-cell {
     width: 100%;
   }
 
-  .agents__horizontal-arrow {
+  .diagram__agent-cell .agent-box {
+    width: 100%;
+  }
+
+  .diagram__horizontal-arrow {
     transform: rotate(90deg);
     padding: var(--space-sm) 0;
   }
 
-  .agents__arrow-single {
+  .diagram__row--arrow {
     padding: var(--space-sm) 0;
-  }
-
-  .agents__arrows-down,
-  .agents__arrows-triple {
-    flex-direction: column;
-    gap: var(--space-xs);
-    padding: var(--space-sm) 0;
-  }
-
-  .agents__arrows-labels {
-    flex-direction: column;
-    gap: var(--space-xs);
-    align-items: center;
-  }
-
-  .agent-arrow--down {
-    transform: none;
   }
 
   .contract-hub__inner {

@@ -221,9 +221,9 @@
         <p data-i18n="agents.subtitle">Chaque agent a un rôle unique. Aucun ne valide son propre travail.</p>
       </header>
 
-      <div class="agents__diagram agents__diagram--contract-centric">
-        <!-- Spec at top -->
-        <div class="agents__spec-top">
+      <div class="agents__diagram agents__diagram--grid">
+        <!-- Row 1: SPEC -->
+        <div class="diagram__row diagram__row--spec">
           <div class="agent-box agent-box--writer">
             <div class="agent-box__icon">📋</div>
             <div class="agent-box__name" data-i18n="agents.spec">Spec</div>
@@ -231,51 +231,67 @@
           </div>
         </div>
 
-        <!-- Arrow down to contract -->
-        <div class="agents__arrow-single">
+        <!-- Row 2: Arrow SPEC → CONTRACT -->
+        <div class="diagram__row diagram__row--arrow">
           <span class="agent-arrow agent-arrow--down">↓</span>
           <span class="agent-arrow-label" data-i18n="agents.label_feed">alimente</span>
         </div>
 
-        <!-- Central Contract -->
-        <div class="contract-hub">
-          <div class="contract-hub__inner">
-            <div class="contract-hub__icon">📜</div>
-            <div class="contract-hub__title" data-i18n="agents.contract_title">Contrat</div>
-            <div class="contract-hub__subtitle" data-i18n="agents.contract_subtitle">Intention + Critères de validation</div>
+        <!-- Row 3: CONTRACT -->
+        <div class="diagram__row diagram__row--contract">
+          <div class="contract-hub">
+            <div class="contract-hub__inner">
+              <div class="contract-hub__icon">📜</div>
+              <div class="contract-hub__title" data-i18n="agents.contract_title">Contrat</div>
+              <div class="contract-hub__subtitle" data-i18n="agents.contract_subtitle">Intention + Critères de validation</div>
+            </div>
           </div>
         </div>
 
-        <!-- Arrows down from contract to all three agents -->
-        <div class="agents__arrows-triple">
-          <span class="agent-arrow agent-arrow--down">↓</span>
-          <span class="agent-arrow agent-arrow--down">↓</span>
-          <span class="agent-arrow agent-arrow--up">↑</span>
+        <!-- Row 4: Arrows CONTRACT → agents (aligned with boxes below) -->
+        <div class="diagram__row diagram__row--arrows-to-agents">
+          <div class="diagram__arrow-col diagram__arrow-col--dev">
+            <span class="agent-arrow agent-arrow--down">↓</span>
+          </div>
+          <div class="diagram__arrow-col diagram__arrow-col--audit">
+            <span class="agent-arrow agent-arrow--down">↓</span>
+          </div>
+          <div class="diagram__arrow-col diagram__arrow-col--scribe">
+            <span class="agent-arrow agent-arrow--up">↑</span>
+          </div>
         </div>
-        <div class="agents__arrows-labels">
+
+        <!-- Row 5: Labels -->
+        <div class="diagram__row diagram__row--labels">
           <span class="agent-arrow-label" data-i18n="agents.label_use">guide</span>
           <span class="agent-arrow-label" data-i18n="agents.label_retrospec">rétro-spécifie</span>
         </div>
 
-        <!-- All agents row: DEV, AUDIT, SCRIBE -->
-        <div class="agents__all-row">
-          <div class="agent-box agent-box--reader">
-            <div class="agent-box__icon">⚡</div>
-            <div class="agent-box__name" data-i18n="agents.dev">Dev</div>
-            <div class="agent-box__role" data-i18n="agents.diagram_dev_role">Implémente le contrat</div>
+        <!-- Row 6: DEV, AUDIT, SCRIBE with horizontal arrow -->
+        <div class="diagram__row diagram__row--agents">
+          <div class="diagram__agent-cell">
+            <div class="agent-box agent-box--reader">
+              <div class="agent-box__icon">⚡</div>
+              <div class="agent-box__name" data-i18n="agents.dev">Dev</div>
+              <div class="agent-box__role" data-i18n="agents.diagram_dev_role">Implémente le contrat</div>
+            </div>
           </div>
-          <div class="agents__horizontal-arrow">
+          <div class="diagram__horizontal-arrow">
             <span class="agent-arrow">→</span>
           </div>
-          <div class="agent-box agent-box--reader">
-            <div class="agent-box__icon">🔍</div>
-            <div class="agent-box__name" data-i18n="agents.audit">Audit</div>
-            <div class="agent-box__role" data-i18n="agents.diagram_audit_role">Vérifie contre le contrat</div>
+          <div class="diagram__agent-cell">
+            <div class="agent-box agent-box--reader">
+              <div class="agent-box__icon">🔍</div>
+              <div class="agent-box__name" data-i18n="agents.audit">Audit</div>
+              <div class="agent-box__role" data-i18n="agents.diagram_audit_role">Vérifie contre le contrat</div>
+            </div>
           </div>
-          <div class="agent-box agent-box--writer">
-            <div class="agent-box__icon">📝</div>
-            <div class="agent-box__name" data-i18n="agents.scribe">Scribe</div>
-            <div class="agent-box__role" data-i18n="agents.diagram_scribe_role">Documente la réalité</div>
+          <div class="diagram__agent-cell">
+            <div class="agent-box agent-box--writer">
+              <div class="agent-box__icon">📝</div>
+              <div class="agent-box__name" data-i18n="agents.scribe">Scribe</div>
+              <div class="agent-box__role" data-i18n="agents.diagram_scribe_role">Documente la réalité</div>
+            </div>
           </div>
         </div>
       </div>
