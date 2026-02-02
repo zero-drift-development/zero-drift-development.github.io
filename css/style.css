@@ -1005,6 +1005,10 @@ section {
   margin: 0 auto var(--space-lg);
 }
 
+.cta .hero__cta {
+  justify-content: center;
+}
+
 /* ========================================
    FOOTER
    ======================================== */
