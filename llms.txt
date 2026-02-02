@@ -1,6 +1,6 @@
 # MADD — Multi-Agent Driven Development
 
-> MADD is an open-source methodology for AI-assisted development that guarantees zero drift between intention and implementation. When AI codes faster than you specify, your methodology must evolve.
+> MADD is an open-source methodology for AI-assisted development that provides the framework to control drift and drive convergence between intention and implementation. When AI codes faster than you specify, your methodology must evolve.
 
 ## Core Principles
 
