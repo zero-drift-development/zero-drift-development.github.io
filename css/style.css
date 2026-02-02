@@ -1048,6 +1048,68 @@ section {
   background: var(--color-bg-elevated);
 }
 
+.comparison__subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-sm);
+}
+
+.comparison__subtitle:first-of-type {
+  margin-top: var(--space-lg);
+}
+
+.comparison__subtitle--sdd {
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-border);
+}
+
+.comparison__intro {
+  color: var(--color-text-secondary);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+}
+
+.comparison__note {
+  margin-top: var(--space-lg);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--color-bg-elevated);
+  border-left: 3px solid var(--color-accent);
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.comparison__note strong {
+  color: var(--color-text-primary);
+}
+
+.comparison__note em {
+  color: var(--color-accent);
+  font-style: normal;
+}
+
+/* SDD comparison table (4 columns) */
+.comparison__table--sdd th:nth-child(4),
+.comparison__table--sdd td:nth-child(4) {
+  color: var(--color-accent);
+}
+
+.comparison__table--sdd th:nth-child(2),
+.comparison__table--sdd th:nth-child(3) {
+  color: var(--color-text-muted);
+}
+
+.comparison__table--sdd td:nth-child(2),
+.comparison__table--sdd td:nth-child(3) {
+  color: var(--color-text-secondary);
+}
+
 /* ========================================
    QUICKSTART SECTION
    ======================================== */

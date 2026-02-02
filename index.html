@@ -340,8 +340,10 @@
   <section class="comparison" id="comparison">
     <div class="container container--narrow">
       <h3 data-i18n="comparison.section_title">Migration</h3>
-      <h2 data-i18n="comparison.title">MADD vs Méthodologies Legacy</h2>
+      <h2 data-i18n="comparison.title">MADD vs Autres Méthodologies</h2>
 
+      <!-- Legacy comparison -->
+      <h4 class="comparison__subtitle" data-i18n="comparison.legacy_subtitle">vs Méthodologies Legacy</h4>
       <div class="comparison__table-wrapper">
         <table class="comparison__table">
           <thead>
@@ -395,6 +397,77 @@
           </tbody>
         </table>
       </div>
+
+      <!-- SDD Frameworks comparison -->
+      <h4 class="comparison__subtitle comparison__subtitle--sdd" data-i18n="comparison.sdd_subtitle">vs Frameworks Spec-Driven</h4>
+      <p class="comparison__intro" data-i18n="comparison.sdd_intro">bMAD et spec-kit partagent la vision "spec-first" de MADD. La différence : MADD est une méthodologie légère, pas un framework à installer.</p>
+
+      <div class="comparison__table-wrapper">
+        <table class="comparison__table comparison__table--sdd">
+          <thead>
+            <tr>
+              <th data-i18n="comparison.th_aspect">Aspect</th>
+              <th data-i18n="comparison.th_bmad">bMAD</th>
+              <th data-i18n="comparison.th_speckit">spec-kit</th>
+              <th data-i18n="comparison.th_madd">MADD</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-i18n="comparison.sdd_row1_aspect">Installation</td>
+              <td data-i18n="comparison.sdd_row1_bmad">Node.js + npx install</td>
+              <td data-i18n="comparison.sdd_row1_speckit">Python + uv + CLI</td>
+              <td data-i18n="comparison.sdd_row1_madd">Aucune</td>
+            </tr>
+            <tr>
+              <td data-i18n="comparison.sdd_row2_aspect">Onboarding</td>
+              <td data-i18n="comparison.sdd_row2_bmad">34+ workflows à maîtriser</td>
+              <td data-i18n="comparison.sdd_row2_speckit">5 commandes + templates</td>
+              <td data-i18n="comparison.sdd_row2_madd">6 principes, 4 agents</td>
+            </tr>
+            <tr>
+              <td data-i18n="comparison.sdd_row3_aspect">Personas / Rôles</td>
+              <td data-i18n="comparison.sdd_row3_bmad">7+ (Analyst, PM, Architect...)</td>
+              <td data-i18n="comparison.sdd_row3_speckit">Non définis</td>
+              <td data-i18n="comparison.sdd_row3_madd">4 agents clairs</td>
+            </tr>
+            <tr>
+              <td data-i18n="comparison.sdd_row4_aspect">Validation indépendante</td>
+              <td data-i18n="comparison.sdd_row4_bmad">Optionnelle (QA persona)</td>
+              <td data-i18n="comparison.sdd_row4_speckit">Non explicite</td>
+              <td data-i18n="comparison.sdd_row4_madd">Obligatoire (principe #3)</td>
+            </tr>
+            <tr>
+              <td data-i18n="comparison.sdd_row5_aspect">Rétro-spécification</td>
+              <td data-i18n="comparison.sdd_row5_bmad">Non</td>
+              <td data-i18n="comparison.sdd_row5_speckit">Non</td>
+              <td data-i18n="comparison.sdd_row5_madd">Oui (Agent Scribe)</td>
+            </tr>
+            <tr>
+              <td data-i18n="comparison.sdd_row6_aspect">Vendor lock-in</td>
+              <td data-i18n="comparison.sdd_row6_bmad">Fichiers .claude/skills</td>
+              <td data-i18n="comparison.sdd_row6_speckit">Structure imposée</td>
+              <td data-i18n="comparison.sdd_row6_madd">Aucun</td>
+            </tr>
+            <tr>
+              <td data-i18n="comparison.sdd_row7_aspect">Complexité</td>
+              <td data-i18n="comparison.sdd_row7_bmad">Élevée</td>
+              <td data-i18n="comparison.sdd_row7_speckit">Modérée</td>
+              <td data-i18n="comparison.sdd_row7_madd">Minimale</td>
+            </tr>
+            <tr>
+              <td data-i18n="comparison.sdd_row8_aspect">Philosophie</td>
+              <td data-i18n="comparison.sdd_row8_bmad">Framework complet</td>
+              <td data-i18n="comparison.sdd_row8_speckit">Toolkit structuré</td>
+              <td data-i18n="comparison.sdd_row8_madd">Principes + liberté</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="comparison__note" data-i18n="comparison.sdd_note" data-i18n-html="true">
+        <strong>Notre position :</strong> bMAD et spec-kit sont des outils valides. Mais ajouter de la complexité pour "contrôler l'IA" est contre-productif. MADD prouve qu'un principe simple — <em>aucun agent ne valide son propre travail</em> — suffit à garantir l'alignement.
+      </p>
     </div>
   </section>
 
