@@ -16,7 +16,7 @@
     "badge": "Méthodologie Open Source",
     "title_main": "Multi-Agent",
     "title_accent": "Driven Development",
-    "subtitle": "Quand l'IA code plus vite que vous ne spécifiez, votre méthodologie doit évoluer. MADD garantit <strong>zéro dérive</strong> entre l'intention et l'implémentation.",
+    "subtitle": "Quand l'IA code plus vite que vous ne spécifiez, votre méthodologie doit évoluer. MADD fournit le <strong>cadre pour contrôler la dérive</strong> et forcer la convergence entre l'intention et l'implémentation.",
     "cta_start": "Commencer →",
     "cta_manifesto": "Lire le Manifeste"
   },
@@ -296,7 +296,7 @@
   "manifesto": {
     "page_subtitle": "Document Fondateur",
     "page_title": "Le Manifeste MADD",
-    "page_intro": "Multi-Agent Driven Development — La méthodologie qui garantit zéro dérive entre l'intention et l'implémentation.",
+    "page_intro": "Multi-Agent Driven Development — La méthodologie qui fournit le cadre pour contrôler la dérive et forcer la convergence.",
     "context_title": "Le Constat",
     "context_intro": "<strong>Le développement assisté par IA change tout, sauf nos méthodologies.</strong>",
     "context_p1": "Scrum, Kanban, SAFe ont été conçus pour gérer la rareté du temps de développement. Quand une équipe de 10 personnes mettait un an à livrer une plateforme, il fallait planifier, prioriser, coordonner.",

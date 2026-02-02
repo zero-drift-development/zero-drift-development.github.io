@@ -16,7 +16,7 @@
     "badge": "Open Source Methodology",
     "title_main": "Multi-Agent",
     "title_accent": "Driven Development",
-    "subtitle": "When AI codes faster than you can specify, your methodology must evolve. MADD guarantees <strong>zero drift</strong> between intention and implementation.",
+    "subtitle": "When AI codes faster than you can specify, your methodology must evolve. MADD provides the <strong>framework to control drift</strong> and drive convergence between intention and implementation.",
     "cta_start": "Get Started →",
     "cta_manifesto": "Read the Manifesto"
   },
@@ -296,7 +296,7 @@
   "manifesto": {
     "page_subtitle": "Founding Document",
     "page_title": "The MADD Manifesto",
-    "page_intro": "Multi-Agent Driven Development — The methodology that guarantees zero drift between intention and implementation.",
+    "page_intro": "Multi-Agent Driven Development — The methodology that provides the framework to control drift and drive convergence.",
     "context_title": "The Problem",
     "context_intro": "<strong>AI-assisted development changes everything, except our methodologies.</strong>",
     "context_p1": "Scrum, Kanban, SAFe were designed to manage the scarcity of development time. When a team of 10 people took a year to deliver a platform, planning, prioritizing, and coordinating were necessary.",
