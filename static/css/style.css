@@ -794,6 +794,190 @@ section {
   font-size: 1.5rem;
 }
 
+/* Grid-based diagram layout */
+.agents__diagram--grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  overflow-x: visible;
+}
+
+.diagram__row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.diagram__row--spec {
+  margin-bottom: var(--space-xs);
+}
+
+.diagram__row--arrow {
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--space-xs) 0;
+}
+
+.diagram__row--contract {
+  margin: var(--space-xs) 0;
+}
+
+/* Arrows row - use CSS Grid for precise alignment */
+.diagram__row--arrows-to-agents {
+  display: grid;
+  grid-template-columns: 180px 24px 180px 24px 180px;
+  gap: var(--space-md);
+  justify-content: center;
+  padding: var(--space-sm) 0 0 0;
+}
+
+.diagram__arrow-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.diagram__arrow-col--dev {
+  grid-column: 1;
+}
+
+.diagram__arrow-col--audit {
+  grid-column: 3;
+}
+
+.diagram__arrow-col--scribe {
+  grid-column: 5;
+}
+
+/* Labels row */
+.diagram__row--labels {
+  display: grid;
+  grid-template-columns: 180px 24px 180px 24px 180px;
+  gap: var(--space-md);
+  justify-content: center;
+  padding: 0 0 var(--space-sm) 0;
+}
+
+.diagram__row--labels .agent-arrow-label:first-child {
+  grid-column: 1 / 4;
+  text-align: center;
+}
+
+.diagram__row--labels .agent-arrow-label:last-child {
+  grid-column: 5;
+  text-align: center;
+}
+
+/* Agents row - use same grid for alignment */
+.diagram__row--agents {
+  display: grid;
+  grid-template-columns: 180px 24px 180px 24px 180px;
+  gap: var(--space-md);
+  justify-content: center;
+  align-items: center;
+}
+
+.diagram__agent-cell {
+  display: flex;
+  justify-content: center;
+}
+
+.diagram__agent-cell .agent-box {
+  width: 100%;
+}
+
+.diagram__horizontal-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.diagram__horizontal-arrow .agent-arrow {
+  font-size: 1.5rem;
+  color: var(--color-info, #60a5fa);
+}
+
+.agent-arrow--down {
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+}
+
+.agent-arrow--up {
+  font-size: 1.25rem;
+  color: var(--color-success, #4ade80);
+}
+
+.agent-arrow-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+}
+
+.contract-hub {
+  padding: var(--space-md);
+}
+
+.contract-hub__inner {
+  background: linear-gradient(135deg, var(--color-accent-glow), transparent);
+  border: 2px solid var(--color-accent);
+  padding: var(--space-lg) var(--space-xl);
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 40px var(--color-accent-glow);
+  min-width: 650px;
+}
+
+.contract-hub__icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-sm);
+}
+
+.contract-hub__title {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+  margin-bottom: var(--space-xs);
+}
+
+.contract-hub__subtitle {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+.agent-box--writer .agent-box__name {
+  color: var(--color-success, #4ade80);
+}
+
+.agent-box--reader .agent-box__name {
+  color: var(--color-info, #60a5fa);
+}
+
+/* Full-bleed diagram - overflows container like Substack images */
+.agents__diagram--full-bleed {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: var(--space-xl) var(--space-lg);
+  overflow-x: hidden;
+}
+
+.agents__diagram--full-bleed .agents__flow {
+  min-width: auto;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
 .agents__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -896,6 +1080,68 @@ section {
 
 .comparison__table tr:hover td {
   background: var(--color-bg-elevated);
+}
+
+.comparison__subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-sm);
+}
+
+.comparison__subtitle:first-of-type {
+  margin-top: var(--space-lg);
+}
+
+.comparison__subtitle--sdd {
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-border);
+}
+
+.comparison__intro {
+  color: var(--color-text-secondary);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+}
+
+.comparison__note {
+  margin-top: var(--space-lg);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--color-bg-elevated);
+  border-left: 3px solid var(--color-accent);
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.comparison__note strong {
+  color: var(--color-text-primary);
+}
+
+.comparison__note em {
+  color: var(--color-accent);
+  font-style: normal;
+}
+
+/* SDD comparison table (4 columns) */
+.comparison__table--sdd th:nth-child(4),
+.comparison__table--sdd td:nth-child(4) {
+  color: var(--color-accent);
+}
+
+.comparison__table--sdd th:nth-child(2),
+.comparison__table--sdd th:nth-child(3) {
+  color: var(--color-text-muted);
+}
+
+.comparison__table--sdd td:nth-child(2),
+.comparison__table--sdd td:nth-child(3) {
+  color: var(--color-text-secondary);
 }
 
 /* ========================================
@@ -1207,7 +1453,7 @@ section {
 }
 
 /* Remove double border when pre is inside code-block */
-.code-block pre {
+.page-content .code-block pre {
   background: none;
   border: none;
   margin: 0;
@@ -1353,74 +1599,6 @@ kbd {
 }
 
 /* ========================================
-   AI AGENT BANNER
-   Visible banner showing agent-first commitment
-   ======================================== */
-.ai-agent-banner {
-  background: var(--color-bg-elevated);
-  border-bottom: 1px solid var(--color-border);
-  padding: var(--space-xs) 0;
-  margin-top: 70px; /* Account for fixed nav (nav height is 70px) */
-}
-
-.ai-agent-banner__inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-sm);
-  flex-wrap: wrap;
-}
-
-.ai-agent-banner__badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.375rem;
-  background: var(--color-accent-glow);
-  border: 1px solid var(--color-accent-dim);
-  color: var(--color-accent);
-  font-family: var(--font-mono);
-  font-size: 0.625rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding: 0.25rem 0.5rem;
-  border-radius: 3px;
-}
-
-.ai-agent-banner__badge::before {
-  content: "◆";
-  font-size: 0.5rem;
-}
-
-.ai-agent-banner__text {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--color-text-muted);
-  margin: 0;
-}
-
-.ai-agent-banner__text a {
-  color: var(--color-text-secondary);
-  text-decoration: none;
-  transition: color var(--transition-fast);
-}
-
-.ai-agent-banner__text a:hover {
-  color: var(--color-accent);
-}
-
-@media (max-width: 768px) {
-  .ai-agent-banner {
-    padding: var(--space-sm) 0;
-  }
-
-  .ai-agent-banner__inner {
-    flex-direction: column;
-    gap: var(--space-xs);
-  }
-}
-
-/* ========================================
    MOBILE RESPONSIVE FIXES
    ======================================== */
 @media (max-width: 480px) {
@@ -1463,6 +1641,55 @@ kbd {
 
   .agent-arrow {
     transform: rotate(90deg);
+  }
+
+  /* Grid diagram responsive */
+  .agents__diagram--grid {
+    gap: var(--space-xs);
+  }
+
+  .diagram__row--arrows-to-agents,
+  .diagram__row--labels,
+  .diagram__row--agents {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    width: 100%;
+  }
+
+  .diagram__row--arrows-to-agents {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .diagram__row--labels {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .diagram__agent-cell {
+    width: 100%;
+  }
+
+  .diagram__agent-cell .agent-box {
+    width: 100%;
+  }
+
+  .diagram__horizontal-arrow {
+    transform: rotate(90deg);
+    padding: var(--space-sm) 0;
+  }
+
+  .diagram__row--arrow {
+    padding: var(--space-sm) 0;
+  }
+
+  .contract-hub__inner {
+    padding: var(--space-md);
+  }
+
+  .contract-hub__title {
+    font-size: 1rem;
   }
 
   /* Fix quickstart tabs - allow wrapping */
