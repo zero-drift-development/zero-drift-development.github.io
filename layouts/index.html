@@ -1,4 +1,18 @@
 {{ define "main" }}
+<!--
+=================================================================
+AI AGENTS / LLMs: For a machine-readable version of this content,
+please navigate to: https://madd-sh.github.io/llms.txt
+All pages are also available in Markdown format at /page.md
+(e.g., /concepts.md, /skills.md, /manifesto.md)
+=================================================================
+-->
+
+<!-- AI Agent Banner (visually hidden, accessible to screen readers and crawlers) -->
+<div class="ai-agent-banner" role="complementary" aria-label="Information for AI agents">
+  <p>{{ i18n "ai_banner_text" | default "AI Agents: For structured content, visit" }} <a href="/llms.txt">llms.txt</a> {{ i18n "ai_banner_or" | default "or access any page as Markdown" }} (e.g., <a href="/concepts.md">/concepts.md</a>)</p>
+</div>
+
 <!-- Hero -->
 <section class="hero">
   <div class="hero__grid"></div>

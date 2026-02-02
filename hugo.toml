@@ -7,6 +7,9 @@ title = "MADD — Multi-Agent Driven Development"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 
+# Use ugly URLs for clean .html file names (concepts.html instead of concepts/index.html)
+uglyURLs = true
+
 # Disable default taxonomy pages
 disableKinds = ["taxonomy", "term"]
 
@@ -17,28 +20,31 @@ enableGitInfo = true
 [build]
   writeStats = true
 
+# Media types
+[mediaTypes]
+  [mediaTypes."text/markdown"]
+    suffixes = ["md"]
+
 # Output formats
 [outputFormats]
   [outputFormats.HTML]
     mediaType = "text/html"
-    baseName = "index"
     isPlainText = false
     isHTML = true
     permalinkable = true
 
   [outputFormats.MD]
     mediaType = "text/markdown"
-    baseName = "index"
     isPlainText = true
     isHTML = false
     permalinkable = true
-    path = ""
+    notAlternative = true
 
 # Configure outputs for different sections
 [outputs]
   home = ["HTML", "MD"]
   page = ["HTML", "MD"]
-  section = ["HTML", "MD"]
+  section = ["HTML"]
 
 # Multilingual configuration
 [languages]
@@ -61,10 +67,7 @@ enableGitInfo = true
   author = "MADD Community"
   githubUrl = "https://github.com/madd-sh"
 
-# Permalinks - clean URLs with .html extension
-[permalinks]
-  [permalinks.page]
-    page = "/:filename.html"
+# Permalinks removed - using uglyURLs = true instead
 
 # Menu configuration
 [menus]

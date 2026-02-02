@@ -2,10 +2,6 @@
 title: "Case Studies"
 description: "Des exemples concrets d'application de MADD en conditions réelles. Ce qui a marché, ce qui a échoué, les leçons apprises."
 layout: "examples"
-url: "/fr/examples.html"
-outputs:
-  - HTML
-  - MD
 ---
 
 ## Plateforme Multi-Tenant en 2 Jours

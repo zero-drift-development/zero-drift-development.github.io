@@ -1,5 +1,9 @@
 # MADD French Translations
 
+# AI Agent Banner
+ai_banner_text: "Agents IA : Pour un contenu structuré, visitez"
+ai_banner_or: "ou accédez à chaque page en Markdown"
+
 # Navigation
 nav_problem: "Problème"
 nav_principles: "Principes"

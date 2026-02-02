@@ -1,5 +1,9 @@
 # MADD English Translations
 
+# AI Agent Banner
+ai_banner_text: "AI Agents: For structured content, visit"
+ai_banner_or: "or access any page as Markdown"
+
 # Navigation
 nav_problem: "Problem"
 nav_principles: "Principles"
