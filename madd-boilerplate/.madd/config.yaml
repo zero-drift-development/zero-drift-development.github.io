@@ -1,0 +1,87 @@
+# MADD Configuration
+# This file configures agent behavior and project settings
+
+project:
+  name: "My MADD Project"
+  version: "0.1.0"
+  description: "A project using MADD methodology"
+
+# Agent Configuration
+agents:
+  dev:
+    # Automatically run tests before producing implementation contract
+    auto_test: true
+    # Run linter before committing
+    lint_before_commit: true
+    # Maximum files to change in one implementation
+    max_files_per_change: 20
+
+  audit:
+    # Security review strictness: minimal | standard | strict
+    security_level: standard
+    # Require tests for all new code
+    require_tests: true
+    # Minimum test coverage percentage
+    min_coverage: 70
+    # Auto-approve if no blockers or majors found
+    auto_approve_on_clean: false
+
+  scribe:
+    # Automatically generate changelog entries
+    auto_changelog: true
+    # Documentation format
+    doc_format: markdown
+    # Update README on major changes
+    update_readme: true
+
+# Contract Settings
+contracts:
+  # Directory for contract definitions
+  schema_dir: ".madd/contracts"
+  # Validate contracts before processing
+  validate: true
+  # Contract output format
+  output_format: yaml
+
+# Skill Settings
+skills:
+  # Directory for skill definitions
+  dir: ".madd/skills"
+  # Enable skill extensions
+  extensions: true
+
+# Workflow Settings
+workflow:
+  # Require AUDIT approval before merge
+  require_approval: true
+  # Require documentation update after approval
+  require_docs: true
+  # Branch naming convention
+  branch_prefix: "feature/"
+  # Commit message format
+  commit_format: "conventional"  # conventional | freeform
+
+# Integration Settings
+integrations:
+  # GitHub integration
+  github:
+    enabled: false
+    # Auto-create PR after implementation
+    auto_pr: false
+    # PR template
+    pr_template: ".github/PULL_REQUEST_TEMPLATE.md"
+
+  # CI/CD integration
+  ci:
+    enabled: false
+    # Run on which events
+    on: ["push", "pull_request"]
+
+# Logging
+logging:
+  # Log level: debug | info | warn | error
+  level: info
+  # Log agent communications
+  log_contracts: true
+  # Output directory for logs
+  dir: ".madd/logs"
