@@ -794,6 +794,86 @@ section {
   font-size: 1.5rem;
 }
 
+/* Contract-centric diagram layout */
+.agents__diagram--contract-centric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  overflow-x: visible;
+}
+
+.agents__writers,
+.agents__readers {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xl);
+}
+
+.agents__arrows-down {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xl);
+  padding: var(--space-xs) 0;
+}
+
+.agent-arrow--down {
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+}
+
+.agent-arrow-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  padding: 0 var(--space-lg);
+}
+
+.contract-hub {
+  padding: var(--space-md);
+}
+
+.contract-hub__inner {
+  background: linear-gradient(135deg, var(--color-accent-glow), transparent);
+  border: 2px solid var(--color-accent);
+  padding: var(--space-lg) var(--space-xl);
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 40px var(--color-accent-glow);
+}
+
+.contract-hub__icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-sm);
+}
+
+.contract-hub__title {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+  margin-bottom: var(--space-xs);
+}
+
+.contract-hub__subtitle {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+.agent-box--writer .agent-box__name {
+  color: var(--color-success, #4ade80);
+}
+
+.agent-box--reader .agent-box__name {
+  color: var(--color-info, #60a5fa);
+}
+
 .agents__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1388,6 +1468,41 @@ kbd {
 
   .agent-arrow {
     transform: rotate(90deg);
+  }
+
+  /* Contract-centric diagram responsive */
+  .agents__diagram--contract-centric {
+    gap: var(--space-xs);
+  }
+
+  .agents__writers,
+  .agents__readers {
+    flex-direction: column;
+    gap: var(--space-md);
+    width: 100%;
+  }
+
+  .agents__writers .agent-box,
+  .agents__readers .agent-box {
+    width: 100%;
+  }
+
+  .agents__arrows-down {
+    flex-direction: column;
+    gap: var(--space-xs);
+    padding: var(--space-sm) 0;
+  }
+
+  .agent-arrow--down {
+    transform: none;
+  }
+
+  .contract-hub__inner {
+    padding: var(--space-md);
+  }
+
+  .contract-hub__title {
+    font-size: 1rem;
   }
 
   /* Fix quickstart tabs - allow wrapping */

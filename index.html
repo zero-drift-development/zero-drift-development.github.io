@@ -221,30 +221,55 @@
         <p data-i18n="agents.subtitle">Chaque agent a un rôle unique. Aucun ne valide son propre travail.</p>
       </header>
 
-      <div class="agents__diagram">
-        <div class="agents__flow">
-          <div class="agent-box">
+      <div class="agents__diagram agents__diagram--contract-centric">
+        <!-- Writers row -->
+        <div class="agents__writers">
+          <div class="agent-box agent-box--writer">
             <div class="agent-box__icon">📋</div>
             <div class="agent-box__name" data-i18n="agents.spec">Spec</div>
-            <div class="agent-box__role" data-i18n="agents.spec_role">Intention</div>
+            <div class="agent-box__role" data-i18n="agents.diagram_spec_role">Formalise l'intention</div>
           </div>
-          <span class="agent-arrow">→</span>
-          <div class="agent-box">
-            <div class="agent-box__icon">⚡</div>
-            <div class="agent-box__name" data-i18n="agents.dev">Dev</div>
-            <div class="agent-box__role" data-i18n="agents.dev_role">Génération</div>
-          </div>
-          <span class="agent-arrow">→</span>
-          <div class="agent-box">
-            <div class="agent-box__icon">🔍</div>
-            <div class="agent-box__name" data-i18n="agents.audit">Audit</div>
-            <div class="agent-box__role" data-i18n="agents.audit_role">Validation</div>
-          </div>
-          <span class="agent-arrow">→</span>
-          <div class="agent-box">
+          <div class="agent-box agent-box--writer">
             <div class="agent-box__icon">📝</div>
             <div class="agent-box__name" data-i18n="agents.scribe">Scribe</div>
-            <div class="agent-box__role" data-i18n="agents.scribe_role">Rétro-Spec</div>
+            <div class="agent-box__role" data-i18n="agents.diagram_scribe_role">Documente la réalité</div>
+          </div>
+        </div>
+
+        <!-- Arrows down to contract -->
+        <div class="agents__arrows-down">
+          <span class="agent-arrow agent-arrow--down">↓</span>
+          <span class="agent-arrow-label" data-i18n="agents.label_feed">alimentent</span>
+          <span class="agent-arrow agent-arrow--down">↓</span>
+        </div>
+
+        <!-- Central Contract -->
+        <div class="contract-hub">
+          <div class="contract-hub__inner">
+            <div class="contract-hub__icon">📜</div>
+            <div class="contract-hub__title" data-i18n="agents.contract_title">Contrat</div>
+            <div class="contract-hub__subtitle" data-i18n="agents.contract_subtitle">Intention + Critères de validation</div>
+          </div>
+        </div>
+
+        <!-- Arrows down from contract -->
+        <div class="agents__arrows-down">
+          <span class="agent-arrow agent-arrow--down">↓</span>
+          <span class="agent-arrow-label" data-i18n="agents.label_use">guide</span>
+          <span class="agent-arrow agent-arrow--down">↓</span>
+        </div>
+
+        <!-- Readers row -->
+        <div class="agents__readers">
+          <div class="agent-box agent-box--reader">
+            <div class="agent-box__icon">⚡</div>
+            <div class="agent-box__name" data-i18n="agents.dev">Dev</div>
+            <div class="agent-box__role" data-i18n="agents.diagram_dev_role">Implémente le contrat</div>
+          </div>
+          <div class="agent-box agent-box--reader">
+            <div class="agent-box__icon">🔍</div>
+            <div class="agent-box__name" data-i18n="agents.audit">Audit</div>
+            <div class="agent-box__role" data-i18n="agents.diagram_audit_role">Vérifie contre le contrat</div>
           </div>
         </div>
       </div>
