@@ -129,30 +129,80 @@
       <p>{{ i18n "agents_subtitle" }}</p>
     </header>
 
-    <div class="agents__diagram">
-      <div class="agents__flow">
-        <div class="agent-box">
+    <div class="agents__diagram agents__diagram--grid">
+      <!-- Row 1: SPEC -->
+      <div class="diagram__row diagram__row--spec">
+        <div class="agent-box agent-box--writer">
           <div class="agent-box__icon">📋</div>
           <div class="agent-box__name">{{ i18n "agents_spec" }}</div>
-          <div class="agent-box__role">{{ i18n "agents_spec_role" }}</div>
+          <div class="agent-box__role">{{ i18n "agents_diagram_spec_role" }}</div>
         </div>
-        <span class="agent-arrow">→</span>
-        <div class="agent-box">
-          <div class="agent-box__icon">⚡</div>
-          <div class="agent-box__name">{{ i18n "agents_dev" }}</div>
-          <div class="agent-box__role">{{ i18n "agents_dev_role" }}</div>
+      </div>
+
+      <!-- Row 2: Arrow SPEC → CONTRACT -->
+      <div class="diagram__row diagram__row--arrow">
+        <span class="agent-arrow agent-arrow--down">↓</span>
+        <span class="agent-arrow-label">{{ i18n "agents_label_feed" }}</span>
+      </div>
+
+      <!-- Row 3: CONTRACT -->
+      <div class="diagram__row diagram__row--contract">
+        <div class="contract-hub">
+          <div class="contract-hub__inner">
+            <div class="contract-hub__icon">📜</div>
+            <div class="contract-hub__title">{{ i18n "agents_contract_title" }}</div>
+            <div class="contract-hub__subtitle">{{ i18n "agents_contract_subtitle" }}</div>
+          </div>
         </div>
-        <span class="agent-arrow">→</span>
-        <div class="agent-box">
-          <div class="agent-box__icon">🔍</div>
-          <div class="agent-box__name">{{ i18n "agents_audit" }}</div>
-          <div class="agent-box__role">{{ i18n "agents_audit_role" }}</div>
+      </div>
+
+      <!-- Row 4: Arrows CONTRACT → agents -->
+      <div class="diagram__row diagram__row--arrows-to-agents">
+        <div class="diagram__arrow-col diagram__arrow-col--dev">
+          <span class="agent-arrow agent-arrow--down">↓</span>
         </div>
-        <span class="agent-arrow">→</span>
-        <div class="agent-box">
-          <div class="agent-box__icon">📝</div>
-          <div class="agent-box__name">{{ i18n "agents_scribe" }}</div>
-          <div class="agent-box__role">{{ i18n "agents_scribe_role" }}</div>
+        <div class="diagram__arrow-col diagram__arrow-col--audit">
+          <span class="agent-arrow agent-arrow--down">↓</span>
+        </div>
+        <div class="diagram__arrow-col diagram__arrow-col--scribe">
+          <span class="agent-arrow agent-arrow--up">↑</span>
+        </div>
+      </div>
+
+      <!-- Row 5: Labels -->
+      <div class="diagram__row diagram__row--labels">
+        <span class="agent-arrow-label">{{ i18n "agents_label_use" }}</span>
+        <span class="agent-arrow-label">{{ i18n "agents_label_retrospec" }}</span>
+      </div>
+
+      <!-- Row 6: DEV, AUDIT, SCRIBE with horizontal arrows -->
+      <div class="diagram__row diagram__row--agents">
+        <div class="diagram__agent-cell">
+          <div class="agent-box agent-box--reader">
+            <div class="agent-box__icon">⚡</div>
+            <div class="agent-box__name">{{ i18n "agents_dev" }}</div>
+            <div class="agent-box__role">{{ i18n "agents_diagram_dev_role" }}</div>
+          </div>
+        </div>
+        <div class="diagram__horizontal-arrow">
+          <span class="agent-arrow">→</span>
+        </div>
+        <div class="diagram__agent-cell">
+          <div class="agent-box agent-box--reader">
+            <div class="agent-box__icon">🔍</div>
+            <div class="agent-box__name">{{ i18n "agents_audit" }}</div>
+            <div class="agent-box__role">{{ i18n "agents_diagram_audit_role" }}</div>
+          </div>
+        </div>
+        <div class="diagram__horizontal-arrow diagram__horizontal-arrow--spacer">
+          <!-- Spacer for equal spacing -->
+        </div>
+        <div class="diagram__agent-cell">
+          <div class="agent-box agent-box--writer">
+            <div class="agent-box__icon">📝</div>
+            <div class="agent-box__name">{{ i18n "agents_scribe" }}</div>
+            <div class="agent-box__role">{{ i18n "agents_diagram_scribe_role" }}</div>
+          </div>
         </div>
       </div>
     </div>

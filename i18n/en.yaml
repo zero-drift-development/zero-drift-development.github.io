@@ -83,6 +83,16 @@ agents_scribe_desc: "The Witness. Documents objective reality."
 agents_scribe_task1: "Analyzes what actually exists"
 agents_scribe_task2: "Compares specs vs reality"
 agents_scribe_task3: "Produces the retro-specification"
+# Diagram-specific labels
+agents_diagram_spec_role: "Formalizes intention"
+agents_diagram_dev_role: "Implements the contract"
+agents_diagram_audit_role: "Verifies against the contract"
+agents_diagram_scribe_role: "Documents reality"
+agents_label_feed: "FEEDS"
+agents_label_use: "GUIDES"
+agents_label_retrospec: "RETRO-SPECIFIES"
+agents_contract_title: "CONTRACT"
+agents_contract_subtitle: "Intention + Validation criteria"
 
 # Comparison Section
 comparison_section_title: "Migration"

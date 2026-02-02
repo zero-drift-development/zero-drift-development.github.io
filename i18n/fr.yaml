@@ -83,6 +83,16 @@ agents_scribe_desc: "Le Témoin. Documente la réalité objective."
 agents_scribe_task1: "Analyse ce qui existe vraiment"
 agents_scribe_task2: "Compare specs vs réalité"
 agents_scribe_task3: "Produit la rétro-spécification"
+# Diagram-specific labels
+agents_diagram_spec_role: "Formalise l'intention"
+agents_diagram_dev_role: "Implémente le contrat"
+agents_diagram_audit_role: "Vérifie contre le contrat"
+agents_diagram_scribe_role: "Documente la réalité"
+agents_label_feed: "alimente"
+agents_label_use: "guide"
+agents_label_retrospec: "rétro-spécifie"
+agents_contract_title: "Contrat"
+agents_contract_subtitle: "Intention + Critères de validation"
 
 # Comparison Section
 comparison_section_title: "Migration"
