@@ -827,7 +827,7 @@ section {
 /* Arrows row - use CSS Grid for precise alignment */
 .diagram__row--arrows-to-agents {
   display: grid;
-  grid-template-columns: 150px 24px 150px 150px;
+  grid-template-columns: 180px 24px 180px 24px 180px;
   gap: var(--space-md);
   justify-content: center;
   padding: var(--space-sm) 0 0 0;
@@ -848,13 +848,13 @@ section {
 }
 
 .diagram__arrow-col--scribe {
-  grid-column: 4;
+  grid-column: 5;
 }
 
 /* Labels row */
 .diagram__row--labels {
   display: grid;
-  grid-template-columns: 150px 24px 150px 150px;
+  grid-template-columns: 180px 24px 180px 24px 180px;
   gap: var(--space-md);
   justify-content: center;
   padding: 0 0 var(--space-sm) 0;
@@ -866,14 +866,14 @@ section {
 }
 
 .diagram__row--labels .agent-arrow-label:last-child {
-  grid-column: 4;
+  grid-column: 5;
   text-align: center;
 }
 
 /* Agents row - use same grid for alignment */
 .diagram__row--agents {
   display: grid;
-  grid-template-columns: 150px 24px 150px 150px;
+  grid-template-columns: 180px 24px 180px 24px 180px;
   gap: var(--space-md);
   justify-content: center;
   align-items: center;
@@ -928,6 +928,7 @@ section {
   text-align: center;
   position: relative;
   box-shadow: 0 0 40px var(--color-accent-glow);
+  min-width: 650px;
 }
 
 .contract-hub__icon {
@@ -957,6 +958,24 @@ section {
 
 .agent-box--reader .agent-box__name {
   color: var(--color-info, #60a5fa);
+}
+
+/* Full-bleed diagram - overflows container like Substack images */
+.agents__diagram--full-bleed {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: var(--space-xl) var(--space-lg);
+  overflow-x: hidden;
+}
+
+.agents__diagram--full-bleed .agents__flow {
+  min-width: auto;
+  flex-wrap: nowrap;
+  justify-content: center;
 }
 
 .agents__grid {
@@ -1431,6 +1450,13 @@ section {
   padding: var(--space-lg);
   overflow-x: auto;
   margin: var(--space-lg) 0;
+}
+
+/* Remove double border when pre is inside code-block */
+.page-content .code-block pre {
+  background: none;
+  border: none;
+  margin: 0;
 }
 
 .page-content pre code {
