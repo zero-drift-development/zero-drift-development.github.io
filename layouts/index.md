@@ -48,6 +48,32 @@
 
 {{ i18n "agents_subtitle" }}
 
+### Architecture Overview
+
+```
+                    ┌─────────────┐
+                    │    SPEC     │
+                    │ (Intention) │
+                    └──────┬──────┘
+                           │
+                       FEEDS ↓
+                           │
+              ┌────────────┴────────────┐
+              │        CONTRACT         │
+              │  Intention + Validation │
+              │        Criteria         │
+              └────┬─────────┬─────┬────┘
+                   │         │     │
+           GUIDES ↓   GUIDES ↓     ↑ RETRO-SPECIFIES
+                   │         │     │
+         ┌─────────┴──┐  ┌───┴───┐ │ ┌──────────┐
+         │    DEV     │→→│ AUDIT │   │  SCRIBE  │
+         │(Generation)│  │(Valid)│   │(Retro-S) │
+         └────────────┘  └───────┘   └──────────┘
+```
+
+**Key principle**: No agent validates its own work. DEV implements, AUDIT verifies, SCRIBE documents reality.
+
 ### Spec Agent
 {{ i18n "agents_spec_desc" }}
 - {{ i18n "agents_spec_task1" }}
@@ -74,6 +100,8 @@
 
 ## {{ i18n "comparison_title" }}
 
+### {{ i18n "comparison_legacy_subtitle" }}
+
 | {{ i18n "comparison_th_aspect" }} | {{ i18n "comparison_th_legacy" }} | {{ i18n "comparison_th_madd" }} |
 |---|---|---|
 | {{ i18n "comparison_row1_aspect" }} | {{ i18n "comparison_row1_legacy" }} | {{ i18n "comparison_row1_madd" }} |
@@ -84,6 +112,23 @@
 | {{ i18n "comparison_row6_aspect" }} | {{ i18n "comparison_row6_legacy" }} | {{ i18n "comparison_row6_madd" }} |
 | {{ i18n "comparison_row7_aspect" }} | {{ i18n "comparison_row7_legacy" }} | {{ i18n "comparison_row7_madd" }} |
 | {{ i18n "comparison_row8_aspect" }} | {{ i18n "comparison_row8_legacy" }} | {{ i18n "comparison_row8_madd" }} |
+
+### {{ i18n "comparison_sdd_subtitle" }}
+
+{{ i18n "comparison_sdd_intro" }}
+
+| {{ i18n "comparison_th_aspect" }} | {{ i18n "comparison_th_bmad" }} | {{ i18n "comparison_th_speckit" }} | {{ i18n "comparison_th_madd" }} |
+|---|---|---|---|
+| {{ i18n "comparison_sdd_row1_aspect" }} | {{ i18n "comparison_sdd_row1_bmad" }} | {{ i18n "comparison_sdd_row1_speckit" }} | {{ i18n "comparison_sdd_row1_madd" }} |
+| {{ i18n "comparison_sdd_row2_aspect" }} | {{ i18n "comparison_sdd_row2_bmad" }} | {{ i18n "comparison_sdd_row2_speckit" }} | {{ i18n "comparison_sdd_row2_madd" }} |
+| {{ i18n "comparison_sdd_row3_aspect" }} | {{ i18n "comparison_sdd_row3_bmad" }} | {{ i18n "comparison_sdd_row3_speckit" }} | {{ i18n "comparison_sdd_row3_madd" }} |
+| {{ i18n "comparison_sdd_row4_aspect" }} | {{ i18n "comparison_sdd_row4_bmad" }} | {{ i18n "comparison_sdd_row4_speckit" }} | {{ i18n "comparison_sdd_row4_madd" }} |
+| {{ i18n "comparison_sdd_row5_aspect" }} | {{ i18n "comparison_sdd_row5_bmad" }} | {{ i18n "comparison_sdd_row5_speckit" }} | {{ i18n "comparison_sdd_row5_madd" }} |
+| {{ i18n "comparison_sdd_row6_aspect" }} | {{ i18n "comparison_sdd_row6_bmad" }} | {{ i18n "comparison_sdd_row6_speckit" }} | {{ i18n "comparison_sdd_row6_madd" }} |
+| {{ i18n "comparison_sdd_row7_aspect" }} | {{ i18n "comparison_sdd_row7_bmad" }} | {{ i18n "comparison_sdd_row7_speckit" }} | {{ i18n "comparison_sdd_row7_madd" }} |
+| {{ i18n "comparison_sdd_row8_aspect" }} | {{ i18n "comparison_sdd_row8_bmad" }} | {{ i18n "comparison_sdd_row8_speckit" }} | {{ i18n "comparison_sdd_row8_madd" }} |
+
+{{ i18n "comparison_sdd_note" }}
 
 ## Pages
 
