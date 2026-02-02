@@ -28,6 +28,40 @@
         <span>MADD</span>
       </a>
 
+      <div class="nav__controls">
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <svg class="theme-toggle__icon--light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-toggle__icon--dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Language Selector -->
+        <div class="lang-selector" id="lang-selector">
+          <button class="lang-selector__btn" aria-expanded="false" aria-haspopup="true">
+            <span id="current-lang">FR</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="lang-selector__dropdown" role="menu">
+            <button class="lang-selector__option" data-lang="fr" role="menuitem">Français</button>
+            <button class="lang-selector__option" data-lang="en" role="menuitem">English</button>
+          </div>
+        </div>
+      </div>
+
       <button class="nav__toggle" aria-label="Menu" aria-expanded="false">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -37,12 +71,12 @@
       </button>
 
       <ul class="nav__links">
-        <li><a href="index.html#problem" class="nav__link">Problème</a></li>
-        <li><a href="index.html#principles" class="nav__link">Principes</a></li>
-        <li><a href="index.html#agents" class="nav__link">Agents</a></li>
-        <li><a href="concepts.html" class="nav__link">Concepts</a></li>
-        <li><a href="skills.html" class="nav__link nav__link--active">Skills</a></li>
-        <li><a href="manifesto.html" class="nav__link">Manifeste</a></li>
+        <li><a href="index.html#problem" class="nav__link" data-i18n="nav.problem">Problème</a></li>
+        <li><a href="index.html#principles" class="nav__link" data-i18n="nav.principles">Principes</a></li>
+        <li><a href="index.html#agents" class="nav__link" data-i18n="nav.agents">Agents</a></li>
+        <li><a href="concepts.html" class="nav__link" data-i18n="nav.concepts">Concepts</a></li>
+        <li><a href="skills.html" class="nav__link nav__link--active" data-i18n="nav.skills">Skills</a></li>
+        <li><a href="manifesto.html" class="nav__link" data-i18n="nav.manifesto">Manifeste</a></li>
         <li><a href="https://github.com/madd-sh" class="nav__link" target="_blank">GitHub ↗</a></li>
       </ul>
     </div>
@@ -411,6 +445,7 @@ Corriger les findings d'audit avec traçabilité complète.
     </div>
   </footer>
 
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
