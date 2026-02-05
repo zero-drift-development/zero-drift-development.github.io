@@ -27,6 +27,8 @@ MADD uses a mandatory architecture of 4 agents with zero conflict of interest:
 - **Audit Agent** (Verifier): Audits without complacency, analyzes produced code, verifies intention/code alignment, identifies drifts and risks
 - **Scribe Agent** (Witness): Documents objective reality, analyzes what actually exists, compares specs vs reality, produces the retro-specification
 
+In practice, a 5th role — the **Orchestrator** — can coordinate the flow between agents, manage dev/audit iteration loops (max 3), and determine validation scope. This role can be human or automated.
+
 ## Pages
 
 - [Home](https://madd-sh.github.io/): Main page with overview, problem statement, principles, and quickstart guide
@@ -52,7 +54,7 @@ A structured, versioned document that formalizes the "why" and "what" before any
 Objective documentation of what was actually implemented, produced by an independent Scribe agent. This becomes the project's memory and the starting point for any new iteration.
 
 ### Skills
-Explicit knowledge contracts that inject up-to-date knowledge into AI agents and define quality criteria between phases. They mediate each transition in the development cycle.
+Explicit knowledge contracts that inject up-to-date knowledge into AI agents and define quality criteria between phases. They mediate each transition in the development cycle. Skills operate at two levels: methodological (how the agent works, often embedded in agent definitions) and domain (what the agent needs to know — organized as public, project, or delta files).
 
 ### Drift Control
 The core framework of MADD: providing the mechanisms to control drift and drive convergence between what you intended and what was actually implemented, through mandatory separation of concerns and independent validation.
@@ -71,6 +73,7 @@ MADD provides a path from Scrum/Kanban/SAFe:
 
 - [GitHub](https://github.com/madd-sh): Source code and contributions
 - [Full Documentation (HTML)](https://madd-sh.github.io/): Complete website with interactive features
+- [MADD Boilerplate](https://github.com/madd-sh/madd-boilerplate): Ready-to-use implementation with 5 agents, distributed JSON contract, and audit recommendation system
 
 ## License
 

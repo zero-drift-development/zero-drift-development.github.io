@@ -2,6 +2,13 @@
 /public/
 /resources/_gen/
 
+# Pre-Hugo stale artifacts (Hugo source is in layouts/, static/, i18n/)
+# These root files were from the pre-Hugo era and should not be re-added
+/*.html
+/css/
+/js/
+/lang/
+
 # Hugo cache
 .hugo_build.lock
 
