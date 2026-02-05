@@ -32,7 +32,7 @@ In practice, a 5th role — the **Orchestrator** — can coordinate the flow bet
 ## Pages
 
 - [Home](https://madd-sh.github.io/): Main page with overview, problem statement, principles, and quickstart guide
-- [Concepts](https://madd-sh.github.io/concepts.html): Core concepts of MADD methodology - Intention Document, Executable Contract, Retro-Specification
+- [Concepts](https://madd-sh.github.io/concepts.html): Core concepts of MADD methodology - Intention Document, Executable Contract, Retro-Specification, Operations
 - [Skills](https://madd-sh.github.io/skills.html): Skills documentation - knowledge contracts for agents
 - [Manifesto](https://madd-sh.github.io/manifesto.html): Full MADD manifesto - founding document
 - [Examples](https://madd-sh.github.io/examples.html): Case studies and examples
@@ -55,6 +55,9 @@ Objective documentation of what was actually implemented, produced by an indepen
 
 ### Skills
 Explicit knowledge contracts that inject up-to-date knowledge into AI agents and define quality criteria between phases. They mediate each transition in the development cycle. Skills operate at two levels: methodological (how the agent works, often embedded in agent definitions) and domain (what the agent needs to know — organized as public, project, or delta files).
+
+### Operations
+The specification of how the system runs beyond development: environments, infrastructure, deployment strategy, and monitoring. Specifying operations upfront — as part of the contract — ensures deployment constraints are considered from the start.
 
 ### Drift Control
 The core framework of MADD: providing the mechanisms to control drift and drive convergence between what you intended and what was actually implemented, through mandatory separation of concerns and independent validation.
