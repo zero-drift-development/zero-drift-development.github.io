@@ -21,6 +21,10 @@ hero_subtitle: "When AI codes faster than you can specify, your methodology must
 hero_cta_start: "Get Started →"
 hero_cta_manifesto: "Read the Manifesto"
 
+# Install Block
+install_label: "Install command"
+install_copy: "Copy to clipboard"
+
 # Problem Section
 problem_section_title: "The Problem"
 problem_title: "AI-assisted development changes everything,<br>except our methodologies."
