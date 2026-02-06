@@ -178,6 +178,12 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
 
+    // Let browser/system shortcuts work (Ctrl/Cmd/Alt combos).
+    if (e.ctrlKey || e.metaKey || e.altKey) {
+      resetGCommand();
+      return;
+    }
+
     // Handle 'g' prefix commands (vim-style)
     if (awaitingGCommand) {
       e.preventDefault();
