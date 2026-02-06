@@ -347,6 +347,47 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   // ========================================
+  // Install Block Tabs & Copy
+  // ========================================
+  const installTabs = document.querySelectorAll('.install-block__tab');
+  const installCommands = document.querySelectorAll('.install-block__command');
+  const installCopyBtn = document.querySelector('.install-block__copy');
+
+  installTabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      const target = this.getAttribute('data-install-tab');
+
+      installTabs.forEach(t => t.classList.remove('install-block__tab--active'));
+      this.classList.add('install-block__tab--active');
+
+      installCommands.forEach(cmd => {
+        cmd.setAttribute('data-active', cmd.id === 'install-' + target ? 'true' : 'false');
+      });
+    });
+  });
+
+  if (installCopyBtn) {
+    installCopyBtn.addEventListener('click', function() {
+      const activeCmd = document.querySelector('.install-block__command[data-active="true"] .install-block__code');
+      if (!activeCmd) return;
+
+      navigator.clipboard.writeText(activeCmd.textContent).then(() => {
+        const copyIcon = installCopyBtn.querySelector('.install-block__copy-icon');
+        const checkIcon = installCopyBtn.querySelector('.install-block__check-icon');
+        installCopyBtn.classList.add('install-block__copy--copied');
+        copyIcon.style.display = 'none';
+        checkIcon.style.display = 'block';
+
+        setTimeout(() => {
+          installCopyBtn.classList.remove('install-block__copy--copied');
+          copyIcon.style.display = '';
+          checkIcon.style.display = 'none';
+        }, 2000);
+      });
+    });
+  }
+
+  // ========================================
   // Smooth scroll for anchor links
   // ========================================
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {

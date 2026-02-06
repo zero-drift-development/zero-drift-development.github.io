@@ -21,6 +21,32 @@
       <a href="#quickstart" class="btn btn--primary">{{ i18n "hero_cta_start" }}</a>
       <a href="{{ "manifesto.html" | relLangURL }}" class="btn btn--secondary">{{ i18n "hero_cta_manifesto" }}</a>
     </div>
+
+    <div class="install-block" role="region" aria-label="{{ i18n "install_label" }}">
+      <div class="install-block__tabs">
+        <button class="install-block__tab install-block__tab--active" data-install-tab="opencode">opencode</button>
+        <button class="install-block__tab" data-install-tab="docker">docker</button>
+      </div>
+      <div class="install-block__body">
+        <div class="install-block__command" id="install-opencode" data-active="true">
+          <span class="install-block__prompt">$</span>
+          <code class="install-block__code">npx degit madd-sh/madd-boilerplate-opencode my-project</code>
+        </div>
+        <div class="install-block__command" id="install-docker" data-active="false">
+          <span class="install-block__prompt">$</span>
+          <code class="install-block__code">npx degit madd-sh/madd-boilerplate-docker-cagent my-project</code>
+        </div>
+        <button class="install-block__copy" aria-label="{{ i18n "install_copy" }}" title="{{ i18n "install_copy" }}">
+          <svg class="install-block__copy-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <svg class="install-block__check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
   </div>
 </section>
 

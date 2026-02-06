@@ -21,6 +21,10 @@ hero_subtitle: "Quand l'IA code plus vite que vous ne spécifiez, votre méthodo
 hero_cta_start: "Commencer →"
 hero_cta_manifesto: "Lire le Manifeste"
 
+# Bloc d'installation
+install_label: "Commande d'installation"
+install_copy: "Copier dans le presse-papiers"
+
 # Problem Section
 problem_section_title: "Le Constat"
 problem_title: "Le développement assisté par IA change tout,<br>sauf nos méthodologies."
