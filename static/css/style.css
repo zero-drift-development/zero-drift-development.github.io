@@ -833,7 +833,13 @@ section {
   border: 1px solid var(--color-border);
   padding: var(--space-lg);
   position: relative;
+  overflow: hidden;
   transition: all var(--transition-base);
+}
+
+.problem__card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .problem__card:hover {
@@ -851,15 +857,29 @@ section {
   top: var(--space-md);
   right: var(--space-md);
   line-height: 1;
+  opacity: 0.7;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .problem__card h3 {
   color: var(--color-warning);
   margin-bottom: var(--space-md);
+  padding-right: 4rem;
 }
 
 .problem__card p {
   font-size: 0.9375rem;
+}
+
+@media (max-width: 640px) {
+  .problem__card::before {
+    font-size: 3rem;
+  }
+
+  .problem__card h3 {
+    padding-right: 3rem;
+  }
 }
 
 /* ========================================
