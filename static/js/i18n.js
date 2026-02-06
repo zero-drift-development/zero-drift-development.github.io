@@ -9,29 +9,54 @@
   // ========================================
   const STORAGE_KEY_THEME = 'madd-theme';
 
+  function getStoredTheme() {
+    try {
+      return localStorage.getItem(STORAGE_KEY_THEME);
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function setStoredTheme(theme) {
+    try {
+      localStorage.setItem(STORAGE_KEY_THEME, theme);
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
+
   // ========================================
   // Theme Management
   // ========================================
   function initTheme() {
-    const savedTheme = localStorage.getItem(STORAGE_KEY_THEME);
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const savedTheme = getStoredTheme();
+    const prefersDark = mediaQuery.matches;
 
     // Use system theme by default if no preference saved
     const theme = savedTheme || (prefersDark ? 'dark' : 'light');
     setTheme(theme, !savedTheme); // Don't persist to localStorage if using system default
 
     // Listen for system theme changes
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      if (!localStorage.getItem(STORAGE_KEY_THEME)) {
+    const handleSystemThemeChange = (e) => {
+      if (!getStoredTheme()) {
         setTheme(e.matches ? 'dark' : 'light');
       }
-    });
+    };
+
+    // Safari < 14 fallback
+    if (typeof mediaQuery.addEventListener === 'function') {
+      mediaQuery.addEventListener('change', handleSystemThemeChange);
+    } else if (typeof mediaQuery.addListener === 'function') {
+      mediaQuery.addListener(handleSystemThemeChange);
+    }
   }
 
   function setTheme(theme, skipPersist) {
     document.documentElement.setAttribute('data-theme', theme);
     if (!skipPersist) {
-      localStorage.setItem(STORAGE_KEY_THEME, theme);
+      setStoredTheme(theme);
     }
   }
 
@@ -49,6 +74,7 @@
     if (!langSelector) return;
 
     const langBtn = langSelector.querySelector('.lang-selector__btn');
+    if (!langBtn) return;
 
     // Toggle dropdown
     langBtn.addEventListener('click', (e) => {
@@ -78,24 +104,30 @@
   // Language Toggle (keyboard shortcut)
   // ========================================
   function toggleLanguage() {
+    const langSelector = document.getElementById('lang-selector');
     const currentLang = document.documentElement.getAttribute('lang') || 'en';
-    const currentPath = window.location.pathname;
 
-    if (currentLang === 'en') {
-      // Switch to French
-      if (currentPath === '/' || currentPath === '/index.html') {
-        window.location.href = '/fr/';
-      } else {
-        window.location.href = '/fr' + currentPath;
-      }
-    } else {
-      // Switch to English
-      if (currentPath === '/fr/' || currentPath === '/fr/index.html') {
-        window.location.href = '/';
-      } else {
-        window.location.href = currentPath.replace('/fr/', '/').replace('/fr', '');
+    // Prefer Hugo-generated translation links when available.
+    if (langSelector) {
+      const options = Array.from(langSelector.querySelectorAll('.lang-selector__option'));
+      const targetOption = options.find((option) => !option.classList.contains('lang-selector__option--active'));
+
+      if (targetOption) {
+        window.location.href = targetOption.href;
+        return;
       }
     }
+
+    // Fallback path logic if selector links are not present.
+    const currentPath = window.location.pathname;
+    if (currentLang === 'en') {
+      window.location.href = (currentPath === '/' || currentPath === '/index.html') ? '/fr/' : '/fr' + currentPath;
+      return;
+    }
+
+    window.location.href = (currentPath === '/fr/' || currentPath === '/fr/index.html')
+      ? '/'
+      : currentPath.replace('/fr/', '/').replace('/fr', '');
   }
 
   // ========================================
@@ -112,7 +144,11 @@
   // Initialize
   // ========================================
   function init() {
-    initTheme();
+    try {
+      initTheme();
+    } catch (_) {
+      // Theme auto-init failed, but explicit toggles should still work.
+    }
     initThemeToggle();
     initLangSelector();
   }
