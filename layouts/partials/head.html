@@ -6,6 +6,7 @@
 <meta name="robots" content="index, follow">
 
 {{- $title := cond .IsHome .Site.Title (printf "%s — MADD" .Title) -}}
+{{- $ogTitle := cond (ne (.Param "ogTitle") "") (.Param "ogTitle") $title -}}
 {{- $description := cond (ne .Description "") .Description .Site.Params.description -}}
 {{- $image := .Site.BaseURL | strings.TrimSuffix "/" | printf "%s/images/og-default.png" -}}
 
@@ -17,7 +18,7 @@
 <!-- Open Graph -->
 <meta property="og:type" content="{{ cond .IsHome "website" "article" }}">
 <meta property="og:site_name" content="MADD — Multi-Agent Driven Development">
-<meta property="og:title" content="{{ $title }}">
+<meta property="og:title" content="{{ $ogTitle }}">
 <meta property="og:description" content="{{ $description }}">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:image" content="{{ $image }}">
@@ -31,7 +32,7 @@
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:title" content="{{ $ogTitle }}">
 <meta name="twitter:description" content="{{ $description }}">
 <meta name="twitter:image" content="{{ $image }}">
 

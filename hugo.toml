@@ -53,14 +53,16 @@ enableGitInfo = true
     weight = 1
     contentDir = "content/en"
     [languages.en.params]
-      description = "MADD - Multi-Agent Driven Development. An open-source methodology for AI-assisted development that provides the framework to control drift and drive convergence."
+      description = "Open-source methodology for AI-assisted development. Control drift and drive convergence between intention and implementation."
+      ogTitle = "MADD — Open-Source Multi-Agent Driven Development Framework"
 
   [languages.fr]
     languageName = "Français"
     weight = 2
     contentDir = "content/fr"
     [languages.fr.params]
-      description = "MADD - Multi-Agent Driven Development. Une méthodologie open source pour le développement assisté par IA qui fournit le cadre pour contrôler la dérive et forcer la convergence."
+      description = "Méthodologie open source pour le développement assisté par IA. Contrôlez la dérive entre intention et implémentation."
+      ogTitle = "MADD — Framework Open Source de Développement Multi-Agents"
 
 # Site parameters
 [params]
