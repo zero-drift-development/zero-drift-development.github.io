@@ -2,8 +2,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 <meta name="keywords" content="MADD, Multi-Agent Driven Development, AI development, methodology, Scrum alternative, AI-assisted development, drift control, convergence">
+<meta name="author" content="{{ .Site.Params.author }}">
+<meta name="robots" content="index, follow">
 
-<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} — MADD{{ end }}</title>
+{{- $title := cond .IsHome .Site.Title (printf "%s — MADD" .Title) -}}
+{{- $description := cond (ne .Description "") .Description .Site.Params.description -}}
+{{- $image := .Site.BaseURL | strings.TrimSuffix "/" | printf "%s/images/og-default.png" -}}
+
+<title>{{ $title }}</title>
+
+<!-- Canonical URL -->
+<link rel="canonical" href="{{ .Permalink }}">
+
+<!-- Open Graph -->
+<meta property="og:type" content="{{ cond .IsHome "website" "article" }}">
+<meta property="og:site_name" content="MADD — Multi-Agent Driven Development">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:image" content="{{ $image }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:locale" content="{{ cond (eq .Lang "fr") "fr_FR" "en_US" }}">
+{{- range .Translations }}
+<meta property="og:locale:alternate" content="{{ cond (eq .Lang "fr") "fr_FR" "en_US" }}">
+{{- end }}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $description }}">
+<meta name="twitter:image" content="{{ $image }}">
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,3 +56,92 @@
 {{ if .OutputFormats.Get "MD" }}
 <link rel="alternate" type="text/markdown" href="{{ (.OutputFormats.Get "MD").Permalink }}">
 {{ end }}
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{{- if .IsHome -}}
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "{{ .Site.BaseURL }}#website",
+      "name": "MADD — Multi-Agent Driven Development",
+      "alternateName": "MADD",
+      "url": "{{ .Site.BaseURL }}",
+      "description": "{{ .Site.Params.description }}",
+      "inLanguage": [
+        { "@type": "Language", "name": "English", "alternateName": "en" },
+        { "@type": "Language", "name": "French", "alternateName": "fr" }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "{{ .Site.BaseURL }}#organization",
+      "name": "MADD Community",
+      "url": "{{ .Site.BaseURL }}",
+      "sameAs": [
+        "{{ .Site.Params.githubUrl }}"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "{{ .Permalink }}#webpage",
+      "url": "{{ .Permalink }}",
+      "name": "{{ $title }}",
+      "description": "{{ $description }}",
+      "isPartOf": { "@id": "{{ .Site.BaseURL }}#website" },
+      "about": { "@id": "{{ .Site.BaseURL }}#organization" },
+      "inLanguage": "{{ .Lang }}"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "MADD",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "description": "An open-source methodology for AI-assisted development that provides the framework to control drift and drive convergence between intention and implementation.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "url": "{{ .Site.BaseURL }}"
+    }
+  ]
+}
+{{- else -}}
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "{{ .Permalink }}#webpage",
+      "url": "{{ .Permalink }}",
+      "name": "{{ $title }}",
+      "description": "{{ $description }}",
+      "isPartOf": { "@id": "{{ .Site.BaseURL }}#website" },
+      "inLanguage": "{{ .Lang }}",
+      "breadcrumb": { "@id": "{{ .Permalink }}#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{ .Permalink }}#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{ .Site.BaseURL }}"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "{{ .Title }}",
+          "item": "{{ .Permalink }}"
+        }
+      ]
+    }
+  ]
+}
+{{- end -}}
+</script>
