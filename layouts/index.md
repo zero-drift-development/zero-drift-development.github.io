@@ -51,48 +51,44 @@
 ### Architecture Overview
 
 ```
-                    ┌─────────────┐
-                    │    SPEC     │
-                    │ (Intention) │
-                    └──────┬──────┘
-                           │
-                       FEEDS ↓
-                           │
-              ┌────────────┴────────────┐
-              │        CONTRACT         │
-              │  Intention + Validation │
-              │        Criteria         │
-              └────┬─────────┬─────┬────┘
-                   │         │     │
-           GUIDES ↓   GUIDES ↓     ↑ RETRO-SPECIFIES
-                   │         │     │
-         ┌─────────┴──┐  ┌───┴───┐ │ ┌──────────┐
-         │    DEV     │→→│ AUDIT │   │  SCRIBE  │
-         │(Generation)│  │(Valid)│   │(Retro-S) │
-         └────────────┘  └───────┘   └──────────┘
+Conductor → Architect → [Contract] → Maker(s) → CI → Breaker(s) → Witness
+                                        ↑                 |
+                                        +-- iterations ---+
 ```
 
-**Key principle**: No agent validates its own work. DEV implements, AUDIT verifies, SCRIBE documents reality.
+**Key principle**: No agent validates its own work. Maker implements, Breaker verifies, Witness documents reality. Domain-specialized pairs ensure deep expertise.
 
-### Spec Agent
+### Conductor Agent
+{{ i18n "agents_conductor_desc" }}
+- {{ i18n "agents_conductor_task1" }}
+- {{ i18n "agents_conductor_task2" }}
+- {{ i18n "agents_conductor_task3" }}
+
+### Architect Agent
 {{ i18n "agents_spec_desc" }}
 - {{ i18n "agents_spec_task1" }}
 - {{ i18n "agents_spec_task2" }}
 - {{ i18n "agents_spec_task3" }}
 
-### Dev Agent
+### Maker Agent
 {{ i18n "agents_dev_desc" }}
 - {{ i18n "agents_dev_task1" }}
 - {{ i18n "agents_dev_task2" }}
 - {{ i18n "agents_dev_task3" }}
 
-### Audit Agent
+### CI Agent
+{{ i18n "agents_ci_desc" }}
+- {{ i18n "agents_ci_task1" }}
+- {{ i18n "agents_ci_task2" }}
+- {{ i18n "agents_ci_task3" }}
+
+### Breaker Agent
 {{ i18n "agents_audit_desc" }}
 - {{ i18n "agents_audit_task1" }}
 - {{ i18n "agents_audit_task2" }}
 - {{ i18n "agents_audit_task3" }}
 
-### Scribe Agent
+### Witness Agent
 {{ i18n "agents_scribe_desc" }}
 - {{ i18n "agents_scribe_task1" }}
 - {{ i18n "agents_scribe_task2" }}
@@ -134,7 +130,6 @@
 
 - [Concepts]({{ "concepts.md" | relLangURL }}): {{ i18n "concepts_page_intro" | plainify }}
 - [Skills]({{ "skills.md" | relLangURL }}): {{ i18n "skills_page_intro" | plainify }}
-- [Manifesto]({{ "manifesto.md" | relLangURL }}): {{ i18n "manifesto_page_intro" | plainify }}
 - [Examples]({{ "examples.md" | relLangURL }}): {{ i18n "examples_page_intro" | plainify }}
 
 ## Links

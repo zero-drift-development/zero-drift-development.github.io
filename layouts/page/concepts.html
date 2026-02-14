@@ -12,43 +12,105 @@
 <main class="page-content">
   <div class="container container--narrow">
 
+    <!-- Workflow -->
+    <h2 id="workflow">{{ i18n "concepts_workflow_title" }}</h2>
+
+    <p>{{ i18n "concepts_workflow_intro" }}</p>
+
+    <div class="agents__diagram">
+      <div class="agents__flow" style="min-width: 500px;">
+        <div class="agent-box agent-box--conductor">
+          <div class="agent-box__icon">🎯</div>
+          <div class="agent-box__name">Conductor</div>
+        </div>
+        <span class="agent-arrow">→</span>
+        <div class="agent-box agent-box--writer">
+          <div class="agent-box__icon">📋</div>
+          <div class="agent-box__name">Architect</div>
+        </div>
+        <span class="agent-arrow">→</span>
+        <div class="agent-box agent-box--reader">
+          <div class="agent-box__icon">⚡</div>
+          <div class="agent-box__name">Maker</div>
+        </div>
+        <span class="agent-arrow">→</span>
+        <div class="agent-box agent-box--ci">
+          <div class="agent-box__icon">🔧</div>
+          <div class="agent-box__name">CI</div>
+        </div>
+        <span class="agent-arrow">→</span>
+        <div class="agent-box agent-box--reader">
+          <div class="agent-box__icon">🔍</div>
+          <div class="agent-box__name">Breaker</div>
+        </div>
+        <span class="agent-arrow">→</span>
+        <div class="agent-box agent-box--writer">
+          <div class="agent-box__icon">📝</div>
+          <div class="agent-box__name">Witness</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="quickstart__steps">
+      <div class="quickstart__step">
+        <span class="quickstart__step-number">1</span>
+        <div>
+          <h4>{{ i18n "concepts_workflow_phase1_title" }} <small style="opacity: 0.6; font-weight: normal;">{{ i18n "concepts_workflow_phase1_agents" }}</small></h4>
+          <p>{{ i18n "concepts_workflow_phase1_desc" }}</p>
+        </div>
+      </div>
+      <div class="quickstart__step">
+        <span class="quickstart__step-number">2</span>
+        <div>
+          <h4>{{ i18n "concepts_workflow_phase2_title" }} <small style="opacity: 0.6; font-weight: normal;">{{ i18n "concepts_workflow_phase2_agents" }}</small></h4>
+          <p>{{ i18n "concepts_workflow_phase2_desc" }}</p>
+        </div>
+      </div>
+      <div class="quickstart__step">
+        <span class="quickstart__step-number">3</span>
+        <div>
+          <h4>{{ i18n "concepts_workflow_phase3_title" }} <small style="opacity: 0.6; font-weight: normal;">{{ i18n "concepts_workflow_phase3_agents" }}</small></h4>
+          <p>{{ i18n "concepts_workflow_phase3_desc" }}</p>
+        </div>
+      </div>
+    </div>
+
+    <p><strong>{{ i18n "concepts_workflow_principle" }}</strong></p>
+
     <!-- Intention Document -->
     <h2 id="intention">{{ i18n "concepts_intention_title" }}</h2>
 
     <p>{{ i18n "concepts_intention_intro" | safeHTML }}</p>
 
-    <p>{{ i18n "concepts_intention_questions" }}</p>
-    <ul>
-      <li>{{ i18n "concepts_intention_q1" | safeHTML }}</li>
-      <li>{{ i18n "concepts_intention_q2" | safeHTML }}</li>
-      <li>{{ i18n "concepts_intention_q3" | safeHTML }}</li>
-    </ul>
+    <p>{{ i18n "concepts_intention_desc" | safeHTML }}</p>
 
-    <h3>{{ i18n "concepts_intention_structure_title" }}</h3>
+    <h3>{{ i18n "concepts_intention_fields_title" }}</h3>
 
-    <div class="code-block">
-      <pre><code># Intention Document: [Feature Name]
-
-## Context
-Why this feature exists. The business problem it solves.
-
-## Objective
-What the user will be able to do once the feature is delivered.
-
-## Requirements
-- [ ] REQ-001: Requirement description
-- [ ] REQ-002: Requirement description
-- [ ] REQ-003: Requirement description
-
-## Validation Criteria
-- Criterion 1: How to verify REQ-001 is implemented
-- Criterion 2: How to verify REQ-002 is implemented
-
-## Out of Scope
-What is NOT included in this intention.
-
-## Dependencies
-Prerequisites needed before starting.</code></pre>
+    <div class="not-table">
+      <div class="not-row">
+        <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">{{ i18n "concepts_intention_field1" }}</span>
+        <span class="not-row__right">{{ i18n "concepts_intention_field1_desc" }}</span>
+      </div>
+      <div class="not-row">
+        <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">{{ i18n "concepts_intention_field2" }}</span>
+        <span class="not-row__right">{{ i18n "concepts_intention_field2_desc" }}</span>
+      </div>
+      <div class="not-row">
+        <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">{{ i18n "concepts_intention_field3" }}</span>
+        <span class="not-row__right">{{ i18n "concepts_intention_field3_desc" }}</span>
+      </div>
+      <div class="not-row">
+        <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">{{ i18n "concepts_intention_field4" }}</span>
+        <span class="not-row__right">{{ i18n "concepts_intention_field4_desc" }}</span>
+      </div>
+      <div class="not-row">
+        <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">{{ i18n "concepts_intention_field5" }}</span>
+        <span class="not-row__right">{{ i18n "concepts_intention_field5_desc" }}</span>
+      </div>
+      <div class="not-row">
+        <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">{{ i18n "concepts_intention_field6" }}</span>
+        <span class="not-row__right">{{ i18n "concepts_intention_field6_desc" }}</span>
+      </div>
     </div>
 
     <h3>{{ i18n "concepts_intention_practices_title" }}</h3>
@@ -65,6 +127,8 @@ Prerequisites needed before starting.</code></pre>
     <p>{{ i18n "concepts_contract_intro" | safeHTML }}</p>
 
     <p>{{ i18n "concepts_contract_desc" }}</p>
+
+    <p>{{ i18n "concepts_contract_hub" }}</p>
 
     <h3>{{ i18n "concepts_contract_types_title" }}</h3>
 
@@ -94,7 +158,28 @@ Prerequisites needed before starting.</code></pre>
     <h3>{{ i18n "concepts_contract_principle_title" }}</h3>
     <p>{{ i18n "concepts_contract_principle" | safeHTML }}</p>
 
-    <p>{{ i18n "concepts_contract_flow" }}</p>
+    <!-- Fractions -->
+    <h2 id="fractions">{{ i18n "concepts_fractions_title" }}</h2>
+
+    <p>{{ i18n "concepts_fractions_intro" | safeHTML }}</p>
+
+    <p>{{ i18n "concepts_fractions_desc" }}</p>
+
+    <h3>{{ i18n "concepts_fractions_rules_title" }}</h3>
+    <ul>
+      <li>{{ i18n "concepts_fractions_rule1" | safeHTML }}</li>
+      <li>{{ i18n "concepts_fractions_rule2" | safeHTML }}</li>
+      <li>{{ i18n "concepts_fractions_rule3" | safeHTML }}</li>
+      <li>{{ i18n "concepts_fractions_rule4" | safeHTML }}</li>
+    </ul>
+
+    <h3>{{ i18n "concepts_fractions_why_title" }}</h3>
+    <ul>
+      <li>{{ i18n "concepts_fractions_why1" | safeHTML }}</li>
+      <li>{{ i18n "concepts_fractions_why2" | safeHTML }}</li>
+      <li>{{ i18n "concepts_fractions_why3" | safeHTML }}</li>
+      <li>{{ i18n "concepts_fractions_why4" | safeHTML }}</li>
+    </ul>
 
     <!-- Retro-Specification -->
     <h2 id="retrospec">{{ i18n "concepts_retrospec_title" }}</h2>
@@ -137,51 +222,8 @@ Prerequisites needed before starting.</code></pre>
       <li>{{ i18n "concepts_retrospec_content5" | safeHTML }}</li>
     </ul>
 
-    <h3>{{ i18n "concepts_retrospec_usage_title" }}</h3>
-    <p>{{ i18n "concepts_retrospec_usage" }}</p>
-
-    <!-- MADD Cycle -->
-    <h2 id="cycle">{{ i18n "concepts_cycle_title" }}</h2>
-
-    <p>{{ i18n "concepts_cycle_intro" }}</p>
-
-    <div class="agents__diagram">
-      <div class="agents__flow" style="min-width: 500px;">
-        <div class="agent-box">
-          <div class="agent-box__icon">📋</div>
-          <div class="agent-box__name">{{ i18n "concepts_cycle_intention" }}</div>
-          <div class="agent-box__role">{{ i18n "concepts_cycle_agent_spec" }}</div>
-        </div>
-        <span class="agent-arrow">→</span>
-        <div class="agent-box">
-          <div class="agent-box__icon">📜</div>
-          <div class="agent-box__name">{{ i18n "concepts_cycle_contract" }}</div>
-          <div class="agent-box__role">{{ i18n "concepts_cycle_agent_spec" }}</div>
-        </div>
-        <span class="agent-arrow">→</span>
-        <div class="agent-box">
-          <div class="agent-box__icon">⚡</div>
-          <div class="agent-box__name">{{ i18n "concepts_cycle_code" }}</div>
-          <div class="agent-box__role">{{ i18n "concepts_cycle_agent_dev" }}</div>
-        </div>
-        <span class="agent-arrow">→</span>
-        <div class="agent-box">
-          <div class="agent-box__icon">📝</div>
-          <div class="agent-box__name">{{ i18n "concepts_cycle_retrospec" }}</div>
-          <div class="agent-box__role">{{ i18n "concepts_cycle_agent_scribe" }}</div>
-        </div>
-      </div>
-    </div>
-
-    <ol>
-      <li>{{ i18n "concepts_cycle_step1" | safeHTML }}</li>
-      <li>{{ i18n "concepts_cycle_step2" | safeHTML }}</li>
-      <li>{{ i18n "concepts_cycle_step3" | safeHTML }}</li>
-      <li>{{ i18n "concepts_cycle_step4" | safeHTML }}</li>
-      <li>{{ i18n "concepts_cycle_step5" | safeHTML }}</li>
-    </ol>
-
-    <p>{{ i18n "concepts_cycle_conclusion" | safeHTML }}</p>
+    <h3>{{ i18n "concepts_retrospec_anchor_title" }}</h3>
+    <p>{{ i18n "concepts_retrospec_anchor" | safeHTML }}</p>
 
     <!-- Operations -->
     <h2 id="operations">{{ i18n "concepts_operations_title" }}</h2>
@@ -224,7 +266,7 @@ Prerequisites needed before starting.</code></pre>
     <p>{{ i18n "concepts_cta_text" }}</p>
     <div class="hero__cta">
       <a href="{{ "skills.html" | relLangURL }}" class="btn btn--primary">{{ i18n "concepts_cta_btn_skills" }}</a>
-      <a href="{{ "manifesto.html" | relLangURL }}" class="btn btn--secondary">{{ i18n "concepts_cta_btn_manifesto" }}</a>
+      <a href="{{ "examples.html" | relLangURL }}" class="btn btn--secondary">{{ i18n "concepts_cta_btn_examples" }}</a>
     </div>
   </div>
 </section>

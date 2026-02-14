@@ -18,23 +18,38 @@ MADD is built on 6 fundamental principles:
 
 6. **Skills are knowledge contracts** - AI has outdated training data. Skills inject up-to-date knowledge and define quality criteria between phases.
 
-## The 4-Agent Architecture
+## The 6-Agent Architecture
 
-MADD uses a mandatory architecture of 4 agents with zero conflict of interest:
+MADD uses a mandatory architecture of 6 agents with zero conflict of interest:
 
-- **Spec Agent** (Intention Architect): Formalizes the "why" and "what", produces the Intention Document, defines validation criteria
-- **Dev Agent** (Developer): Transforms intention into code, respects the contract, documents technical choices
-- **Audit Agent** (Verifier): Audits without complacency, analyzes produced code, verifies intention/code alignment, identifies drifts and risks
-- **Scribe Agent** (Witness): Documents objective reality, analyzes what actually exists, compares specs vs reality, produces the retro-specification
+- **Conductor**: Orchestrates the workflow — manages fraction-based iteration cycles, detects technical domains from task annotations, dispatches domain-specialized Maker/Breaker pairs
+- **Architect Agent** (Intention Architect): Formalizes the "why" and "what", produces the Intention Document, defines validation criteria, annotates tasks with domains
+- **Maker Agent** (Implementer): Domain-specialized implementation guided by skills. Transforms intention into code, respects the contract
+- **CI Agent** (Quality Gate): Automated build, lint, type-check, and test validation between Maker and Breaker. If CI fails, Maker is sent back immediately
+- **Breaker Agent** (Challenger): Domain-specialized verification. Challenges without complacency, identifies drifts and risks. Read-only — cannot modify code
+- **Witness Agent** (Observer): Documents objective reality. Analyzes what actually exists, compares specs vs reality, produces the retro-specification
 
-In practice, a 5th role — the **Orchestrator** — can coordinate the flow between agents, manage dev/audit iteration loops (max 3), and determine validation scope. This role can be human or automated.
+## Domain Specialization (v2)
+
+The Maker and Breaker are template agents specialized by domain skills. The Conductor detects domains from task annotations and invokes one Maker/Breaker pair per domain:
+
+| Domain | Maker produces | Breaker audits |
+|--------|---------------|----------------|
+| Database | Normalization, RLS, audit logging, indexing | Missing normalization, RLS, indexes, cascade risks |
+| API | REST patterns, validation, rate limiting, pagination | Missing validation, auth, CORS, N+1 queries |
+| Frontend | Component architecture, state management, accessibility | Performance, bundle size, accessibility, XSS |
+| Security | OIDC/JWKS, RBAC, encryption, mTLS, headers | OWASP Top 10, privilege escalation, secrets |
+| Infrastructure | Docker multi-stage, Compose, Terraform, secrets | Running as root, healthchecks, hardcoded secrets |
+
+## Fraction-Based Workflow
+
+Work is decomposed into fractions — small groups of 2-6 related tasks. Each fraction goes through its own Maker → CI → Breaker cycle. Benefits: context control, focused audit, crash recovery, incremental delivery.
 
 ## Pages
 
-- [Home](https://madd.sh/): Main page with overview, problem statement, principles, and quickstart guide
-- [Concepts](https://madd.sh/concepts.html): Core concepts of MADD methodology - Intention Document, Executable Contract, Retro-Specification, Operations
-- [Skills](https://madd.sh/skills.html): Skills documentation - knowledge contracts for agents
-- [Manifesto](https://madd.sh/manifesto.html): Full MADD manifesto - founding document
+- [Home](https://madd.sh/): Main page with overview, problem statement, principles, agents, domain specialization, and quickstart guide
+- [Concepts](https://madd.sh/concepts.html): Core concepts — Intention Document, Executable Contract, Fractions, Retro-Specification, Operations
+- [Skills](https://madd.sh/skills.html): Skills documentation — knowledge contracts for agents, including domain-specialized skills
 - [Examples](https://madd.sh/examples.html): Case studies and examples
 
 ## Pages (French versions)
@@ -42,7 +57,6 @@ In practice, a 5th role — the **Orchestrator** — can coordinate the flow bet
 - [Accueil](https://madd.sh/fr/): Page principale
 - [Concepts](https://madd.sh/fr/concepts.html): Les concepts MADD
 - [Skills](https://madd.sh/fr/skills.html): Les Skills MADD
-- [Manifeste](https://madd.sh/fr/manifesto.html): Le Manifeste MADD
 - [Exemples](https://madd.sh/fr/examples.html): Études de cas
 
 ## Key Concepts
@@ -51,13 +65,16 @@ In practice, a 5th role — the **Orchestrator** — can coordinate the flow bet
 A structured, versioned document that formalizes the "why" and "what" before any "how". It serves as the contract between human intention and AI execution.
 
 ### Retro-Specification
-Objective documentation of what was actually implemented, produced by an independent Scribe agent. This becomes the project's memory and the starting point for any new iteration.
+Objective documentation of what was actually implemented, produced by an independent Witness agent. This becomes the project's memory and the starting point for any new iteration.
 
 ### Skills
-Explicit knowledge contracts that inject up-to-date knowledge into AI agents and define quality criteria between phases. They mediate each transition in the development cycle. Skills operate at two levels: methodological (how the agent works, often embedded in agent definitions) and domain (what the agent needs to know — organized as public, project, or delta files).
+Explicit knowledge contracts that inject up-to-date knowledge into AI agents and define quality criteria between phases. Skills operate at two levels: methodological (how the agent works) and domain (what the agent needs to know — organized as public, project, or delta files). Domain skills specialize Maker/Breaker agents per technical domain.
+
+### Fractions
+Small, independently deliverable units of work (2-6 tasks). Each fraction completes its own Maker → CI → Breaker cycle before the next one starts. Enables context control, focused audit, crash recovery, and incremental delivery.
 
 ### Operations
-The specification of how the system runs beyond development: environments, infrastructure, deployment strategy, and monitoring. Specifying operations upfront — as part of the contract — ensures deployment constraints are considered from the start.
+The specification of how the system runs beyond development: environments, infrastructure, deployment strategy, and monitoring.
 
 ### Drift Control
 The core framework of MADD: providing the mechanisms to control drift and drive convergence between what you intended and what was actually implemented, through mandatory separation of concerns and independent validation.
@@ -68,7 +85,7 @@ MADD provides a path from Scrum/Kanban/SAFe:
 - Sprints → Intention Cycles (no fixed duration)
 - Stories → Intention Docs + Executable Contracts
 - Estimation → Obsolete (development is too fast)
-- Code Review → Independent Agent Audit
+- Code Review → Independent Agent Audit (domain-specialized Breaker)
 - Definition of Done → Formal Audit Skill
 - Retrospectives → Consolidations (improve skills, not process)
 
@@ -76,7 +93,7 @@ MADD provides a path from Scrum/Kanban/SAFe:
 
 - [GitHub](https://github.com/madd-sh): Source code and contributions
 - [Full Documentation (HTML)](https://madd.sh/): Complete website with interactive features
-- [MADD Boilerplate](https://github.com/madd-sh/madd-boilerplate): Ready-to-use implementation with 5 agents, distributed JSON contract, and audit recommendation system
+- [MADD Boilerplates](https://github.com/madd-sh): Ready-to-use implementations for Claude Code, Codex, OpenCode, Docker, and Mistral Vibe
 
 ## License
 

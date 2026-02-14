@@ -1,5 +1,6 @@
 ---
 title: "MADD Concepts"
-description: "Three artifacts structure every MADD cycle: the Intention Document, the Executable Contract, and the Retro-Specification."
+description: "Five artifacts and a structured workflow eliminate drift between intention and implementation: Intention Document, Executable Contract, Fractions, Retro-Specification, and Operations."
+type: "page"
 layout: "concepts"
 ---

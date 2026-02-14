@@ -1,6 +1,7 @@
 ---
 title: "Case Studies"
 description: "Des exemples concrets d'application de MADD en conditions réelles. Ce qui a marché, ce qui a échoué, les leçons apprises."
+type: "page"
 layout: "examples"
 ---
 
@@ -37,15 +38,15 @@ Avec une équipe classique et Scrum : planning, sprints, code reviews, QA... est
 
 <div class="not-table">
   <div class="not-row">
-    <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">Agent Spec (Gemini)</span>
+    <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">Agent Architect (Gemini)</span>
     <span class="not-row__right">Roadmap, Intention Documents, priorisation des fondations</span>
   </div>
   <div class="not-row">
-    <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">Agent Dev (Opus)</span>
+    <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">Agent Maker (Opus)</span>
     <span class="not-row__right">Implémentation guidée par les contrats</span>
   </div>
   <div class="not-row">
-    <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">Agent Audit (GPT)</span>
+    <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">Agent Breaker (GPT)</span>
     <span class="not-row__right">Due diligence sur chaque livraison</span>
   </div>
 </div>
@@ -53,15 +54,15 @@ Avec une équipe classique et Scrum : planning, sprints, code reviews, QA... est
 ### Ce qui a fait la différence
 
 1. **Fondations d'abord** — L'isolation multi-tenant a été implémentée avant toute feature. Pas de "on verra plus tard".
-2. **Contrats exécutables** — Chaque requirement avait des tests. L'Agent Dev ne pouvait pas "tricher".
-3. **Audit indépendant** — GPT a détecté 3 failles de sécurité que l'Agent Dev avait manquées.
+2. **Contrats exécutables** — Chaque requirement avait des tests. L'Agent Maker ne pouvait pas "tricher".
+3. **Audit indépendant** — GPT a détecté 3 failles de sécurité que l'Agent Maker avait manquées.
 4. **Pas de dette cachée** — La rétro-spec a documenté 12 limitations techniques dès le départ.
 
 ### Les frictions rencontrées
 
 - Gemini avait des connaissances obsolètes sur Next.js 14 → Skills delta nécessaires
 - Opus avait tendance à sur-ingénierer → Contraintes explicites dans le Development Skill
-- Le Scribe était initialement l'Agent Dev lui-même → Biais détecté, séparation forcée
+- Le Witness était initialement l'Agent Maker lui-même → Biais détecté, séparation forcée
 
 ### Résultats mesurables
 

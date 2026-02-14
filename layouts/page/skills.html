@@ -12,21 +12,49 @@
 <main class="page-content">
   <div class="container container--narrow">
 
-    <!-- Why Skills -->
-    <h2 id="why">{{ i18n "skills_why_title" }}</h2>
+    <!-- The Knowledge Gap -->
+    <h2 id="gap">{{ i18n "skills_gap_title" }}</h2>
 
-    <p>{{ i18n "skills_why_intro" }}</p>
+    <p>{{ i18n "skills_gap_intro" }}</p>
     <ul>
-      <li>{{ i18n "skills_why_item1" }}</li>
-      <li>{{ i18n "skills_why_item2" }}</li>
-      <li>{{ i18n "skills_why_item3" }}</li>
-      <li>{{ i18n "skills_why_item4" }}</li>
+      <li>{{ i18n "skills_gap_item1" }}</li>
+      <li>{{ i18n "skills_gap_item2" }}</li>
+      <li>{{ i18n "skills_gap_item3" }}</li>
+      <li>{{ i18n "skills_gap_item4" }}</li>
     </ul>
 
-    <p>{{ i18n "skills_why_conclusion" | safeHTML }}</p>
+    <p>{{ i18n "skills_gap_conclusion" | safeHTML }}</p>
 
-    <!-- Types of Skills -->
+    <!-- Skill Anatomy -->
+    <h2 id="anatomy">{{ i18n "skills_anatomy_title" }}</h2>
+
+    <p>{{ i18n "skills_anatomy_intro" }}</p>
+
+    <div class="not-table">
+      <div class="not-row">
+        <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">{{ i18n "skills_anatomy_field1" }}</span>
+        <span class="not-row__right">{{ i18n "skills_anatomy_field1_desc" }}</span>
+      </div>
+      <div class="not-row">
+        <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">{{ i18n "skills_anatomy_field2" }}</span>
+        <span class="not-row__right">{{ i18n "skills_anatomy_field2_desc" }}</span>
+      </div>
+      <div class="not-row">
+        <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">{{ i18n "skills_anatomy_field3" }}</span>
+        <span class="not-row__right">{{ i18n "skills_anatomy_field3_desc" }}</span>
+      </div>
+      <div class="not-row">
+        <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">{{ i18n "skills_anatomy_field4" }}</span>
+        <span class="not-row__right">{{ i18n "skills_anatomy_field4_desc" }}</span>
+      </div>
+    </div>
+
+    <p>{{ i18n "skills_anatomy_note" | safeHTML }}</p>
+
+    <!-- Three Skill Types -->
     <h2 id="types">{{ i18n "skills_types_title" }}</h2>
+
+    <p>{{ i18n "skills_types_intro" }}</p>
 
     <div class="not-table">
       <div class="not-row">
@@ -43,264 +71,76 @@
       </div>
     </div>
 
-    <!-- Specification Skill -->
-    <h2 id="specification">{{ i18n "skills_spec_skill_title" }}</h2>
+    <!-- Transition Skills -->
+    <h2 id="transitions">{{ i18n "skills_transitions_title" }}</h2>
 
-    <p>{{ i18n "skills_spec_skill_agent" | safeHTML }}</p>
-    <p>{{ i18n "skills_spec_skill_transition" | safeHTML }}</p>
+    <p>{{ i18n "skills_transitions_intro" }}</p>
 
-    <p>{{ i18n "skills_spec_skill_desc" }}</p>
+    <h3>{{ i18n "skills_transition_spec_title" }}</h3>
+    <p><strong>{{ i18n "skills_transition_spec_agents" }}</strong> — {{ i18n "skills_transition_spec_flow" }}</p>
+    <p>{{ i18n "skills_transition_spec_desc" }}</p>
 
-    <h3>{{ i18n "skills_spec_skill_content_title" }}</h3>
-    <div class="code-block">
-      <pre><code># Specification Skill
+    <h3>{{ i18n "skills_transition_dev_title" }}</h3>
+    <p><strong>{{ i18n "skills_transition_dev_agents" }}</strong> — {{ i18n "skills_transition_dev_flow" }}</p>
+    <p>{{ i18n "skills_transition_dev_desc" }}</p>
 
-## Objective
-Produce structured Intention Documents and executable contracts.
+    <h3>{{ i18n "skills_transition_audit_title" }}</h3>
+    <p><strong>{{ i18n "skills_transition_audit_agents" }}</strong> — {{ i18n "skills_transition_audit_flow" }}</p>
+    <p>{{ i18n "skills_transition_audit_desc" }}</p>
 
-## Mandatory Intention Document Structure
-- Context: Business problem to solve
-- Objective: What the user will be able to do
-- Requirements: Numbered list (REQ-XXX)
-- Validation Criteria: Minimum one per requirement
-- Out of Scope: What is not included
-- Dependencies: Technical prerequisites
+    <h3>{{ i18n "skills_transition_retrospec_title" }}</h3>
+    <p><strong>{{ i18n "skills_transition_retrospec_agents" }}</strong> — {{ i18n "skills_transition_retrospec_flow" }}</p>
+    <p>{{ i18n "skills_transition_retrospec_desc" }}</p>
 
-## Rules
-- Each requirement MUST have at least one validation criterion
-- Criteria MUST be automatable (test, schema, assertion)
-- Out of scope is MANDATORY (prevents drift)
-- No "how" — only "why" and "what"
+    <h3>{{ i18n "skills_transition_correction_title" }}</h3>
+    <p><strong>{{ i18n "skills_transition_correction_agents" }}</strong> — {{ i18n "skills_transition_correction_flow" }}</p>
+    <p>{{ i18n "skills_transition_correction_desc" }}</p>
 
-## Anti-patterns to avoid
-- Vague requirements ("improve performance")
-- Subjective criteria ("must be fast")
-- Implicit scope (anything unsaid is out of scope)
+    <!-- Domain Skills -->
+    <h2 id="domain-skills">{{ i18n "skills_domain_title" }}</h2>
 
-## Output format
-Structured markdown, versionable with code.</code></pre>
+    <p>{{ i18n "skills_domain_intro" | safeHTML }}</p>
+
+    <div class="comparison__table-wrapper">
+      <table class="comparison__table">
+        <thead>
+          <tr>
+            <th>{{ i18n "skills_domain_table_domain" }}</th>
+            <th>{{ i18n "skills_domain_table_maker" }}</th>
+            <th>{{ i18n "skills_domain_table_breaker" }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ i18n "skills_domain_db" }}</td>
+            <td>{{ i18n "skills_domain_db_maker" }}</td>
+            <td>{{ i18n "skills_domain_db_breaker" }}</td>
+          </tr>
+          <tr>
+            <td>{{ i18n "skills_domain_api" }}</td>
+            <td>{{ i18n "skills_domain_api_maker" }}</td>
+            <td>{{ i18n "skills_domain_api_breaker" }}</td>
+          </tr>
+          <tr>
+            <td>{{ i18n "skills_domain_frontend" }}</td>
+            <td>{{ i18n "skills_domain_frontend_maker" }}</td>
+            <td>{{ i18n "skills_domain_frontend_breaker" }}</td>
+          </tr>
+          <tr>
+            <td>{{ i18n "skills_domain_security" }}</td>
+            <td>{{ i18n "skills_domain_security_maker" }}</td>
+            <td>{{ i18n "skills_domain_security_breaker" }}</td>
+          </tr>
+          <tr>
+            <td>{{ i18n "skills_domain_infra" }}</td>
+            <td>{{ i18n "skills_domain_infra_maker" }}</td>
+            <td>{{ i18n "skills_domain_infra_breaker" }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
-    <!-- Development Skill -->
-    <h2 id="development">{{ i18n "skills_dev_skill_title" }}</h2>
-
-    <p>{{ i18n "skills_dev_skill_agent" | safeHTML }}</p>
-    <p>{{ i18n "skills_dev_skill_transition" | safeHTML }}</p>
-
-    <p>{{ i18n "skills_dev_skill_desc" }}</p>
-
-    <h3>{{ i18n "skills_dev_skill_content_title" }}</h3>
-    <div class="code-block">
-      <pre><code># Development Skill
-
-## Tech Stack
-- Framework: Next.js 14 (App Router)
-- Language: TypeScript strict
-- Style: Tailwind CSS
-- State: Zustand
-- Tests: Vitest + Playwright
-
-## Code Conventions
-- Naming: camelCase for variables, PascalCase for components
-- Files: kebab-case
-- Exports: Named exports only (no default)
-
-## Mandatory Patterns
-- Server Components by default, Client Components explicit
-- Zod validation on all user inputs
-- Error boundaries per route
-
-## Forbidden Anti-patterns
-- TypeScript any
-- console.log in production
-- Direct state mutations
-- Relative imports beyond 2 levels (../../..)
-
-## File Structure
-/src
-  /app          → Next.js routes
-  /components   → Reusable components
-  /lib          → Utilities and helpers
-  /hooks        → Custom hooks
-  /types        → TypeScript types
-  /services     → Business logic</code></pre>
-    </div>
-
-    <!-- Audit Skill -->
-    <h2 id="audit">{{ i18n "skills_audit_skill_title" }}</h2>
-
-    <p>{{ i18n "skills_audit_skill_agent" | safeHTML }}</p>
-    <p>{{ i18n "skills_audit_skill_transition" | safeHTML }}</p>
-
-    <p>{{ i18n "skills_audit_skill_desc" }}</p>
-
-    <h3>{{ i18n "skills_audit_skill_content_title" }}</h3>
-    <div class="code-block">
-      <pre><code># Audit Skill (Due Diligence)
-
-## Objective
-Analyze produced code and verify alignment with intention.
-
-## Analysis Criteria
-
-### 1. Functional Alignment
-- Is each Intention Document requirement implemented?
-- Do validation criteria pass?
-- Is there out-of-scope code?
-
-### 2. Technical Quality
-- Development Skill conventions respected
-- Listed anti-patterns absent
-- Sufficient test coverage
-
-### 3. Security
-- User input validation
-- No SQL/XSS/Command injection
-- No secrets exposed in code
-
-### 4. Technical Debt
-- TODO/FIXME identified and documented
-- Temporary workarounds flagged
-- Obsolete dependencies
-
-## Report Format
-## Audit Report - [Feature]
-
-### Global Status: PASS | FAIL | WARNING
-
-### Functional Alignment
-- REQ-001: ✅ Implemented | ❌ Missing | ⚠️ Partial
-
-### Critical Findings
-1. [Problem description]
-   - Location: file:line
-   - Impact: [Security|Performance|Functional]
-   - Recommendation: [Corrective action]
-
-## Rules
-- NEVER PASS if a critical finding exists
-- Each finding MUST have a precise location
-- Recommendations MUST be actionable</code></pre>
-    </div>
-
-    <!-- Retro-Spec Skill -->
-    <h2 id="retrospec">{{ i18n "skills_retrospec_skill_title" }}</h2>
-
-    <p>{{ i18n "skills_retrospec_skill_agent" | safeHTML }}</p>
-    <p>{{ i18n "skills_retrospec_skill_transition" | safeHTML }}</p>
-
-    <p>{{ i18n "skills_retrospec_skill_desc" }}</p>
-
-    <h3>{{ i18n "skills_retrospec_skill_content_title" }}</h3>
-    <div class="code-block">
-      <pre><code># Retro-Spec Skill
-
-## Objective
-Objectively document what REALLY exists in the code.
-Not what the dev says they did. What is there.
-
-## Required Analysis
-
-### 1. Functional Inventory
-- What features are implemented?
-- What endpoints/routes exist?
-- What components are available?
-
-### 2. Implementation State
-- Complete vs partial features
-- Commented or disabled code
-- TODO/FIXME/HACK present
-
-### 3. Dependencies
-- Libraries used + versions
-- External APIs called
-- Third-party services integrated
-
-### 4. Intention Gaps
-- Requirements implemented differently
-- Unplanned features added
-- Technical limitations encountered
-
-## Output Format
-## Retro-Specification - [Date]
-
-### Current System State
-
-#### Features
-- [Feature 1]: Complete | Partial | Stub
-- [Feature 2]: ...
-
-#### Actual Architecture
-[Description of architecture as implemented]
-
-#### Dependencies
-| Package | Version | Usage |
-|---------|---------|-------|
-| ...     | ...     | ...   |
-
-### Identified Gaps
-| Intention | Reality | Reason |
-|-----------|---------|--------|
-| ...       | ...     | ...    |
-
-## Rules
-- ABSOLUTE objectivity — no embellishment
-- FACTUAL — what is observed, not interpreted
-- USEFUL — next Spec Agent must be able to start from here</code></pre>
-    </div>
-
-    <!-- Correction Skill -->
-    <h2 id="correction">{{ i18n "skills_correction_skill_title" }}</h2>
-
-    <p>{{ i18n "skills_correction_skill_agent" | safeHTML }}</p>
-    <p>{{ i18n "skills_correction_skill_transition" | safeHTML }}</p>
-
-    <p>{{ i18n "skills_correction_skill_desc" }}</p>
-
-    <h3>{{ i18n "skills_correction_skill_content_title" }}</h3>
-    <div class="code-block">
-      <pre><code># Correction Skill
-
-## Objective
-Fix audit findings with complete traceability.
-
-## Mandatory Process
-
-### For each critical finding
-1. Identify root cause (not just symptom)
-2. Implement correction
-3. Add test that would have detected the problem
-4. Document the correction
-
-### For each minor finding
-1. Fix or document why acceptable
-2. If acceptable: add as explicit technical debt
-
-## Documentation Format
-## Correction - [Finding ID]
-
-### Problem
-[Finding description as identified by audit]
-
-### Root Cause
-[Why this problem existed]
-
-### Applied Correction
-[What was changed]
-
-### Added Test
-[Reference to test verifying correction]
-
-### Impact
-[Other parts of code potentially affected]
-
-## Rules
-- NEVER correct without associated test
-- NEVER "fix" that breaks something else (check regression)
-- Traceability finding → commit mandatory</code></pre>
-    </div>
-
-    <!-- Create Your Own Skills -->
+    <!-- Writing Your Own Skills -->
     <h2 id="custom">{{ i18n "skills_custom_title" }}</h2>
 
     <p>{{ i18n "skills_custom_intro" }}</p>
@@ -312,21 +152,23 @@ Fix audit findings with complete traceability.
       <li>{{ i18n "skills_custom_step4" | safeHTML }}</li>
     </ol>
 
-    <p>{{ i18n "skills_custom_conclusion" | safeHTML }}</p>
+    <!-- Skill Lifecycle -->
+    <h2 id="lifecycle">{{ i18n "skills_lifecycle_title" }}</h2>
 
-    <!-- Implementation Notes -->
-    <h2 id="implementation">{{ i18n "skills_impl_title" }}</h2>
+    <p>{{ i18n "skills_lifecycle_intro" }}</p>
 
-    <p>{{ i18n "skills_impl_intro" }}</p>
+    <p>{{ i18n "skills_lifecycle_versioning" }}</p>
 
-    <p>{{ i18n "skills_impl_level1" | safeHTML }}</p>
-    <p>{{ i18n "skills_impl_level2" | safeHTML }}</p>
+    <h3>{{ i18n "skills_lifecycle_structure_title" }}</h3>
 
-    <p>{{ i18n "skills_impl_invariant" | safeHTML }}</p>
+    <div class="code-block">
+      <pre><code>skills/
+  public/         # Framework docs, language best practices
+  project/        # Your conventions, architecture decisions
+  delta/          # Temporary patches (new versions, hotfixes)</code></pre>
+    </div>
 
-    <p>{{ i18n "skills_impl_security" }}</p>
-
-    <p>{{ i18n "skills_impl_boilerplate" | safeHTML }}</p>
+    <p>{{ i18n "skills_lifecycle_boilerplate" | safeHTML }}</p>
 
   </div>
 </main>

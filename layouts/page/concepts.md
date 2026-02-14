@@ -2,40 +2,46 @@
 
 {{ i18n "concepts_page_intro" | plainify }}
 
+## {{ i18n "concepts_workflow_title" }}
+
+{{ i18n "concepts_workflow_intro" }}
+
+```
+Conductor → Architect → [Contract] → Maker(s) → CI → Breaker(s) → Witness
+                                        ↑                 |
+                                        +-- iterations ---+
+```
+
+### {{ i18n "concepts_workflow_phase1_title" }}
+
+**{{ i18n "concepts_workflow_phase1_agents" }}** — {{ i18n "concepts_workflow_phase1_desc" }}
+
+### {{ i18n "concepts_workflow_phase2_title" }}
+
+**{{ i18n "concepts_workflow_phase2_agents" }}** — {{ i18n "concepts_workflow_phase2_desc" }}
+
+### {{ i18n "concepts_workflow_phase3_title" }}
+
+**{{ i18n "concepts_workflow_phase3_agents" }}** — {{ i18n "concepts_workflow_phase3_desc" }}
+
+**{{ i18n "concepts_workflow_principle" }}**
+
 ## {{ i18n "concepts_intention_title" }}
 
 {{ i18n "concepts_intention_intro" | plainify }}
 
-{{ i18n "concepts_intention_questions" }}
+{{ i18n "concepts_intention_desc" | plainify }}
 
-- {{ i18n "concepts_intention_q1" | plainify }}
-- {{ i18n "concepts_intention_q2" | plainify }}
-- {{ i18n "concepts_intention_q3" | plainify }}
+### {{ i18n "concepts_intention_fields_title" }}
 
-### {{ i18n "concepts_intention_structure_title" }}
-
-```markdown
-# Intention Document: [Feature Name]
-
-## Context
-Why this feature exists. The business problem it solves.
-
-## Objective
-What the user will be able to do once the feature is delivered.
-
-## Requirements
-- [ ] REQ-001: Requirement description
-- [ ] REQ-002: Requirement description
-
-## Validation Criteria
-- Criterion 1: How to verify REQ-001 is implemented
-
-## Out of Scope
-What is NOT included in this intention.
-
-## Dependencies
-Prerequisites needed before starting.
-```
+| Field | Description |
+|-------|-------------|
+| {{ i18n "concepts_intention_field1" }} | {{ i18n "concepts_intention_field1_desc" }} |
+| {{ i18n "concepts_intention_field2" }} | {{ i18n "concepts_intention_field2_desc" }} |
+| {{ i18n "concepts_intention_field3" }} | {{ i18n "concepts_intention_field3_desc" }} |
+| {{ i18n "concepts_intention_field4" }} | {{ i18n "concepts_intention_field4_desc" }} |
+| {{ i18n "concepts_intention_field5" }} | {{ i18n "concepts_intention_field5_desc" }} |
+| {{ i18n "concepts_intention_field6" }} | {{ i18n "concepts_intention_field6_desc" }} |
 
 ### {{ i18n "concepts_intention_practices_title" }}
 
@@ -49,6 +55,8 @@ Prerequisites needed before starting.
 {{ i18n "concepts_contract_intro" | plainify }}
 
 {{ i18n "concepts_contract_desc" }}
+
+{{ i18n "concepts_contract_hub" }}
 
 ### {{ i18n "concepts_contract_types_title" }}
 
@@ -64,7 +72,25 @@ Prerequisites needed before starting.
 
 {{ i18n "concepts_contract_principle" | plainify }}
 
-{{ i18n "concepts_contract_flow" }}
+## {{ i18n "concepts_fractions_title" }}
+
+{{ i18n "concepts_fractions_intro" | plainify }}
+
+{{ i18n "concepts_fractions_desc" }}
+
+### {{ i18n "concepts_fractions_rules_title" }}
+
+- {{ i18n "concepts_fractions_rule1" | plainify }}
+- {{ i18n "concepts_fractions_rule2" | plainify }}
+- {{ i18n "concepts_fractions_rule3" | plainify }}
+- {{ i18n "concepts_fractions_rule4" | plainify }}
+
+### {{ i18n "concepts_fractions_why_title" }}
+
+- {{ i18n "concepts_fractions_why1" | plainify }}
+- {{ i18n "concepts_fractions_why2" | plainify }}
+- {{ i18n "concepts_fractions_why3" | plainify }}
+- {{ i18n "concepts_fractions_why4" | plainify }}
 
 ## {{ i18n "concepts_retrospec_title" }}
 
@@ -89,24 +115,29 @@ Prerequisites needed before starting.
 - {{ i18n "concepts_retrospec_content4" | plainify }}
 - {{ i18n "concepts_retrospec_content5" | plainify }}
 
-### {{ i18n "concepts_retrospec_usage_title" }}
+### {{ i18n "concepts_retrospec_anchor_title" }}
 
-{{ i18n "concepts_retrospec_usage" }}
+{{ i18n "concepts_retrospec_anchor" | plainify }}
 
-## {{ i18n "concepts_cycle_title" }}
+## {{ i18n "concepts_operations_title" }}
 
-{{ i18n "concepts_cycle_intro" }}
+{{ i18n "concepts_operations_intro" | plainify }}
 
-**Intention** ({{ i18n "concepts_cycle_agent_spec" }}) → **{{ i18n "concepts_cycle_contract" }}** ({{ i18n "concepts_cycle_agent_spec" }}) → **{{ i18n "concepts_cycle_code" }}** ({{ i18n "concepts_cycle_agent_dev" }}) → **{{ i18n "concepts_cycle_retrospec" }}** ({{ i18n "concepts_cycle_agent_scribe" }})
+{{ i18n "concepts_operations_desc" }}
 
-1. {{ i18n "concepts_cycle_step1" | plainify }}
-2. {{ i18n "concepts_cycle_step2" | plainify }}
-3. {{ i18n "concepts_cycle_step3" | plainify }}
-4. {{ i18n "concepts_cycle_step4" | plainify }}
-5. {{ i18n "concepts_cycle_step5" | plainify }}
+### {{ i18n "concepts_operations_scope_title" }}
 
-{{ i18n "concepts_cycle_conclusion" | plainify }}
+| Scope | Description |
+|-------|-------------|
+| {{ i18n "concepts_operations_scope1" }} | {{ i18n "concepts_operations_scope1_desc" }} |
+| {{ i18n "concepts_operations_scope2" }} | {{ i18n "concepts_operations_scope2_desc" }} |
+| {{ i18n "concepts_operations_scope3" }} | {{ i18n "concepts_operations_scope3_desc" }} |
+| {{ i18n "concepts_operations_scope4" }} | {{ i18n "concepts_operations_scope4_desc" }} |
+
+### {{ i18n "concepts_operations_why_title" }}
+
+{{ i18n "concepts_operations_why" | plainify }}
 
 ---
 *MADD — Multi-Agent Driven Development*
-*[View HTML version]({{ .Permalink }})*
+*[View HTML version]({{ .RelPermalink | replaceRE "\\.[^.]+$" ".html" }})*

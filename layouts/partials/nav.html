@@ -40,11 +40,11 @@
         </button>
         <div class="lang-selector__dropdown" role="menu">
           {{- if eq .Lang "en" -}}
-          <a class="lang-selector__option lang-selector__option--active" href="{{ .Permalink }}" role="menuitem">English</a>
+          <a class="lang-selector__option lang-selector__option--active" href="{{ .RelPermalink }}" role="menuitem">English</a>
           {{- with .Translations -}}
             {{- range . -}}
               {{- if eq .Lang "fr" -}}
-          <a class="lang-selector__option" href="{{ .Permalink }}" role="menuitem">Français</a>
+          <a class="lang-selector__option" href="{{ .RelPermalink }}" role="menuitem">Français</a>
               {{- end -}}
             {{- end -}}
           {{- else -}}
@@ -54,13 +54,13 @@
           {{- with .Translations -}}
             {{- range . -}}
               {{- if eq .Lang "en" -}}
-          <a class="lang-selector__option" href="{{ .Permalink }}" role="menuitem">English</a>
+          <a class="lang-selector__option" href="{{ .RelPermalink }}" role="menuitem">English</a>
               {{- end -}}
             {{- end -}}
           {{- else -}}
           <a class="lang-selector__option" href="/" role="menuitem">English</a>
           {{- end -}}
-          <a class="lang-selector__option lang-selector__option--active" href="{{ .Permalink }}" role="menuitem">Français</a>
+          <a class="lang-selector__option lang-selector__option--active" href="{{ .RelPermalink }}" role="menuitem">Français</a>
           {{- end -}}
         </div>
       </div>
@@ -81,17 +81,17 @@
 
     <ul class="nav__links">
       {{ if .IsHome }}
+      <li><a href="#agents" class="nav__link">{{ i18n "nav_agents" }}</a></li>
       <li><a href="#problem" class="nav__link">{{ i18n "nav_problem" }}</a></li>
       <li><a href="#principles" class="nav__link">{{ i18n "nav_principles" }}</a></li>
-      <li><a href="#agents" class="nav__link">{{ i18n "nav_agents" }}</a></li>
       {{ else }}
+      <li><a href="{{ "/" | relLangURL }}#agents" class="nav__link">{{ i18n "nav_agents" }}</a></li>
       <li><a href="{{ "/" | relLangURL }}#problem" class="nav__link">{{ i18n "nav_problem" }}</a></li>
       <li><a href="{{ "/" | relLangURL }}#principles" class="nav__link">{{ i18n "nav_principles" }}</a></li>
-      <li><a href="{{ "/" | relLangURL }}#agents" class="nav__link">{{ i18n "nav_agents" }}</a></li>
       {{ end }}
       <li><a href="{{ "concepts.html" | relLangURL }}" class="nav__link{{ if eq $pageName "concepts" }} nav__link--active{{ end }}">{{ i18n "nav_concepts" }}</a></li>
       <li><a href="{{ "skills.html" | relLangURL }}" class="nav__link{{ if eq $pageName "skills" }} nav__link--active{{ end }}">{{ i18n "nav_skills" }}</a></li>
-      <li><a href="{{ "manifesto.html" | relLangURL }}" class="nav__link{{ if eq $pageName "manifesto" }} nav__link--active{{ end }}">{{ i18n "nav_manifesto" }}</a></li>
+      <li><a href="{{ "examples.html" | relLangURL }}" class="nav__link{{ if eq $pageName "examples" }} nav__link--active{{ end }}">{{ i18n "nav_case_studies" }}</a></li>
       <li><a href="https://github.com/madd-sh" class="nav__link" target="_blank">GitHub ↗</a></li>
     </ul>
   </div>

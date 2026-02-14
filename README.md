@@ -10,8 +10,9 @@ Ce repository contient le site web officiel de MADD : https://madd.sh/
 
 MADD est une méthodologie de développement conçue pour l'ère de l'IA. Elle repose sur :
 
-- **4 agents spécialisés** : Spec, Dev, Audit, Scribe
+- **6 agents spécialisés** : Conductor, Architect, Maker, CI, Breaker, Witness
 - **6 principes fondamentaux** : intention, contrats, validation indépendante, rétro-spec, fondations, skills
+- **Spécialisation par domaine** : paires Maker/Breaker spécialisées (database, API, frontend, security, infrastructure)
 - **Zéro dérive** : garantie d'alignement entre ce qui est demandé et ce qui est livré
 
 ## Les 6 Principes

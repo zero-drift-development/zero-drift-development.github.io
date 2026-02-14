@@ -1,5 +1,6 @@
 ---
 title: "Les Concepts MADD"
-description: "Trois artefacts structurent chaque cycle MADD : l'Intention Document, le Contrat Exécutable, et la Rétro-Spécification."
+description: "Cinq artefacts et un workflow structuré éliminent la dérive entre intention et implémentation : Intention Document, Contrat Exécutable, Fractions, Rétro-Spécification, et Opérations."
+type: "page"
 layout: "concepts"
 ---

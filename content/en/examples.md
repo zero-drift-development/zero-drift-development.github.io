@@ -1,6 +1,7 @@
 ---
 title: "Case Studies"
 description: "Concrete examples of applying MADD in real conditions. What worked, what failed, lessons learned."
+type: "page"
 layout: "examples"
 ---
 
@@ -37,15 +38,15 @@ With a classic team and Scrum: planning, sprints, code reviews, QA... realistic 
 
 <div class="not-table">
   <div class="not-row">
-    <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">Spec Agent (Gemini)</span>
+    <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">Architect Agent (Gemini)</span>
     <span class="not-row__right">Roadmap, Intention Documents, foundation prioritization</span>
   </div>
   <div class="not-row">
-    <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">Dev Agent (Opus)</span>
+    <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">Maker Agent (Opus)</span>
     <span class="not-row__right">Contract-guided implementation</span>
   </div>
   <div class="not-row">
-    <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">Audit Agent (GPT)</span>
+    <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">Breaker Agent (GPT)</span>
     <span class="not-row__right">Due diligence on each delivery</span>
   </div>
 </div>
@@ -53,15 +54,15 @@ With a classic team and Scrum: planning, sprints, code reviews, QA... realistic 
 ### What Made the Difference
 
 1. **Foundations first** — Multi-tenant isolation was implemented before any feature. No "we'll see later".
-2. **Executable contracts** — Every requirement had tests. The Dev Agent couldn't "cheat".
-3. **Independent audit** — GPT detected 3 security flaws that the Dev Agent had missed.
+2. **Executable contracts** — Every requirement had tests. The Maker Agent couldn't "cheat".
+3. **Independent audit** — GPT detected 3 security flaws that the Maker Agent had missed.
 4. **No hidden debt** — The retro-spec documented 12 technical limitations from the start.
 
 ### Frictions Encountered
 
 - Gemini had outdated knowledge about Next.js 14 → Delta skills needed
 - Opus tended to over-engineer → Explicit constraints in the Development Skill
-- The Scribe was initially the Dev Agent itself → Bias detected, separation enforced
+- The Witness was initially the Maker Agent itself → Bias detected, separation enforced
 
 ### Measurable Results
 

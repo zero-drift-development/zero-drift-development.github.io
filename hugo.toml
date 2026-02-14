@@ -74,16 +74,16 @@ enableGitInfo = true
 # Menu configuration
 [menus]
   [[menus.main]]
+    name = "Agents"
+    pageRef = "/#agents"
+    weight = 1
+  [[menus.main]]
     name = "Problem"
     pageRef = "/#problem"
-    weight = 1
+    weight = 2
   [[menus.main]]
     name = "Principles"
     pageRef = "/#principles"
-    weight = 2
-  [[menus.main]]
-    name = "Agents"
-    pageRef = "/#agents"
     weight = 3
   [[menus.main]]
     name = "Concepts"
@@ -94,8 +94,8 @@ enableGitInfo = true
     pageRef = "/skills"
     weight = 5
   [[menus.main]]
-    name = "Manifesto"
-    pageRef = "/manifesto"
+    name = "Case Studies"
+    pageRef = "/examples"
     weight = 6
   [[menus.main]]
     name = "GitHub"

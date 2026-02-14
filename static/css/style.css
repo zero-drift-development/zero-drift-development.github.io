@@ -814,8 +814,20 @@ section {
 
 .problem__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--space-lg);
+}
+
+@media (max-width: 768px) {
+  .problem__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .problem__grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .problem__card {
@@ -1001,6 +1013,132 @@ section {
 .agent-arrow {
   color: var(--color-text-muted);
   font-size: 1.5rem;
+}
+
+/* Hub diagram layout — Contract as central cornerstone */
+.agents__diagram--hub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+  overflow-x: visible;
+}
+
+/* Conductor at top */
+.diagram__conductor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.diagram__conductor-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+}
+
+.diagram__conductor-arrow {
+  font-size: 1.5rem;
+  color: var(--color-text-muted);
+  line-height: 1;
+}
+
+/* 3-column grid: Writers | Contract | Readers */
+.diagram__hub-grid {
+  display: grid;
+  grid-template-columns: 170px 40px 1fr 40px 170px;
+  align-items: stretch;
+  gap: 0 var(--space-sm);
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Writers column (left) */
+.diagram__writers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: var(--space-lg);
+}
+
+.diagram__writer-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.diagram__label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/* Arrow columns */
+.diagram__arrows-in,
+.diagram__arrows-out {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.diagram__arrows-in .agent-arrow,
+.diagram__arrows-out .agent-arrow {
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+}
+
+/* Contract (center) — big and prominent, stretches full height */
+.diagram__hub-grid .contract-hub {
+  padding: var(--space-sm);
+  align-self: stretch;
+}
+
+.diagram__hub-grid .contract-hub__inner {
+  min-width: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Readers column (right) — vertical execution flow */
+.diagram__readers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xs);
+}
+
+.diagram__readers .agent-box {
+  min-width: auto;
+  width: 100%;
+}
+
+.diagram__reader-arrow {
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+  line-height: 1;
+}
+
+/* CI agent color */
+.agent-box--ci .agent-box__name {
+  color: var(--color-warning, #fbbf24);
+}
+
+/* Conductor agent color */
+.agent-box--conductor .agent-box__name {
+  color: var(--color-accent);
 }
 
 /* Grid-based diagram layout */
@@ -1189,8 +1327,20 @@ section {
 
 .agents__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-lg);
+}
+
+@media (max-width: 768px) {
+  .agents__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .agents__grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .agent-card {
@@ -1247,6 +1397,12 @@ section {
 /* ========================================
    COMPARISON SECTION
    ======================================== */
+.comparison {
+  background: var(--color-bg-elevated);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
 .comparison__table-wrapper {
   overflow-x: auto;
   margin-top: var(--space-lg);
@@ -1357,9 +1513,6 @@ section {
    QUICKSTART SECTION
    ======================================== */
 .quickstart {
-  background: var(--color-bg-elevated);
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
 }
 
 .quickstart__tabs {
@@ -1850,6 +2003,34 @@ kbd {
 
   .agent-arrow {
     transform: rotate(90deg);
+  }
+
+  /* Hub diagram responsive — stack to single column */
+  .diagram__hub-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .diagram__arrows-in,
+  .diagram__arrows-out {
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--space-lg);
+  }
+
+  .diagram__arrows-in .agent-arrow,
+  .diagram__arrows-out .agent-arrow {
+    transform: rotate(90deg);
+  }
+
+  .diagram__writers {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .diagram__hub-grid .contract-hub__inner {
+    min-height: auto;
   }
 
   /* Grid diagram responsive */

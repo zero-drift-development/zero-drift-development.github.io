@@ -7,11 +7,12 @@ document.addEventListener('DOMContentLoaded', function() {
   // Keyboard Navigation (TUI-style)
   // ========================================
   const PAGES = [
-    { path: '/', name: 'Home', key: 'h' },
+    { path: '/#agents', name: 'Agents', key: 'a' },
+    { path: '/#problem', name: 'Problem', key: 'p' },
+    { path: '/#principles', name: 'Principles', key: 'r' },
     { path: '/concepts.html', name: 'Concepts', key: 'c' },
     { path: '/skills.html', name: 'Skills', key: 's' },
-    { path: '/manifesto.html', name: 'Manifesto', key: 'm' },
-    { path: '/examples.html', name: 'Examples', key: 'e' }
+    { path: '/examples.html', name: 'Case Studies', key: 'e' }
   ];
 
   // Normalize pathname for comparison
@@ -22,6 +23,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function getCurrentPageIndex() {
     const currentPath = normalizePath(window.location.pathname);
+    const currentHash = window.location.hash;
+
+    // On homepage, check hash to determine which section
+    if (currentPath === '/') {
+      if (currentHash) {
+        const idx = PAGES.findIndex(p => p.path === '/' + currentHash);
+        if (idx !== -1) return idx;
+      }
+      return 0; // Default to first (Agents)
+    }
+
+    // On other pages, match by pathname
     return PAGES.findIndex(p => normalizePath(p.path) === currentPath);
   }
 
@@ -66,12 +79,13 @@ document.addEventListener('DOMContentLoaded', function() {
             <h4 data-i18n="help.navigation.title">Navigation</h4>
             <ul>
               <li><kbd>←</kbd> / <kbd>→</kbd> <span data-i18n="help.navigation.arrows">Page précédente / suivante</span></li>
-              <li><kbd>g</kbd> <kbd>h</kbd> <span data-i18n="help.navigation.gh">Aller à l'accueil (Home)</span></li>
-              <li><kbd>g</kbd> <kbd>c</kbd> <span data-i18n="help.navigation.gc">Aller aux Concepts</span></li>
-              <li><kbd>g</kbd> <kbd>s</kbd> <span data-i18n="help.navigation.gs">Aller aux Skills</span></li>
-              <li><kbd>g</kbd> <kbd>m</kbd> <span data-i18n="help.navigation.gm">Aller au Manifeste</span></li>
-              <li><kbd>g</kbd> <kbd>e</kbd> <span data-i18n="help.navigation.ge">Aller aux Exemples</span></li>
-              <li><kbd>1</kbd>-<kbd>5</kbd> <span data-i18n="help.navigation.numbers">Navigation directe aux pages</span></li>
+              <li><kbd>g</kbd> <kbd>a</kbd> <span data-i18n="help.navigation.ga">Agents</span></li>
+              <li><kbd>g</kbd> <kbd>p</kbd> <span data-i18n="help.navigation.gp">Problem</span></li>
+              <li><kbd>g</kbd> <kbd>r</kbd> <span data-i18n="help.navigation.gr">Principles</span></li>
+              <li><kbd>g</kbd> <kbd>c</kbd> <span data-i18n="help.navigation.gc">Concepts</span></li>
+              <li><kbd>g</kbd> <kbd>s</kbd> <span data-i18n="help.navigation.gs">Skills</span></li>
+              <li><kbd>g</kbd> <kbd>e</kbd> <span data-i18n="help.navigation.ge">Case Studies</span></li>
+              <li><kbd>1</kbd>-<kbd>6</kbd> <span data-i18n="help.navigation.numbers">Direct navigation</span></li>
             </ul>
           </div>
           <div class="keyboard-help-modal__section">
@@ -193,21 +207,14 @@ document.addEventListener('DOMContentLoaded', function() {
         case 'g': // gg - go to top
           window.scrollTo({ top: 0, behavior: 'smooth' });
           return;
-        case 'h': // gh - home
-          navigateToPage(0);
+        default: {
+          // Dynamic g+key navigation from PAGES array
+          const page = PAGES.find(p => p.key === e.key.toLowerCase());
+          if (page) {
+            navigateToPage(PAGES.indexOf(page));
+          }
           return;
-        case 'c': // gc - concepts
-          navigateToPage(1);
-          return;
-        case 's': // gs - skills
-          navigateToPage(2);
-          return;
-        case 'm': // gm - manifesto
-          navigateToPage(3);
-          return;
-        case 'e': // ge - examples
-          navigateToPage(4);
-          return;
+        }
       }
       return;
     }
@@ -290,8 +297,8 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
 
-    // Number keys for direct page navigation (1-5)
-    if (e.key >= '1' && e.key <= '5') {
+    // Number keys for direct page navigation (1-6)
+    if (e.key >= '1' && e.key <= '6') {
       e.preventDefault();
       navigateToPage(parseInt(e.key) - 1);
       return;
